@@ -1,0 +1,29 @@
+html, body {
+  padding: 0;
+  max-width: 1960px;
+  margin: auto;
+  @include baseFont();
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@mixin responsive-margin {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+
+@include breakpoint(small){
+  .inner-width-mobile {
+    margin-left: $mobile-gutter;
+    margin-right: $mobile-gutter;
+  }
+}
+
+@include breakpoint(medium-up){
+  .inner-width {
+    @include responsive-margin();
+  }
+}
