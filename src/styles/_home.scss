@@ -9,6 +9,7 @@ section.home-content-wrapper {
   div.home-featured-image-wrapper {
     .slide {
       position: relative;
+      display: block !important; // fixes slick added whitespace
       img {
         display: block;
         width: 100%;
