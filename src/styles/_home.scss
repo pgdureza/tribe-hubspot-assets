@@ -7,28 +7,40 @@ section.home-content-wrapper {
     }
   }
   div.home-featured-image-wrapper {
-    position: relative;
-    img {
-      display: block;
-      width: 100%;
-      object-fit: cover;
-      height: 100%;
-    }
+    .slide {
+      position: relative;
+      img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+      }
 
-    div.featured-image-text {
-      position: absolute;
-      bottom: 20px;
-      right: 30px;
-      p {
-        font-size: 14px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.71;
-        letter-spacing: normal;
-        text-align: center;
-        color: #ffffff;
-        margin: 0;
+      .placeholder-img-cover {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        opacity: 0.62;
+        mix-blend-mode: multiply;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      div.featured-image-text {
+        position: absolute;
+        bottom: 20px;
+        right: 30px;
+        p {
+          font-size: 14px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.71;
+          letter-spacing: normal;
+          text-align: right;
+          color: #ffffff;
+          margin: 0;
+        }
       }
     }
   }
@@ -81,6 +93,7 @@ section.home-content-wrapper {
           line-height: 1.6;
           letter-spacing: 2px;
           color: #3b373a;
+          text-transform: uppercase;
         }
       }
     }
@@ -96,7 +109,7 @@ section.home-content-wrapper {
 
   section.home-content-wrapper {
     div.home-header {
-      margin-top: 14vw;
+      margin-top: 14vh;
     }
 
     display: flex;
@@ -104,8 +117,12 @@ section.home-content-wrapper {
     div.home-featured-image-wrapper {
       width: 56%;
       order: 2;
-      height: calc(100vh - #{$desktop-header-height});
-      max-height: 1440px;
+
+      .slide {
+        height: calc(100vh - #{$desktop-header-height});
+        max-height: 1440px;
+        min-height: 919px;
+      }
     }
     div.home-content {
       width: 410px;
@@ -116,6 +133,12 @@ section.home-content-wrapper {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      div.home-content-text {
+        height: 59%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
       h2 {
         display: block;
         margin: 0 0 24px;
