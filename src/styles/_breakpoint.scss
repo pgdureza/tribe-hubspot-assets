@@ -1,3 +1,4 @@
+// phone-only tablet-portrait-up tablet-landscape-up desktop-up big-desktop-up
 @mixin breakpoint($range) {
   @if $range == phone-only {
     @media (max-width: #{$phone-upper-boundary - 1}) { @content; }

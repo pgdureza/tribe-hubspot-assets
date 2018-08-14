@@ -1,0 +1,41 @@
+.hamburger  {
+  .line{
+    width: 25px;
+    height: 2px;
+    display: block;
+    margin: 6px auto;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+body.mobile-menu-open {
+  .hamburger {
+    .line:nth-child(2){
+      opacity: 0;
+    }
+    
+    .line:nth-child(1){
+      transform: translateY(8px) rotate(45deg);
+    }
+    
+    .line:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+}
+
+header.mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 10;
+  padding: 24px $mobile-gutter;
+  margin: 0;
+  width: 100%;
+}
+@include breakpoint(tablet-portrait-up){
+  header.mobile-header {
+    display: none;
+  }
+}

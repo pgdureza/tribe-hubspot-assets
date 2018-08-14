@@ -1,5 +1,12 @@
 'use strict'
 
 $(document).ready(function(){
-  console.log('asd111');
+
+  // burger menu
+  $(".hamburger").click(function(){
+    $("body").toggleClass("mobile-menu-open");
+  });
+
+
+  
 })
