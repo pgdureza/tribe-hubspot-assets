@@ -15,14 +15,16 @@ html, body {
 }
 
 
-@include breakpoint(small){
-  .inner-width-mobile {
-    margin-left: $mobile-gutter;
-    margin-right: $mobile-gutter;
-  }
+.inner-width-mobile {
+  margin-left: $mobile-gutter;
+  margin-right: $mobile-gutter;
 }
 
-@include breakpoint(medium-up){
+@include breakpoint(tablet-landscape-up){
+  .inner-width-mobile {
+    margin-left: inherit;
+    margin-right: inherit;
+  }
   .inner-width {
     @include responsive-margin();
   }

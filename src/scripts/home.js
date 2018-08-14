@@ -3,8 +3,8 @@ $(document).ready(function(){
   $('a.home-video-link').on('click', function(e){
     e.preventDefault();
     $("#home-video-wrapper").modal({
-      fadeDuration: 300,
-      fadeDelay: 0.5,
+      fadeDuration: 200,
+      fadeDelay: 1,
       showClose: true
     });
   });

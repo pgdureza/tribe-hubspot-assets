@@ -33,7 +33,7 @@ p {
   letter-spacing: 0.6px;
 }
 
-@include breakpoint(medium-up){
+@include breakpoint(tablet-landscape-up){
   h2 {
     font-size: 25px;
     line-height: normal;

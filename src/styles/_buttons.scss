@@ -1,0 +1,35 @@
+.cta_button {
+  border-radius: 25px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12);
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.5px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px 16px;
+  transition: color .2s ease-in, background-color .2s ease-in, border .2s ease-in;
+
+  &.cta-primary {
+    background-color: #f848c4;
+    color: #fff;
+    border: solid 1px #f848c4;
+    &:hover {
+      background-color: #fff;
+      color: #f848c4;
+    }
+  }
+
+  &.cta-secondary {
+    background-color: #ffffff;
+    border: solid 1px #f848c4;
+    color: #f848c4;
+    &:hover {
+      background-color: #f848c4;
+      color: #fff;
+    }
+  }
+}

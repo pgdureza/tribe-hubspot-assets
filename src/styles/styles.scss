@@ -2,13 +2,18 @@
 @import "jquery.modal.min";
 @import "slick";
 
-// app styles
+// utils & settings
 @import "variables";
-@import "utils";
+@import "breakpoint";
+
+// modules & components
 @import "typography";
 @import "base";
 @import "footer";
 @import "header";
 @import "modal";
-@import "home";
 @import "home-video";
+@import "buttons";
+
+// page specific
+@import "home";

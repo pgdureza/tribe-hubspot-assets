@@ -1,9 +1,0 @@
-// only support 2 breakpoints
-@mixin breakpoint($point) {
-  @if $point == 'medium-up' {
-    @media (min-width: $medium-breakpoint) { @content ; }
-  }
-  @else if $point == 'small' {
-      @media (max-width: ($medium-breakpoint - 1))  { @content ; }
-  }
-}

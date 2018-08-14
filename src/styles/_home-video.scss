@@ -16,7 +16,7 @@
   height: 100%;
 }
 
-@include breakpoint(medium-up){
+@include breakpoint(tablet-landscape-up){
 	.video-wrapper-module .home-video-link {
     margin: auto;
     width: 80px;
