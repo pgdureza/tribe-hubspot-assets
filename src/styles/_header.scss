@@ -9,7 +9,8 @@ header.main-header {
     align-items: center;
     padding: 35px 0 30px;
     overflow-x: hidden;
-    @include responsive-margin;
+    margin-left: $desktop-header-gutter;
+    margin-right: $desktop-header-gutter;
   
     section.navigation {
       > span { // logo image wrapper

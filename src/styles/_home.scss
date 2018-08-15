@@ -7,7 +7,7 @@ section.home-content-wrapper {
     }
   }
   div.home-featured-image-wrapper {
-    .slide {
+    .image-with-handle {
       position: relative;
       display: block !important; // fixes slick added whitespace
       min-height: 410px;
@@ -131,7 +131,7 @@ section.home-content-wrapper {
       width: 56%;
       order: 2;
 
-      .slide {
+      .image-with-handle {
         height: calc(100vh - #{$desktop-header-height});
         max-height: 1440px;
         min-height: 919px;

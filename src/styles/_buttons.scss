@@ -18,8 +18,9 @@
     color: #fff;
     border: solid 1px #f848c4;
     &:hover {
-      background-color: #fff;
-      color: #f848c4;
+      background-color: #FA81D6;
+      border: solid 1px #FA81D6;
+      color: #fff;
     }
   }
 
@@ -28,8 +29,19 @@
     border: solid 1px #f848c4;
     color: #f848c4;
     &:hover {
-      background-color: #f848c4;
-      color: #fff;
+      background-color: #ffffff;
+      border: solid 1px #FA81D6;
+      color: #FA81D6;
+    }
+  }
+}
+
+.flexible-cta {
+  a.cta_button {
+    width: 100% !important; // override for inline styling for ctas
+
+    @include breakpoint(tablet-landscape-up){
+      width: inherit !important;
     }
   }
 }

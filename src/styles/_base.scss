@@ -9,12 +9,6 @@ html, body {
   box-sizing: border-box;
 }
 
-@mixin responsive-margin {
-  margin-left: 30px;
-  margin-right: 30px;
-}
-
-
 .inner-width-mobile {
   margin-left: $mobile-gutter;
   margin-right: $mobile-gutter;
@@ -22,10 +16,11 @@ html, body {
 
 @include breakpoint(tablet-landscape-up){
   .inner-width-mobile {
-    margin-left: inherit;
-    margin-right: inherit;
+    margin-left: auto;
+    margin-right: auto;
   }
   .inner-width {
-    @include responsive-margin();
+    margin-left: 100px;
+    margin-right: 100px;
   }
 }

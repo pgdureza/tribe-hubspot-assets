@@ -1,0 +1,32 @@
+.why-tribe {
+
+  @include breakpoint(tablet-landscape-up){
+    .column {
+      &.cta {
+        width: 25%
+      }
+    }
+  }
+
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #7a7a7a;
+    margin: 16px 0 30px;
+
+    @include breakpoint(tablet-landscape-up){
+      font-size: 18px;
+      line-height: 1.78;
+      letter-spacing: normal;
+    }
+  }
+}

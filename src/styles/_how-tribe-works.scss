@@ -1,0 +1,62 @@
+.how-tribe-works {
+  ul {
+    padding: 0;
+    list-style: none;
+    margin-top: 30px;
+    margin-bottom: 60px;
+
+    li{
+      margin: 0;
+      padding: 20px 0;
+      &:first-of-type{
+        padding-top: 0;
+      }
+      &:not(:last-of-type) {
+        border-bottom: 1px solid #e4e4e4;
+      }
+      font-size: 18px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.56;
+      letter-spacing: normal;
+      color: #3b373a;
+
+      @include breakpoint(tablet-landscape-up){
+        font-size: 24px;
+        line-height: 1.33;
+        padding: 30px 0;
+      }
+    }
+  }
+}
+
+@include breakpoint(tablet-landscape-up){
+  .how-tribe-works-wrapper {
+    border-radius: 4px;
+    border: solid 4px #f8f8f8;
+    padding-right: 60px;
+    margin-right: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h4 {
+      margin: 48px 0;
+    }
+
+    .column.video {
+      width: 58.33%;
+
+      .wistia-video {
+        margin-left: -60px;
+      }
+    }
+    .column.how-tribe-works {
+      width: 33.33%;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
