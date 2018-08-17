@@ -1,0 +1,52 @@
+.case-cards-wrapper {
+  margin-bottom: 60px;
+  .column {
+    &.cards {
+      .hs_cos_wrapper:nth-child(n+3) {
+        display: none;
+      }
+    }
+  }
+  .card-extra-row {
+    .case-card {
+      display: none;
+    }
+  }
+}
+@include breakpoint(tablet-landscape-up){
+  .case-cards-wrapper {
+    margin-bottom: 140px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .column {
+      &.big-card {
+        width: calc(50% - 10px);
+      }
+      &.cards {
+        width: calc(50% - 10px);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        > .hs_cos_wrapper_widget {
+          width: calc(50% - 10px);
+          margin-bottom: 20px;
+        }
+        .hs_cos_wrapper:nth-child(n+3) {
+          display: block; // removes hidden 2 ++ cards
+        }
+      }
+    }
+
+    .card-extra-row { 
+      display: flex;
+      justify-content: space-between;
+      > div {
+        width: calc(25% - 15px);
+      }
+      .case-card {
+        display: block;
+      }
+    }
+  }
+}

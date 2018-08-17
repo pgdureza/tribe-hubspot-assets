@@ -1,0 +1,82 @@
+
+.footer-locations {
+  border-top: solid 2px #e4e4e4;
+  border-bottom: solid 2px #e4e4e4;
+  padding-top: 38px;
+  padding-bottom: 4px;
+  margin-bottom: 26px;
+
+  @include breakpoint(tablet-landscape-up){
+
+  }
+}
+
+span#hs_cos_wrapper_footer-locations {
+  display: block;
+  
+  @include breakpoint(tablet-landscape-up){
+    display: flex;
+    justify-content: space-between;
+
+    > div {
+      width: 25%;
+    }
+
+  }
+
+  .location {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 34px;
+  }
+
+
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 60px;
+
+    @include breakpoint(tablet-landscape-up){
+      max-width: 78px;
+    }
+  }
+
+  .location-address {
+    padding-left: 6.5%;
+    width: 100%;
+    span {
+      display: block;
+    }
+    .name {
+      font-size: 10px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.6;
+      letter-spacing: 2px;
+      color: #3b373a;
+      margin-top: 0;
+      margin-bottom: 4px;
+
+      @include breakpoint(tablet-landscape-up){
+        font-size: 12px;
+        line-height: normal;
+        margin-bottom: 8px;
+      }
+    }
+    .address-line {
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.43;
+      letter-spacing: normal;
+      color: #7a7a7a;
+
+      @include breakpoint(tablet-landscape-up){
+        line-height: 1.71;
+      }
+    }
+  }
+}

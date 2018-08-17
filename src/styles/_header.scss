@@ -11,6 +11,10 @@ header.main-header {
     overflow-x: hidden;
     margin-left: $desktop-header-gutter;
     margin-right: $desktop-header-gutter;
+
+    a.cta_button {
+      font-size: 12px;
+    }
   
     section.navigation {
       > span { // logo image wrapper

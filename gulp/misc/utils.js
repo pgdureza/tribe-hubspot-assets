@@ -5,7 +5,8 @@ module.exports = function () {
     var plugins = [
       this.postcssnormalize,
       this.autoprefixer(autoprefixerConfig),
-      this.cssnano(cssnanoConfig)
+      this.postcssobjectfit,
+      this.cssnano(cssnanoConfig),
     ]
     this.pump([
       this.gulp.src(src),

@@ -1,0 +1,57 @@
+.what-are-you-waiting-for {
+  position: relative;
+  .cta-wrapper {
+    background-color: #f8f8f8;
+    padding: 30px #{$mobile-gutter};
+
+    h3 {
+      margin: 0 auto 12px;
+      font-size: 20px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.4;
+      letter-spacing: normal;
+      color: #3b373a;
+      @include breakpoint(tablet-landscape-up){
+        font-size: 40px;
+      }
+    }
+  
+    p {
+      margin: 12px auto 30px;
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      color: #7a7a7a;
+      @include breakpoint(tablet-landscape-up){
+        font-size: 18px;
+        line-height: 1.78;
+        margin-top: 16px;
+        margin-bottom: 48px;
+      }
+    }
+
+  }
+
+  @include breakpoint(tablet-landscape-up){
+    .image-wrapper {
+      max-width: 820px;
+      margin-left: auto;
+    }
+
+    .cta-wrapper {
+      max-width: 505px;
+      top: 0;
+      position: absolute;
+      left: 0;
+      padding: 60px 105px;
+
+
+    }
+  }
+  
+}

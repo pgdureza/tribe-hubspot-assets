@@ -1,0 +1,82 @@
+.case-card {
+
+  .case-card-image {
+    height: 51.2vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+  .brand-image {
+    border: solid 1px #e4e4e4;
+    border-top: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 4px 4px;
+
+    height: 28vw;
+    margin-bottom: 16px;
+
+    img {
+      max-height: 40px;
+    }
+  }
+
+  @include breakpoint(tablet-landscape-up){
+    .case-card-image {
+      max-height: 211.25px;
+      height: 12.5vw;
+    }
+    .brand-image {
+      max-height: 115px;
+      height: 6.8vw;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.case-card-featured {
+  border-radius: 4px;
+  background-color: #3b373a;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  margin-bottom: 16px;
+  height: 79.5vw;
+
+  @include breakpoint(tablet-landscape-up){
+    max-height: 672.33px;
+    margin-bottom: 0;
+    height: calc(38.6vw + 20px);
+  }
+
+  .case-card-image {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .brand-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      max-height: 85px;
+      width: auto;
+    }
+  }
+}

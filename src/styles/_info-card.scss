@@ -1,0 +1,54 @@
+.info-card {
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: solid 1px #e4e4e4;
+  margin: 16px 0;
+  padding: 30px;
+
+  @include breakpoint(tablet-landscape-up){
+    margin: 0px 0 20px 0;
+  }
+  img {
+    display: block;
+    width: 48px;
+    height: 48px;
+
+    @include breakpoint(tablet-landscape-up){
+      width: 64px;
+      height: 64px;
+    }
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    color: #3b373a;
+    margin-top: 20px;
+    margin-bottom: 6px;
+
+    @include breakpoint(tablet-landscape-up){
+      font-size: 18px;
+      line-height: 1.33;
+      margin-top: 21px;
+      margin-bottom: 8px;
+    }
+  }
+  .card-caption{
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #7a7a7a;
+
+    @include breakpoint(tablet-landscape-up){
+      line-height: 1.71;
+      margin-top: 8px;
+    }
+  }
+}

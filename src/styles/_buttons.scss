@@ -11,6 +11,7 @@
   text-transform: uppercase;
   text-decoration: none;
   padding: 16px 16px;
+  white-space: nowrap;
   transition: color .2s ease-in, background-color .2s ease-in, border .2s ease-in;
 
   &.cta-primary {
@@ -34,14 +35,26 @@
       color: #FA81D6;
     }
   }
+
+  &:not(.cta-secondary):not(.cta-primary) {
+    background-color: #f848c4;
+    color: #fff;
+    border: solid 1px #f848c4;
+    padding: 16px 24px;
+    &:hover {
+      background-color: #FA81D6;
+      border: solid 1px #FA81D6;
+      color: #fff;
+    }
+  }
 }
 
 .flexible-cta {
   a.cta_button {
-    width: 100% !important; // override for inline styling for ctas
+    display: block;
 
     @include breakpoint(tablet-landscape-up){
-      width: inherit !important;
+      display: inline-block;
     }
   }
 }

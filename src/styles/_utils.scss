@@ -9,3 +9,20 @@
 .clearfix {
   zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
+
+
+.mobile-only {
+  display: block;
+}
+.desktop-only {
+  display: none;
+}
+
+@include breakpoint(tablet-landscape-up){
+  .mobile-only {
+    display: none;
+  }
+  .desktop-only {
+    display: block;
+  }
+}

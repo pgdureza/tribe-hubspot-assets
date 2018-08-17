@@ -22,6 +22,7 @@ module.exports = function () {
   this.ftp = require('vinyl-ftp')
   this.path = require('path')
   this.postcss = require('gulp-postcss')
+  this.postcssobjectfit = require('postcss-object-fit-images')
   this.cssnano = require('cssnano')
   this.postcssnormalize = require('postcss-normalize')
   this.strip = require('gulp-strip-comments')

@@ -13,7 +13,7 @@ if ($("#home-main-section").length > 0){
     });
   
     // slider
-    $("#hs_cos_wrapper_jumbotron-slide-images").slick({
+    $("#hs_cos_wrapper_featured-image-slider").slick({
       dots: false,
       infinite: true,
       speed: 500,

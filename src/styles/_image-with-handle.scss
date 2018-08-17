@@ -1,0 +1,48 @@
+.image-with-handle {
+  position: relative;
+  display: block !important; // fixes slick added whitespace
+
+  &:not(.parallaxed-image){
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .placeholder-img-cover {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 0.62;
+    mix-blend-mode: multiply;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
+  }
+
+  div.featured-image-text {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    p {
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.71;
+      letter-spacing: normal;
+      text-align: right;
+      color: #ffffff;
+      margin: 0;
+    }
+  }
+}
+
+@include breakpoint(tablet-landscape-up){
+  .image-with-handle {
+    div.featured-image-text {
+      bottom: 35px;
+      right: 90px;
+    }
+  }
+}

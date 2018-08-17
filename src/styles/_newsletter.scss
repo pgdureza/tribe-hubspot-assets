@@ -1,0 +1,9 @@
+.newsletter-wrapper {
+  border-top: solid 2px #3b373a;
+  text-align: center;
+  padding: 38px 0 48px;
+
+  @include breakpoint(tablet-landscape-up){
+    margin-top: 140px;
+  }
+}
