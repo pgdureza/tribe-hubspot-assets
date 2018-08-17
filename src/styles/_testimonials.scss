@@ -10,6 +10,17 @@ div#testimonial-slider-control {
   position: relative;
   display: block;
 
+  .creator-control {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    text-align: center;
+    color: #3b373a;
+  }
+
   .slick-list {
     padding-bottom: 40px;
     overflow: scroll;
@@ -22,9 +33,9 @@ div#testimonial-slider-control {
   .slick-track {
     display: flex;
     transform: none !important;
+    width: 100% !important;
 
     @include breakpoint(tablet-landscape-up){
-      width: 100% !important;
       justify-content: center;
     }
   }
@@ -58,9 +69,10 @@ div#testimonial-slider-control {
       border-radius: 4px;
       border: solid 1px #e4e4e4;
       cursor: pointer;
+      @include cubicBezier();
     }
 
-    &.slick-current {
+    &:hover, &.slick-current {
       > div {
         border-color: #fff;
         background: #ffffff;
@@ -95,7 +107,7 @@ div#testimonial-slider-control {
   }
 }
 
-.brand-testimonials {
+.brand-testimonials, .creator-testimonials {
   background-color: #f8f8f8;
 
   @include breakpoint(tablet-landscape-up){
@@ -103,7 +115,31 @@ div#testimonial-slider-control {
       padding-top: 40px;
     }
   }
-
 }
 
+.creator-testimonials {
+  div#testimonial-slider-control {
+    .slick-slide {
+      min-width: 220px !important;
+
+      @include breakpoint(tablet-landscape-up){
+        width: 220px!important;
+        max-width: 24% !important;
+        min-width: auto !important;
+      }
+
+      .creator-control {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        
+        img {
+          // margin: 8px 12px 8px 16px;
+          margin: 8px 5.6% 8px 7.4%;
+          display: block;
+        }
+      }
+    }
+  }
+}
 

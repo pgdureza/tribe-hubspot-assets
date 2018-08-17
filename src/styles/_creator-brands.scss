@@ -1,0 +1,60 @@
+.creator-brands {
+
+  span#hs_cos_wrapper_creator-brands-gallery {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+
+    > div {
+      width: 33%;
+      text-align: center;
+      @include cubicBezier();
+      &.hidden {
+        opacity: 0;
+        transform: translate(0, 3px)
+      }
+      &:nth-child(n+4) {
+        display: none;
+      }
+      @include breakpoint(tablet-landscape-up){
+        width: 16.67%;
+        &:nth-child(n+4) {
+          display: block;
+        }
+        &:nth-child(n+7) {
+          display: none;
+        }
+      }
+    }
+  }
+  padding-top: 60px;
+  padding-bottom: 62px;
+  @include breakpoint(tablet-landscape-up){
+    padding-top: 97px;
+    padding-bottom: 129px;
+  }
+  h2 {
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.67;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #3b373a;
+    text-transform: uppercase;
+
+    margin-bottom: 32px;
+
+    @include breakpoint(tablet-landscape-up){
+      margin-bottom: 64px;
+      font-size: 16px;
+      line-height: normal;
+    }    
+  }
+
+  img {
+    max-width: 91px;
+    height: auto;
+  }
+}

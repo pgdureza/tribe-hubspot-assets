@@ -41,6 +41,7 @@
     .card-extra-row { 
       display: flex;
       justify-content: space-between;
+      width: 100%;
       > div {
         width: calc(25% - 15px);
       }

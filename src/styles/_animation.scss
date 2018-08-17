@@ -28,5 +28,5 @@
 }
 
 @mixin cubicBezier(){
-  transition: 0.5s cubic-bezier(0.26, 0.54, 0.32, 1) all;
+  transition: 0.5s #{$cubicbezier} all;
 }

@@ -2,7 +2,7 @@
 
   height: 100px;
   margin: 60px 0;
-
+  max-width: 295px;
   p {
     font-size: 10px;
     font-weight: 500;
@@ -18,7 +18,7 @@
     @include breakpoint(tablet-landscape-up){
       font-size: 12px;
       line-height: 1.67;
-      width: 80%;
+      width: 100%;
     }
   }
 
@@ -43,7 +43,7 @@
   .background-circle {
     width: 100px;
     height: 100px;
-    background-color: #ffeefa;
+    background-color: #ffeefa; // default color, but can be overriden in module
     border-radius: 200px;
     margin-left: 48px;
 

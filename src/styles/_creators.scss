@@ -1,0 +1,111 @@
+// bunch of overrides from existing brand modules
+body.creators {
+  .download-cta {
+    .hs-cta-wrapper:first-of-type {
+      a.cta_button:not(.cta-secondary):not(.cta-primary) {
+        padding-right: 25px;
+      }
+    }
+    a.cta_button:not(.cta-secondary):not(.cta-primary) {
+      padding: 0;
+      margin: 0;
+      background: none;
+      border: 0;
+      max-width: 161px;
+      display: inline-block;
+      box-shadow: none;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .animated-counters {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    > .hs_cos_wrapper {
+      .value {
+        font-size: 32px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1;
+        letter-spacing: 1.5px;
+        color: #3b373a;
+
+        @include breakpoint(tablet-landscape-up){
+          font-size: 40px;
+        }
+      }
+
+      &:first-of-type {
+        .background-circle {
+          width: 100px;
+          height: 100px;
+        }
+        
+
+      }
+
+      &:last-of-type {
+        .value {
+          margin-top: -70px;
+        }
+        .animated-counter {
+          padding-top: 10px;
+          padding-left: 25px;
+          @include breakpoint(tablet-landscape-up){
+            padding-left: 50px;
+          }
+        }
+        .background-circle {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+  }
+
+  .how-tribe-works {
+    p {
+      font-size: 20px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.4;
+      letter-spacing: normal;
+      color: #3b373a;
+      margin-bottom: 60px;
+      margin-top: 20px;
+
+      @include breakpoint(tablet-landscape-up){
+        margin: 0;
+        font-size: 32px;
+        line-height: 1.5;
+      }
+    }
+
+    h4 {
+      margin-top: 0;
+    }
+  }
+
+  @include breakpoint(tablet-landscape-up){
+    .why-tribe .column.cards {
+      width: 75%;
+    }
+    .why-tribe #hs_cos_wrapper_information-cards>div {
+      width: calc(33% - 10px);
+    }
+  }
+}
+
+.download-cta {
+  display: flex;
+  justify-content: flex-start;
+  img {
+    width: 100%;
+  }
+}

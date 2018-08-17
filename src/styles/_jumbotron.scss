@@ -1,11 +1,13 @@
 .jumbotron {
   h2 {
-    margin-top: 28px;
+    margin-top: 0;
     margin-bottom: 16px;
+    max-width: 400px;
   }
   p {
     margin-top: 16px;
     margin-bottom: 30px;
+    max-width: 400px;
 
     font-size: 16px;
     font-weight: normal;
@@ -24,6 +26,7 @@
   @include breakpoint(tablet-landscape-up){
     display: flex;
     justify-content: space-between;
+    align-items: center;
     .column {
       &.video {
         width: 58.33%;
@@ -37,12 +40,11 @@
       }
       
       &.content {
-        width: 32%;
+        width: 41%;
         order: 1;
         margin-bottom: 155px;
         margin-top: 120px;
       }
     }
   }
-
 }

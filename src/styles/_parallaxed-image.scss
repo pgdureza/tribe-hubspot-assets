@@ -2,7 +2,7 @@
   height: 100%;
   position: relative;
   overflow: hidden;
-  height: 230px;
+  height: 57vw;
 
   @include breakpoint(tablet-landscape-up){
     height: 550px;
@@ -17,5 +17,6 @@
     pointer-events: none;
     width: 100%;
     height: auto;
+    background-attachment: fixed
   }
 }
