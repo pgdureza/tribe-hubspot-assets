@@ -9,6 +9,10 @@ html, body {
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%; // fixes issues with CMS image width
+}
+
 .inner-width-mobile {
   margin-left: $mobile-gutter;
   margin-right: $mobile-gutter;

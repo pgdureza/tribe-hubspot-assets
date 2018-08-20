@@ -108,6 +108,7 @@ div#testimonial-slider-control {
 }
 
 .brand-testimonials, .creator-testimonials {
+  position: relative;
   background-color: #f8f8f8;
 
   @include breakpoint(tablet-landscape-up){
@@ -140,6 +141,25 @@ div#testimonial-slider-control {
         }
       }
     }
+  }
+}
+
+span#hs_cos_wrapper_quote-icon {
+  position: absolute;
+  top: 18px;
+  transform: scaleX(-1);
+  right: 22px;
+  display: block;
+
+  img {
+    max-width: 100%;
+  }
+
+  @include breakpoint(tablet-landscape-up){
+    transform: none;
+    top: 26px;
+    left: calc(7% - 46px);
+    right: 0;
   }
 }
 

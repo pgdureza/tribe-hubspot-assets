@@ -1,13 +1,27 @@
 .why-tribe {
 
   .info-card:last-of-type{
-    margin-bottom: 30px;
+    
+  }
+
+  #hs_cos_wrapper_information-cards {
+    > div {
+      &:last-of-type{
+        margin-bottom: 30px;
+      }
+    }
   }
 
   @include breakpoint(tablet-landscape-up){
-    .info-card:last-of-type{
-      margin-bottom: 16px;
+    #hs_cos_wrapper_information-cards {
+      > div {
+        margin-bottom: 16px;
+        &:last-of-type{
+          margin-bottom: 16px;
+        }
+      }
     }
+
     .column {
       &.cta {
         width: 25%

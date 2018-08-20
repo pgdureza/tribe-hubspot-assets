@@ -11,7 +11,7 @@
   }
 }
 
-span#hs_cos_wrapper_footer-locations {
+div#hs_cos_wrapper_footer-locations {
   display: block;
   
   @include breakpoint(tablet-landscape-up){
@@ -29,6 +29,7 @@ span#hs_cos_wrapper_footer-locations {
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 34px;
+    text-transform: uppercase;
   }
 
 
