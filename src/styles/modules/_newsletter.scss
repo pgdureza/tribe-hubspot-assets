@@ -124,6 +124,7 @@
           align-items: center;
           padding: 0 16px;
           margin-left: -1px; // hides the right border for the input box w/o akward transition
+          cursor: pointer;
 
           @include breakpoint(tablet-landscape-up){
             height: 65px;
@@ -181,6 +182,7 @@
             align-items: center;
             @include breakpoint(tablet-landscape-up){
               padding-left: 40px;
+              cursor: pointer;
             }
             &:before {
               content: ' ';
@@ -191,7 +193,6 @@
               border-radius: 100px;
               left: 0;
               background: #ffffff;
-              cursor: pointer;
               @include breakpoint(tablet-landscape-up){
                 width: 30px;
                 height: 30px;

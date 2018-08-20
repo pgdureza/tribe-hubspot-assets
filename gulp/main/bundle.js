@@ -58,7 +58,7 @@ gulp.task("obfuscate", done => {
 
 gulp.task("uglify", done => {
   run_uglify(
-    appRoot.path + config.app.paths.scripts + "**/*.js",
+    appRoot.path + config.app.paths.scripts + "/**/*.js",
     appRoot.path + config.app.paths.dist + config.app.paths.distJS
   );
   done();
@@ -86,11 +86,11 @@ gulp.task("watch:scripts", () => {
 gulp.task("watch:styles", () => {
   gulp.watch(appRoot.path + config.app.paths.styles +
     gulpif(config.app.input.compiler.styles.sass === true,
-      '**/*.scss',
+      '/**/*.scss',
       gulpif(config.app.input.compiler.styles.less === true,
-        '**/*.less',
+        '/**/*.less',
         gulpif(config.app.input.compiler.styles.less === true,
-          '**/*.styl'
+          '/**/*.styl'
         )
       )
     ),

@@ -12,7 +12,7 @@ module.exports = function () {
       this.gulp.src(src),
       // this.sourcemaps.init(),
       this.gulpif(this.config.app.input.compiler.styles.sass === true, this.sass().on('error', function (err) {
-        this.gutil.log(this.gutil.colors.red('[Error]'), err.toString())
+        console.log(err.toString())
         this.emit('end')
         return false
       }), this.gulpif(this.config.app.input.compiler.styles.less === true, this.less().on('error', function (err) {

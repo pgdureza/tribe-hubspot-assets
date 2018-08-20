@@ -1,43 +1,45 @@
 // vendor styles
-@import "jquery.modal.min";
-@import "slick";
+@import "vendors/jquery.modal.min";
+@import "vendors/slick";
 
 // utils & settings
-@import "variables";
-@import "breakpoint";
-@import "utils";
+@import "settings/variables";
+@import "settings/breakpoint";
+@import "settings/utils";
+
+// global styles
+@import "global/typography";
+@import "global/base";
+@import "global/animation";
+@import "global/buttons";
 
 // modules & components
-@import "animation";
-@import "typography";
-@import "base";
-@import "footer";
-@import "header";
-@import "header-mobile";
-@import "modal";
-@import "home-video";
-@import "buttons";
-@import "jumbotron";
-@import "wistia-video";
-@import "how-tribe-works";
-@import "animated-counter";
-@import "why-tribe";
-@import "info-card";
-@import "testimonial-slide";
-@import "testimonials";
-@import "campaign-count";
-@import "case-card";
-@import "case-cards";
-@import "view-more-link";
-@import "image-with-handle";
-@import "what-are-you-waiting-for";
-@import "parallaxed-image";
-@import "locations";
-@import "newsletter";
-@import "creator-brands";
+@import "modules/footer";
+@import "modules/header";
+@import "modules/header-mobile";
+@import "modules/modal";
+@import "modules/home-video";
+@import "modules/jumbotron";
+@import "modules/wistia-video";
+@import "modules/how-tribe-works";
+@import "modules/animated-counter";
+@import "modules/why-tribe";
+@import "modules/info-card";
+@import "modules/testimonial-slide";
+@import "modules/testimonials";
+@import "modules/campaign-count";
+@import "modules/case-card";
+@import "modules/case-cards";
+@import "modules/view-more-link";
+@import "modules/image-with-handle";
+@import "modules/what-are-you-waiting-for";
+@import "modules/parallaxed-image";
+@import "modules/locations";
+@import "modules/newsletter";
+@import "modules/creator-brands";
 
 // page specific
-@import "home";
-@import "creators";
+@import "pages/home";
+@import "pages/creators";
 
 
