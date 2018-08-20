@@ -1,7 +1,8 @@
-// polyfill objectfit
-$(function () { objectFitImages() })
 
 $(document).ready(function(){
+
+  // polyfill objectfit
+  objectFitImages()
 
   // burger menu
   $(".hamburger").click(function(){
@@ -107,4 +108,9 @@ $(document).ready(function(){
     });
   });
 
+});
+
+$(window).load(function(){
+    // appends newsletter arrow
+    $(".newsletter-wrapper .hs_email .input").append('<submit ><span>SUBSCRIBE</span><span class="arrow-button"> </span></submit>');
 });

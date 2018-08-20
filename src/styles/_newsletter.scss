@@ -1,9 +1,255 @@
 .newsletter-wrapper {
   border-top: solid 2px #3b373a;
-  text-align: center;
+  text-align: left;
   padding: 38px 0 48px;
 
   @include breakpoint(tablet-landscape-up){
     margin-top: 140px;
+    border-top: 0;
+    background: #f8f8f8;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+    .inner-width { // override the inner-width class
+      margin-left: calc(7% - 40px);
+      margin-right: calc(7% - 40px);
+    }
+  }
+
+  > div {
+    @include breakpoint(tablet-landscape-up){
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      > h3 {
+        width: 35%;
+        margin: 0;
+      }
+      span#hs_cos_wrapper_newsletter {
+        width: 65%;
+      }
+    }
+  }
+
+  .form-title { // default title of form
+    display: none;
+  }
+
+  .hs-form-field > label {
+    display: none;
+  }
+
+  .hs_option_choices {
+    > label {
+      display: none;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-start;
+      width: auto;
+      padding: 0;
+      margin: 25px 0;
+
+      li {
+
+        &:first-of-type {
+          margin-right: 4%;
+        }
+        
+        @include breakpoint(tablet-landscape-up){
+          width: 50%;
+          margin-left: 4%;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  // rearrange items in the form
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    @include breakpoint(tablet-landscape-up){
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .field {
+      width: 100%;
+    }
+
+    .hs_submit {
+      display: none;
+    }
+
+    .hs_email {
+
+      .input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+
+        input {
+          width: 100%;
+          border-radius: 4px 0 0 4px;
+          border: solid 1px #e4e4e4;
+          display: block;
+          font-size: 14px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.43;
+          letter-spacing: normal;
+          color: #7a7a7a;
+          padding: 20px 0px 20px 22px;
+          outline: none;
+  
+          @include breakpoint(tablet-landscape-up){
+            line-height: 1.71;
+          }
+        }
+  
+        submit {
+          background: white;
+          height: 62px;
+          border: 1px solid #e4e4e4;
+          border-left: none;
+          display: flex;
+          align-items: center;
+          padding: 0 16px;
+          margin-left: -1px; // hides the right border for the input box w/o akward transition
+
+          @include breakpoint(tablet-landscape-up){
+            height: 65px;
+          }
+
+          span:not(.arrow-button){
+            display: none;
+            font-size: 14px;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: 1.5px;
+            color: #4a4a4a;
+            padding-right: 8px;
+
+            @include breakpoint(tablet-landscape-up){
+              display: block;
+            }
+          }
+          .arrow-button {
+            width: 32px;
+            height: 32px;
+            background-color: #ffeefa;
+            border-radius: 100%;
+            background-image: url(#{$arrow-image-url});
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto;
+          }
+        }
+      }
+    }
+
+    .input {
+      width: 100%;
+
+      .hs-form-radio {
+
+        @include breakpoint(tablet-landscape-up){
+          font-size: 14px;
+          font-weight: 500;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: normal;
+          letter-spacing: 1.5px;
+          color: #4a4a4a;
+        }
+        input {
+          display: none; // hides the actual radio button
+          & + span {
+            position: relative;
+            padding-left: 34px;
+            display: flex;
+            align-items: center;
+            @include breakpoint(tablet-landscape-up){
+              padding-left: 40px;
+            }
+            &:before {
+              content: ' ';
+              width: 24px;
+              height: 24px;
+              border: 1px solid #7a7a7a;
+              position: absolute;
+              border-radius: 100px;
+              left: 0;
+              background: #ffffff;
+              cursor: pointer;
+              @include breakpoint(tablet-landscape-up){
+                width: 30px;
+                height: 30px;
+              }
+            }
+            &:after {
+              content: " ";
+              width: 14px;
+              position: absolute;
+              left: 6px;
+              background: #f848c4;
+              height: 14px;
+              border-radius: 100%;
+              top: calc(50% - 7px);
+              opacity: 0;
+
+              @include breakpoint(tablet-landscape-up){
+                top: calc(50% - 10px);
+                width: 20px;
+                height: 20px;
+              }
+            }
+          }
+          &:checked {
+            & + span {
+              &:after {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    color: #3b373a;
+    margin: 0 auto 12px;
+  }
+
+  p {
+    margin: 12px 0 0;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #7a7a7a;
+
+    @include breakpoint(tablet-landscape-up){
+      display: none;
+    }
   }
 }

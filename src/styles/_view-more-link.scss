@@ -32,6 +32,9 @@
     height: 36px;
     border-radius: 100px;
     background: #ffeefa;
+    background-image: url(#{$arrow-image-url});
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   @include breakpoint(tablet-landscape-up){

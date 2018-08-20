@@ -1,7 +1,5 @@
 nav.footer-menu {
-  @include breakpoint(tablet-landscape-up){
-    min-width: 550px;
-  }
+  
   ul {
     display: block;
     margin: 30px 0 24px;
@@ -9,13 +7,12 @@ nav.footer-menu {
 
     @include breakpoint(tablet-landscape-up){
       display: flex;
-      margin: 0;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-content: center;
-      width: 550px;
-      max-width: 53vw;
+      margin: 0;
+      width: 100%;
     }
-  
+
     li {
       list-style: none;
       margin-bottom: 20px;
@@ -25,7 +22,12 @@ nav.footer-menu {
       }
   
       @include breakpoint(tablet-landscape-up){
+        padding-right: 30px;
         margin: 0;
+        display: inline-block;
+        &:last-of-type {
+          padding-right: 0;
+        }
       }
   
       a {
@@ -93,16 +95,11 @@ footer.main-footer {
 }
 
 @include breakpoint(tablet-landscape-up){
-  .logo-and-navigation {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
 
   .footer-copyright {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 
     a, div {
       margin: 0;
@@ -126,10 +123,6 @@ div.social-icons {
   margin-bottom: 40px;
 
   @include breakpoint(tablet-landscape-up){
-    position: absolute;
-    right: 0;
-    top: 12px;
-    width: 240px;
     text-align: right;
     max-width: 15vw;
   }
@@ -154,3 +147,32 @@ div.social-icons {
   }
   
 }
+
+.footer-desktop-link-wrapper {
+  border-top: solid 2px #3b373a;
+  padding-top: 18px;
+  padding-bottom: 20px;
+
+  .footer-desktop-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+  
+    .social-icons {
+      min-width: 250px;
+      margin: 0;
+    }
+  
+    .footer-menu a {
+      font-size: 18px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.78;
+      letter-spacing: normal;
+      color: #3b373a;
+    }
+  }
+}
+
