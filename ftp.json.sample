@@ -1,0 +1,9 @@
+{
+  "enable": false,
+  "host": "ftp.hubapi.com",
+  "user": "xxxxx@tribegroup.co",
+  "password": "XXXXX",
+  "port": 3200,
+  "secure": true,
+  "base": "/portals/XXXXXX-XXXXX/content/templates/custom/page/test/"
+}

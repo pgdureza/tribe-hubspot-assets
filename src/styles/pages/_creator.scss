@@ -1,5 +1,5 @@
 // bunch of overrides from existing brand modules
-body.creators {
+body.creator {
   .download-cta {
     .hs-cta-wrapper:first-of-type {
       a.cta_button:not(.cta-secondary):not(.cta-primary) {
@@ -14,7 +14,7 @@ body.creators {
       max-width: 161px;
       display: inline-block;
       box-shadow: none;
-
+      display: none;
       img {
         width: 100%;
       }

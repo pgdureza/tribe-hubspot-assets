@@ -1,9 +1,3 @@
-#hs_cos_wrapper_featured-image-slider {
-  @include fadeIn();
-  .hs_cos_wrapper {
-    display: block !important; // fix for slick whitespace
-  }
-}
 section.home-content-wrapper {
   div.home-header {
     margin-top: 30px;
