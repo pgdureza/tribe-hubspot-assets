@@ -20,27 +20,33 @@
     @include breakpoint(tablet-landscape-up){
       font-size: 18px;
       line-height: 1.78;
+      margin-top: 30px;
+      margin-bottom: 30px;
     }
   }
 
   @include breakpoint(tablet-landscape-up){
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     .column {
       &.video {
         width: 58.33%;
         order: 2;
         margin-bottom: 160px;
-        margin-top: 120px;
+        margin-top: 50px;
       }
       
       &.content {
-        width: 41%;
+        width: 33.33%;
         order: 1;
         margin-bottom: 155px;
-        margin-top: 120px;
+        margin-top: 70px;
       }
     }
+  }
+
+  @include breakpoint(big-desktop-up){
+    align-items: center;
   }
 }

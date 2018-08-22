@@ -1,5 +1,7 @@
 // bunch of overrides from existing brand modules
 body.creator {
+
+  // DOWNLOAD CTS OVERRIDES
   .download-cta {
     .hs-cta-wrapper:first-of-type {
       a.cta_button:not(.cta-secondary):not(.cta-primary) {
@@ -19,6 +21,8 @@ body.creator {
       }
     }
   }
+
+  // ANIMATED COUNTERS OVERRIDES
   .animated-counters {
     display: flex;
     align-items: center;
@@ -67,6 +71,7 @@ body.creator {
     }
   }
 
+  // HOW TRIBE WORKS OVERRIDE
   .how-tribe-works {
     p {
       font-size: 20px;
@@ -99,6 +104,23 @@ body.creator {
       width: calc(33% - 10px);
     }
   }
+
+  // INFO CARD OVERRIDES
+  .info-card .card-caption {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #3b373a;
+
+    @include breakpoint(tablet-landscape-up){
+      font-size: 18px;
+      line-height: 1.78;
+    }
+  }
+
 }
 
 .download-cta {

@@ -1,5 +1,15 @@
 .what-are-you-waiting-for {
   position: relative;
+  .image-with-handle  {
+    div.featured-image-text {
+      bottom: 20px;
+      right: 31px;
+      @include breakpoint(tablet-landscape-up){
+        right: 20px;
+      }
+    }
+  }
+  
   .cta-wrapper {
     background-color: #f8f8f8;
     padding: 30px #{$mobile-gutter};
