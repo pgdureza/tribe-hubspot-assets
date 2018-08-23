@@ -9,8 +9,10 @@ html, body {
   box-sizing: border-box;
 }
 
-img {
-  max-width: 100%; // fixes issues with CMS image width
+img { // fixes issues with CMS image width
+  max-width: 100%; 
+  width: auto;
+  height: auto;
 }
 
 .inner-width-mobile {

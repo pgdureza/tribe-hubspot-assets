@@ -69,18 +69,22 @@
       position: absolute;
       top: -15px;
       right: -15px;
-      width: 22px;
-      height: 22px;
+      max-width: 22px;
+      max-height: 22px;
+      height: auto;
+      width: auto;
     }
 
     min-width: 100px; // add min width so floating image will not twitch
     margin-top: 60px;
     @include breakpoint(tablet-landscape-up){
       img {
-        width: 32px;
-        height: 32px;
+        max-width: 32px;
+        max-height: 32px;
         top: -24px;
         right: -24px;
+        height: auto;
+        width: auto;
       }
       
       min-width: 145px; // add min width so floating image will not twitch
