@@ -54,7 +54,9 @@
   }
 
   img {
-    max-width: 91px;
     height: auto;
+    max-width: 91px;
+    max-height: 32px;
+    width: auto !important;
   }
 }

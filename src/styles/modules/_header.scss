@@ -7,10 +7,11 @@ header.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 35px 0 30px;
+    height: $header-height-desktop;
     overflow-x: hidden;
-    margin-left: $desktop-header-gutter;
-    margin-right: $desktop-header-gutter;
+    padding-left: $desktop-header-gutter;
+    padding-right: $desktop-header-gutter;
+    width: 100%;
 
     a.cta_button {
       font-size: 12px;
@@ -94,5 +95,21 @@ nav.header-menu .hs-menu-item a {
 
 nav.header-menu .hs-menu-item.active-branch a {
 	border-bottom: 1px solid black;
+}
+
+
+// desktop sticky header
+@include breakpoint(tablet-landscape-up){
+  body:not(.home){
+    .main-header {
+      position: fixed;
+      background: #fff;
+      z-index: 999;
+      top: 0;
+    }
+    .main-content {
+      margin-top: $header-height-desktop;
+      }
+    }
 }
 

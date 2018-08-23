@@ -3,8 +3,17 @@ header.mobile-header {
   justify-content: space-between;
   align-items: center;
   z-index: 10;
-  padding: 24px $mobile-gutter;
+  padding: $mobile-gutter;
   margin: 0;
+  width: 100%;
+  height: $header-height-mobile;
+
+  .icon-wrapper {
+    a {
+      margin-left: -12px;
+      display: block;
+    }
+  }
 
   .hamburger  {
     .line{
@@ -32,6 +41,19 @@ body.home {
     img {
       filter: brightness(0) invert(1);
     }
+  }
+}
+
+// sticky
+body:not(.home){
+  .mobile-header  {
+    position: fixed;
+    background: #fff;
+    z-index: 999;
+    top: 0;
+  }
+  .main-content {
+    margin-top: $header-height-mobile;
   }
 }
 
