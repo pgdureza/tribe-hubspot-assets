@@ -83,7 +83,7 @@ div#testimonial-slider-control {
     img {
       margin: auto;
       max-height: 24px;
-
+      width: auto;
       @include breakpoint(tablet-landscape-up){
         max-height: 38px;
       }
