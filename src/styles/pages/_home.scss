@@ -175,10 +175,17 @@ section.home-content-wrapper {
     }
 
     .image-with-handle {
-      height: calc(100vh - #{$desktop-header-height});
-      max-height: 1440px;
-      min-height: 919px;
+      height: calc(100vh - #{$header-height-desktop});
     }
 
+  }
+}
+
+
+.placeholder-img-cover {
+  &.top {
+    @include breakpoint(tablet-landscape-up){
+      display: none; // remove top placeholder image cover for desktop
+    }
   }
 }
