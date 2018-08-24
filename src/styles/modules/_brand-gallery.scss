@@ -1,11 +1,19 @@
 .creator-brands {
 
-  span#hs_cos_wrapper_creator-brands-gallery {
+  padding-top: 60px;
+  padding-bottom: 62px;
+  
+  @include breakpoint(tablet-landscape-up){
+    padding-top: 97px;
+    padding-bottom: 129px;
+  }
+
+  .brand-gallery {
     display: flex;
     justify-content: space-around;
     align-content: center;
 
-    > div {
+    div.image-wrapper {
       width: 33%;
       text-align: center;
       @include cubicBezier();
@@ -27,12 +35,7 @@
       }
     }
   }
-  padding-top: 60px;
-  padding-bottom: 62px;
-  @include breakpoint(tablet-landscape-up){
-    padding-top: 97px;
-    padding-bottom: 129px;
-  }
+  
   h2 {
     font-size: 12px;
     font-weight: 500;

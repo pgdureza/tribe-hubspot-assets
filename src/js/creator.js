@@ -6,6 +6,6 @@ $(document).ready(function(){
   //=include modules/parallax-box.js
   //=include modules/featured-simage-silder.js
   //=include modules/testimonials.js
-  //=include modules/creator-brands.js
+  //=include modules/brand-gallery.js
 
 });

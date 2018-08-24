@@ -106,6 +106,7 @@ nav.header-menu .hs-menu-item.active-branch a {
       background: #fff;
       z-index: 999;
       top: 0;
+      max-width: $max-supported-width;
     }
     .main-content {
       margin-top: $header-height-desktop;
