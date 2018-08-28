@@ -13,8 +13,8 @@
     opacity: 0;
   }
   &.lazyloaded {
-    animation: fade-in 1s cubic-bezier(0.26, 0.54, 0.32, 1) 0s forwards;
     opacity: 1;
+    animation: fade-in 1s cubic-bezier(0.26, 0.54, 0.32, 1) 0s forwards;
   }
 }
 
@@ -22,8 +22,8 @@
   display: block;
   opacity: 0;
   &.slick-initialized {
-    animation: vex-fadein 2s cubic-bezier(0.26, 0.54, 0.32, 1) 0s forwards;
     opacity: 1;
+    animation: vex-fadein 2s cubic-bezier(0.26, 0.54, 0.32, 1) 0s forwards;
   }
 }
 

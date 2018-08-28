@@ -1,7 +1,16 @@
 span#hs_cos_wrapper_testimonial-slider {
   display: block;
   padding-top: 44px;
-  padding-bottom: 30px;
+  padding-bottom: 32px;
+
+  @include breakpoint(tablet-landscape-up){
+    padding-bottom: 24px;
+    padding-top: 80px; // only 80 instead of 120 since we will use additional 40px for the featured image overflow
+
+    .slick-track {
+      padding-top: 40px;
+    }
+  }
 
   @include fadeIn();
 }
@@ -26,7 +35,7 @@ div#testimonial-slider-control {
     overflow: scroll;
 
     @include breakpoint(tablet-landscape-up){
-
+      padding-bottom: 80px;
     }
   }
 
@@ -110,12 +119,6 @@ div#testimonial-slider-control {
 .brand-testimonials, .creator-testimonials {
   position: relative;
   background-color: #f8f8f8;
-
-  @include breakpoint(tablet-landscape-up){
-    .slick-track {
-      padding-top: 40px;
-    }
-  }
 }
 
 .creator-testimonials {
@@ -152,7 +155,7 @@ span#hs_cos_wrapper_quote-icon {
   display: block;
 
   img {
-    max-width: 100%;
+    max-width: 40px;
   }
 
   @include breakpoint(tablet-landscape-up){

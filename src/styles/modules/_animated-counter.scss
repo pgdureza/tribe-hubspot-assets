@@ -22,6 +22,52 @@
     }
   }
 
+  .counter {
+    .mask-track {
+      position: relative;
+      .mask-skew {
+        @include cubicBezier();
+        width: 100%;
+        display: inline-block;
+        transform: skew(20deg) translate(-5px);  
+        overflow: hidden;
+        padding-left: 5px;
+        padding-right: 5px;
+        .mask {
+          @include cubicBezier();
+          display: block;
+        }
+        &.current {
+          .mask {
+            transform: skew(-20deg) translate(0);
+          }
+          &.animating {
+            transform: skew(20deg) translate(100%);
+            .mask {
+              transform: skew(-20deg) translate(-120%);
+            }
+          }
+        }
+        &.next {
+          position: absolute;
+          left: 0;
+          top: 0;
+          padding: 0;
+          transform: skew(20deg) translate(calc(-100% + 5px));
+          .mask {
+            transform: skew(-20deg) translate(calc(100%));
+          }
+          &.animating { 
+            transform: skew(20deg) translate(0);
+            .mask {
+              transform: skew(-20deg) translate(0);
+            }
+          }
+        }
+      }
+    }
+  }
+
   .value {
     margin-top: -81px;
     font-size: 32px;
