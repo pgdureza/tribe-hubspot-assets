@@ -33,7 +33,7 @@
 
 @include breakpoint(tablet-landscape-up){
   .how-tribe-works-wrapper {
-    border-radius: 4px;
+    border-radius: $rounded-corner;
     border: solid 4px #f8f8f8;
     padding-right: 60px;
     margin-right: 40px; 

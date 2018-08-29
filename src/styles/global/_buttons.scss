@@ -13,6 +13,7 @@
   padding: 16px 16px;
   white-space: nowrap;
   transition: color .2s ease-in, background-color .2s ease-in, border .2s ease-in;
+  cursor: pointer;
 
   &.cta-primary {
     background-color: #f848c4;

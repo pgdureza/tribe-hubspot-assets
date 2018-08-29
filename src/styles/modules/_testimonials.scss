@@ -75,7 +75,7 @@ div#testimonial-slider-control {
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: 4px;
+      border-radius: $rounded-corner;
       border: solid 1px #e4e4e4;
       cursor: pointer;
       @include cubicBezier();

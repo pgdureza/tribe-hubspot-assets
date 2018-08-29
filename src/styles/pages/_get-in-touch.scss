@@ -1,0 +1,43 @@
+h1 {
+  font-size: 48px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  text-align: center;
+  color: #3b373a;
+  text-align: left;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 0;
+  @include breakpoint(tablet-landscape-up){
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+
+div#get-in-touch-main-content {
+  margin-bottom: 60px;
+  @include breakpoint(tablet-landscape-up){
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  
+    #get-in-touch-form {
+      width: 41.67%;
+      order: 1;
+    }
+    
+    #get-in-touch-image-wrapper {
+      width: 50%;
+      order: 2;
+    }
+  }
+}
+
+.hs_who_do_you_need_2 ul, .hs_who_do_you_need_2 label {
+  display: none;
+}

@@ -97,7 +97,7 @@
 
         input {
           width: 100%;
-          border-radius: 4px 0 0 4px;
+          border-radius: #{$rounded-corner} 0 0 #{$rounded-corner};
           border: solid 1px #e4e4e4;
           display: block;
           font-size: 14px;
@@ -106,7 +106,7 @@
           font-stretch: normal;
           line-height: 1.43;
           letter-spacing: normal;
-          color: #7a7a7a;
+          color: #3b373a;
           padding: 20px 0px 20px 22px;
           outline: none;
   

@@ -5,7 +5,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    border-radius: 4px 4px 0 0;
+    border-radius: #{$rounded-corner} #{$rounded-corner} 0 0;
     overflow: hidden;
     img {
       width: 100%;
@@ -20,7 +20,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 #{$rounded-corner} #{$rounded-corner};
 
     height: 28vw;
     margin-bottom: 16px;
@@ -45,7 +45,7 @@
 }
 
 .case-card-featured {
-  border-radius: 4px;
+  border-radius: $rounded-corner;
   background-color: #3b373a;
   overflow: hidden;
   width: 100%;
