@@ -1,5 +1,7 @@
 .animated-counter {
 
+  $small-movement-when-animating: 2px;
+
   height: 100px;
   margin: 60px 0;
   max-width: 295px;
@@ -26,25 +28,30 @@
     .mask-track {
       position: relative;
       .mask-skew {
-        @include cubicBezier();
         width: 100%;
         display: inline-block;
-        transform: skew(20deg) translate(-5px);  
+        transform: skew(20deg) translate(0);  
         overflow: hidden;
         padding-left: 5px;
         padding-right: 5px;
+        box-sizing: content-box;
         .mask {
-          @include cubicBezier();
           display: block;
+        }
+        &.animating {
+          transition: 0.3s linear transform;
+          .mask {
+            transition: 0.3s linear transform;
+          }
         }
         &.current {
           .mask {
             transform: skew(-20deg) translate(0);
           }
           &.animating {
-            transform: skew(20deg) translate(100%);
+            transform: skew(20deg) translate(calc(100%));
             .mask {
-              transform: skew(-20deg) translate(-120%);
+              transform: skew(-20deg) translate(calc(-100% + #{$small-movement-when-animating}));
             }
           }
         }
@@ -52,10 +59,12 @@
           position: absolute;
           left: 0;
           top: 0;
-          padding: 0;
-          transform: skew(20deg) translate(calc(-100% + 5px));
+          transform: skew(20deg) translate(-100%);
           .mask {
-            transform: skew(-20deg) translate(calc(100%));
+            transform: skew(-20deg) translate(calc(100% - #{$small-movement-when-animating}));
+          }
+          &:not(.animating) { 
+            opacity: 0;
           }
           &.animating { 
             transform: skew(20deg) translate(0);

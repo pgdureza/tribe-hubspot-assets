@@ -1,8 +1,17 @@
 // animated counter
 $('.animated-counter').each(function () {
   var el = this;
-  var startingPoint = $(el).find('.counter').data("value");
-  var suffix = $(el).find('.counter').data("suffix") || "";
+  var $counter = $(el).find('.counter');
+  var isglobalsource = $counter.data("global-variable-source");
+
+  var startingPoint = 0
+  if (isglobalsource){
+    startingPoint = TRIBEGLOBALS.payouts.value;
+  } else {
+    startingPoint = $counter.data('value').toString().replace(/,/g, '');
+  }
+  
+  var suffix = $counter.data("suffix") || "";
 
   function triggerAnimation(counter, transitionSpeed){
     $(el).find(".mask-skew.current").addClass('animating');
@@ -18,6 +27,9 @@ $('.animated-counter').each(function () {
 
   function createNextElement(counter, suffix, className){
     var content = Math.ceil(parseInt(counter)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + suffix;
+    if (isglobalsource){ // probably add handling for non global source in the future 
+      content = TRIBEGLOBALS.payouts.currency + content + TRIBEGLOBALS.payouts.suffix;
+    }
     $(el).find(".mask-track").append('<div class="mask-skew ' + className + '"><div class="mask">' + content + '</div></div>');
   }
 
@@ -38,8 +50,7 @@ $('.animated-counter').each(function () {
   }
 
   $(el).appear(function(){
-    animateCounter((startingPoint - 10), startingPoint, 1000, 500);
-    console.log('appeared');
+    animateCounter((startingPoint - 10), startingPoint, 1000, 300);
   });
 
 }); 
