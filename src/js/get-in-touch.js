@@ -9,7 +9,7 @@ $(window).load(function(){
     var values = [];
 
     // create the select field and wrap in container div for styling
-    $(".hs_who_do_you_need_2").append($select);
+    $(".hs_who_do_you_need_2").prepend($select);
     $select.wrap("<div class='styled-dropdown'>");
     
     // generate options
@@ -32,5 +32,6 @@ $(window).load(function(){
   createWhoDoYouNeedDropDown();
 
   //=include modules/styled-dropdown.js
+  //=include modules/autocomplete-countries.js
 
 })

@@ -1,0 +1,32 @@
+.easy-autocomplete {
+  position: relative;
+  width: 100% !important; // override easy-autocomplete inline style from script
+  ul {
+    position: absolute;
+    background: rgb(255, 255, 255);
+    width: calc(100% + 2px);
+    top: calc(100% + 1px);
+    padding: 15px 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.12) 2px 8px 20px 0px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: rgb(59, 55, 58);
+    margin: 0;
+    z-index: 9;
+    list-style: none;
+    display: none;
+
+    li {
+      padding: 5px 20px 5px;
+      cursor: pointer;
+      &.selected, &:hover {
+        background-color: #f8f8f8;
+      }
+    }
+  }
+}

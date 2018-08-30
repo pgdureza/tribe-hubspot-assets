@@ -38,6 +38,6 @@ div#get-in-touch-main-content {
   }
 }
 
-.hs_who_do_you_need_2 ul, .hs_who_do_you_need_2 label {
+.hs_who_do_you_need_2 ul, .hs_who_do_you_need_2 > label { // first label is the actual label, other labels can be error messages
   display: none;
 }
