@@ -5,8 +5,7 @@ div#hs_form_target_contact-us {
       margin: 0;
     }
 
-    input, textarea, select {
-      transition: 0.3s linear border;
+    input, textarea, select, .styled-dropdown {
       font-size: 14px;
       font-weight: normal;
       font-style: normal;
@@ -24,6 +23,12 @@ div#hs_form_target_contact-us {
       &:focus {
         border-color: #7a7a7a;
       }    
+    }
+
+    .styled-dropdown { // styled dropdowns should hide the actual dropdown
+      select {
+        display: none;
+      }
     }
 
     select {
@@ -48,9 +53,12 @@ div#hs_form_target_contact-us {
     .field {
       margin-bottom: 16px;
     }
-
+    fieldset {
+      max-width: none;
+    }
     fieldset.form-columns-2 {
       .hs-form-field {
+        width: 100%;
         @include breakpoint(tablet-landscape-up){
 
           width: calc(50% - 8px);

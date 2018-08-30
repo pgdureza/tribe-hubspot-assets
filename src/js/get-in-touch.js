@@ -1,5 +1,6 @@
 //=include global/**/*.js
 
+
 $(window).load(function(){
   
   function createWhoDoYouNeedDropDown(){
@@ -7,14 +8,15 @@ $(window).load(function(){
     var $select = $("<select>");
     var values = [];
 
-    // create the select field
+    // create the select field and wrap in container div for styling
     $(".hs_who_do_you_need_2").append($select);
+    $select.wrap("<div class='styled-dropdown'>");
     
     // generate options
-    var initialValue = "<option value='' disabled selected>" + $(".hs_who_do_you_need_2 > label > span:first-of-type").text() + "</option>";
-    values.push(initialValue);
+    var initialValue = $(".hs_who_do_you_need_2 > label > span:first-of-type").text();
+    values.push("<option value='' disabled selected>" + initialValue + "</option>");
     $(".hs_who_do_you_need_2 input").each(function(){
-      values.push("<option>" + $(this).val() + "</option>");
+      values.push("<option value='" + $(this).val() + "'>" + $(this).val() + "</option>");
     });
 
     $select.html(values);
@@ -24,8 +26,11 @@ $(window).load(function(){
       var selectedValue = $(this).val();
       $(".hs_who_do_you_need_2 input[value='"+selectedValue+"']").trigger('click');
     });
+
   }
 
   createWhoDoYouNeedDropDown();
+
+  //=include modules/styled-dropdown.js
 
 })
