@@ -1,17 +1,8 @@
-h1 {
-  text-align: left;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin: 0;
-  @include breakpoint(tablet-landscape-up){
-    text-align: center;
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-}
-
 section#body-content {
   p {
+    &:first-of-type {
+      margin-top: 0;
+    }
     font-size: 16px;
     font-weight: normal;
     font-style: normal;
@@ -19,9 +10,11 @@ section#body-content {
     line-height: 1.5;
     letter-spacing: normal;
     color: #7a7a7a;
+    margin: 24px 0;
     @include breakpoint(tablet-landscape-up){
       font-size: 18px;
       line-height: 1.78;
+      margin: 32px 0;
     }
     
   }
@@ -35,6 +28,7 @@ div#about-us {
     margin-bottom: 60px;
   }
   @include breakpoint(tablet-landscape-up){
+    padding-top: 20px;
     display: flex;
     justify-content: space-between;
     section#about-us-image-wrapper {

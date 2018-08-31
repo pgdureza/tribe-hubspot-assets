@@ -34,4 +34,10 @@ $(window).load(function(){
   //=include modules/styled-dropdown.js
   //=include modules/autocomplete-countries.js
 
+  $(".easy-autocomplete input").on('focus', function(){
+    $(this).parent().addClass('active')
+  }).on('blur', function(){
+    $(this).parent().removeClass('active')
+  });
+
 })

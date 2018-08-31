@@ -1,3 +1,9 @@
+// load in all images 
+$(".fade-in-image img").on('load', function(){
+  $(this).addClass('loaded')
+}).each(function() {
+  if(this.complete) $(this).load();
+});
 
 $(document).ready(function(){
 

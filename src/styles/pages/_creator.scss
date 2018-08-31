@@ -59,9 +59,6 @@ body.creator {
         .animated-counter {
           padding-top: 10px;
           padding-left: 25px;
-          @include breakpoint(tablet-landscape-up){
-            padding-left: 50px;
-          }
         }
         .background-circle {
           width: 80px;

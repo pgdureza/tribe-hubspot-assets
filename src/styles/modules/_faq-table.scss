@@ -1,0 +1,78 @@
+.faq-table {
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  letter-spacing: 3px
+}
+
+.faq-table th {
+  background: #f735be;
+  color: #fff
+}
+
+.faq-table th span {
+  font-size: 10px
+}
+
+.faq-table th:first-child {
+  border-radius: 18px 0 0 0
+}
+
+.faq-table th:last-child {
+  border-radius: 0 18px 0 0
+}
+
+.faq-table tr:first-child td {
+  font-weight: bold;
+  border-bottom: 0
+}
+
+.faq-table tr td:nth-child(2) {
+  border-left: 0;
+  border-right: 0
+}
+
+.faq-table tr:nth-child(3) td {
+  border-top: 0
+}
+
+.faq-table tr:nth-child(2) td,.faq-table tr:nth-child(3) td,.faq-table tr:nth-child(4) td,.faq-table tr:nth-child(5) td,.faq-table tr:nth-child(6) td {
+  border-bottom: 0
+}
+
+.faq-table tr:first-of-type td,.faq-table tr:last-of-type td {
+  border-bottom: 0
+}
+
+.faq-table tr:last-child td:first-child {
+  border-radius: 0 0 0 18px
+}
+
+.faq-table tr:last-child td:last-child {
+  border-radius: 0 0 18px 0
+}
+
+.faq-table tr:last-child td:first-child:last-child {
+  border-radius: 0 0 18px 18px;
+  border-bottom: 1px solid #f635be
+}
+
+.faq-table td {
+  color: #f735be
+}
+
+.faq-table {
+  font-size: 10px;
+}
+
+th,td {
+  border: 1px solid #f735be;
+  border-bottom: 0;
+  padding: 15px
+}
+
+@include breakpoint(tablet-landscape-up){
+  .faq-table {
+    font-size: inherit;
+  }
+}

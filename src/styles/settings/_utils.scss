@@ -26,3 +26,40 @@
     display: block;
   }
 }
+
+@mixin caret($offset){
+  position: relative;
+  &:after, &:before {
+    content: ' ';
+    border-bottom: 1px solid #000000;
+    position: absolute;
+    top: 50%;
+    width: 8px;
+  }
+
+  &:after {
+    @include cubicBezier();
+    right: #{$offset  + 6}px;
+    transform: rotate(45deg);
+  }
+
+  &:before {
+    @include cubicBezier();
+    right: #{$offset}px;
+    transform: rotate(-45deg);
+  }
+
+  &.active {
+    &:after {
+      @include cubicBezier();
+      right: #{$offset + 6}px;
+      transform: rotate(-45deg);
+    }
+  
+    &:before {
+      @include cubicBezier();
+      right: #{$offset}px;
+      transform: rotate(45deg);
+    }
+  }
+}

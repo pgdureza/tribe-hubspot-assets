@@ -5,6 +5,10 @@
   height: 100px;
   margin: 60px 0;
   max-width: 295px;
+
+  @include breakpoint(tablet-landscape-up){
+    min-width: 200px;
+  }
   p {
     font-size: 10px;
     font-weight: 500;

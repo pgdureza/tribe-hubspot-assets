@@ -1,0 +1,38 @@
+main#main-content {
+  .field-with-icon {
+    border-radius: $rounded-corner;
+    background-color: #ffffff;
+    border: solid 1px #e4e4e4;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding: 0;
+
+    img {
+      display: block;
+      width: 17px;
+      padding-left: 14px;
+      box-sizing: content-box;
+      padding-right: 19px;
+    }
+    input {
+      width: calc(100% - 50px);
+      padding: 13px 0;
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      margin: 0;
+      border: 0;
+      outline: none;
+
+      @include breakpoint(tablet-landscape-up){
+        font-size: 14px;
+        line-height: 1.71;
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+.tabs-wrapper {
+  position: relative;
+  margin-top: 15px;
+  > span.hs_cos_wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    @include breakpoint(tablet-landscape-up){
+      display: block;
+    }
+
+    > .hs_cos_wrapper_widget {
+      width: 100%; // auto-adjust width
+      border-bottom: solid 2px #e4e4e4;
+      
+      @include breakpoint(tablet-landscape-up){
+        width: auto;
+        border-bottom: none;
+      }
+
+      a {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: 0.5px;
+        color: #3b373a;
+        display: block;
+        text-align: center;
+        padding: 9px 0;
+        @include cubicBezier();
+        &.active{
+          color: #f848c4;
+        }
+        @include breakpoint(tablet-landscape-up){
+          font-size: 18px;
+          font-weight: normal;
+          line-height: 1.78;
+          letter-spacing: normal;
+          display: inline-block;
+          text-align: left;
+          padding: 0 0 5px 0;
+          margin-bottom: 25px;
+          overflow: hidden;
+          position: relative;
+          &:after{
+            position: absolute;
+            border-bottom: solid 2px #f848c4;
+            content: ' ';
+            width: 0;
+            @include cubicBezier();
+          }
+          &.active{
+            &:after{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .indicator { // active underline indicator
+    border-bottom: 2px solid #f848c4;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%; // gets overriden via javascript
+    @include cubicBezier();
+
+    @include breakpoint(tablet-landscape-up){
+      display: none;
+    }
+  }
+}

@@ -21,7 +21,7 @@
 @mixin fadeIn(){
   display: block;
   opacity: 0;
-  &.slick-initialized {
+  &.slick-initialized, &.loaded {
     opacity: 1;
     animation: vex-fadein 2s cubic-bezier(0.26, 0.54, 0.32, 1) 0s forwards;
   }
@@ -30,3 +30,9 @@
 @mixin cubicBezier(){
   transition: 0.5s #{$cubicbezier} all;
 }
+
+
+// fade in all loaded images
+.fade-in-image img {
+  @include fadeIn();
+} 

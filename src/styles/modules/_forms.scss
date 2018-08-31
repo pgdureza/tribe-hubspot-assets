@@ -1,83 +1,84 @@
-div#hs_form_target_contact-us {
-  form {
+main#main-content {
 
-    h3 {
-      margin: 0;
-    }
+  h3 {
+    margin: 0;
+  }
 
-    input, textarea, select, .styled-dropdown {
-      font-size: 14px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.17;
-      letter-spacing: normal;
-      color: #3b373a;
-      border: 1px solid #e4e4e4;
-      border-radius: $rounded-corner;
-      padding: 16px 20px;
-      outline: none;
-      width: 100%;
-      display: block;
+  input, textarea, select, .styled-dropdown, .field-with-icon {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    color: #3b373a;
+    border: 1px solid #e4e4e4;
+    border-radius: $rounded-corner;
+    padding: 16px 20px;
+    outline: none;
+    width: 100%;
+    display: block;
 
-      &:focus {
-        border-color: #7a7a7a;
-      }    
-    }
+    &:focus, &.active {
+      border-color: #7a7a7a;
+    }    
+  }
 
-    .styled-dropdown { // styled dropdowns should hide the actual dropdown
-      select {
-        display: none;
-      }
-    }
-
+  .styled-dropdown { // styled dropdowns should hide the actual dropdown
     select {
-      appearance: none;
-      background: transparent;
-    }
-
-    textarea {
-      min-height: 160px;
-    }
-  
-    .hs-form-required { // remove the *
-      display: none; 
-    }
-    
-    .hs-submit input {
-      @extend .cta_button;
-      @extend .cta-primary;
-      width: 190px;
-    }
-
-    .field {
-      margin-bottom: 16px;
-    }
-    fieldset {
-      max-width: none;
-    }
-    fieldset.form-columns-2 {
-      .hs-form-field {
-        width: 100%;
-        @include breakpoint(tablet-landscape-up){
-
-          width: calc(50% - 8px);
-          &:first-of-type {
-            margin-right: 8px;
-          }
-          &:last-of-type {
-            margin-left: 8px;
-          }
-        }
-        .input {
-          width: 100%;
-          margin-right: 0;
-        }
-      }
-    }
-
-    fieldset.form-columns-1 .input {
-      margin-right: 0;
+      display: none;
     }
   }
+
+  select {
+    appearance: none;
+    background: transparent;
+  }
+
+  textarea {
+    min-height: 160px;
+  }
+
+  .hs-form-required { // remove the *
+    display: none; 
+  }
+  
+  .hs-submit input {
+    @extend .cta_button;
+    @extend .cta-primary;
+    width: 190px;
+  }
+
+  .field {
+    margin-bottom: 16px;
+  }
+  fieldset {
+    max-width: none;
+  }
+  fieldset.form-columns-2 {
+    .hs-form-field {
+      width: 100%;
+      @include breakpoint(tablet-landscape-up){
+
+        width: calc(50% - 8px);
+        &:first-of-type {
+          margin-right: 8px;
+        }
+        &:last-of-type {
+          margin-left: 8px;
+        }
+      }
+      .input {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
+
+  fieldset.form-columns-1 .input {
+    margin-right: 0;
+  }
+    
 }
+
+

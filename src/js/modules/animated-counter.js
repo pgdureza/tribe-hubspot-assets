@@ -2,16 +2,32 @@
 $('.animated-counter').each(function () {
   var el = this;
   var $counter = $(el).find('.counter');
-  var isglobalsource = $counter.data("global-variable-source");
+  var hasCountrySpecificValues = $counter.data('country-specific-values');
+  var showCurrency = $counter.data('show-currency');
+  var shorten = $counter.data('shorten');
+  var startingPoint = $counter.data('value').toString().replace(/,/g, '');
 
-  var startingPoint = 0
-  if (isglobalsource){
-    startingPoint = TRIBEGLOBALS.payouts.value;
-  } else {
-    startingPoint = $counter.data('value').toString().replace(/,/g, '');
+  if (hasCountrySpecificValues){
+    var values = $counter.data('country-specific-values').split(",");
+    for (var i in values){
+      var countryData = values[i].split("-");
+      if (countryData[0] == resources.country.code) {
+        startingPoint = countryData[1].toString().replace(/,/g, '');
+      }
+    }
   }
-  
-  var suffix = $counter.data("suffix") || "";
+
+  var suffix = "";
+  if (shorten){
+    // add commas then split
+    var commaSeparated = Math.ceil(parseInt(startingPoint)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",").split(",");
+    if (commaSeparated.length == 2){
+      suffix = "k"
+    } else if (commaSeparated.length == 3){
+      suffix = "M"
+    }
+    startingPoint = commaSeparated[0];
+  }
 
   function triggerAnimation(counter, transitionSpeed){
     $(el).find(".mask-skew.current").addClass('animating');
@@ -27,8 +43,8 @@ $('.animated-counter').each(function () {
 
   function createNextElement(counter, suffix, className){
     var content = Math.ceil(parseInt(counter)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + suffix;
-    if (isglobalsource){ // probably add handling for non global source in the future 
-      content = TRIBEGLOBALS.payouts.currency + content + TRIBEGLOBALS.payouts.suffix;
+    if (showCurrency){ // probably add handling for non global source in the future 
+      content = resources.country.currency_symbol + content ;
     }
     $(el).find(".mask-track").append('<div class="mask-skew ' + className + '"><div class="mask">' + content + '</div></div>');
   }
