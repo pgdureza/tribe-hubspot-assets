@@ -9,10 +9,9 @@ $(window).ready(function(){
   // add search event handlers
   $("[name=q]:visible").on('keyup', function(){
     var q = $(this).val();
+    $(".accordion-content").show();
     if (!!q){
       $(".accordion-content:not(:containsIN('" + q + "'))").hide();
-    } else {
-      $(".accordion-content").show();
     }
   });
 })
