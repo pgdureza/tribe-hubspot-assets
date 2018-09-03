@@ -1,4 +1,18 @@
 .case-card {
+  cursor: pointer;
+  border-radius: 5px;
+  @include cubicBezier();
+  &:hover {
+    transform: translate(0 -4px);
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.12);
+    .brand-image {
+      .text-content { 
+        padding-top: 5px;
+        height: 52px;
+        opacity: 1;
+      }
+    }
+  }
 
   .case-card-image {
     height: 51.2vw;
@@ -20,6 +34,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+
     border-radius: 0 0 #{$rounded-corner} #{$rounded-corner};
 
     height: 28vw;
@@ -29,6 +46,37 @@
       max-width: 100px;
       max-height: 40px;
     }
+
+    .text-content {
+      @include cubicBezier();
+      width: 100%;
+      height: 0;
+      opacity: 0;
+      span {
+        display: block;
+        &.name {
+          font-size: 14px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.71;
+          letter-spacing: normal;
+          text-align: center;
+          color: #3b373a;
+        }
+        &.type {
+          font-size: 10px;
+          font-weight: 500;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 2;
+          letter-spacing: 1.7px;
+          text-align: center;
+          color: #7a7a7a;
+          text-transform: uppercase;
+        }
+      }
+    }
   }
 
   @include breakpoint(tablet-landscape-up){
@@ -37,9 +85,9 @@
       height: 12.5vw;
     }
     .brand-image {
-      max-height: 115px;
-      height: 6.8vw;
+      height: 9vw;
       margin-bottom: 0;
+      max-height: 130px;
     }
   }
 }
@@ -52,11 +100,30 @@
   position: relative;
   margin-bottom: 16px;
   height: 79.5vw;
+  @include cubicBezier();
+
+  .case-card-image {
+    height: 100%;
+    @include cubicBezier();
+  }
+
+  &:hover {
+    .brand-image {
+      .text-content { 
+        height: 100px;
+        opacity: 1;
+        padding-top: 30px;
+      }
+    }
+    .case-card-image {
+      opacity: 0.5;
+    }
+  }
 
   @include breakpoint(tablet-landscape-up){
     max-height: 672.33px;
     margin-bottom: 0;
-    height: calc(38.6vw + 20px);
+    height: calc(43vw + 20px);
   }
 
   .case-card-image {
@@ -75,12 +142,44 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
     img {
       max-height: 85px;
       max-width: 100px;
       width: auto;
       @include breakpoint(tablet-landscape-up){
         max-width: 250px;
+      }
+    }
+    .text-content {
+      @include cubicBezier();
+      width: 100%;
+      height: 0;
+      opacity: 0;
+      span {
+        display: block;
+        &.name {
+          font-size: 18px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.78;
+          letter-spacing: normal;
+          text-align: center;
+          color: #ffffff;
+        }
+        &.type {
+          font-size: 10px;
+          font-weight: 500;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 2;
+          letter-spacing: 1.7px;
+          text-align: center;
+          color: #ffffff;
+          text-transform: uppercase;
+        }
       }
     }
   }

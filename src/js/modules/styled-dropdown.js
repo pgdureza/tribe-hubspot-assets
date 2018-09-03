@@ -28,7 +28,6 @@ $(".styled-dropdown").each(function(){
 
 // clicking on the dropdown opens the menu
 $(".styled-dropdown").on('click', function(){
-  console.log('triggered');
   var $container = $(this);
   if ($container.hasClass("active")){
     // close all

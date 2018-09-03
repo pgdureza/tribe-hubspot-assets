@@ -48,4 +48,11 @@
   }
 
   @include caret(22);
+
+  &.error {
+    &:after, &:before {
+      content: ' ';
+      border-bottom: 1px solid #f20000;
+    }
+  }
 }
