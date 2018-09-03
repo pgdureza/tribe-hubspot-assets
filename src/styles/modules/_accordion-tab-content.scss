@@ -59,17 +59,24 @@
     letter-spacing: normal;
     color: #7a7a7a;
     display: none;
-    margin-bottom: 20px;
-    margin-top: 12px;
+    padding-bottom: 20px;
+    padding-top: 0;
+    @include breakpoint(tablet-landscape-up){
+      padding-bottom: 26px;
+    }
     a {
       color: #f848c4;
       text-decoration: none;
+    }
+    p {
+      margin-top: 0;
     }
   }
 }
 
 .faq-tab-targets {
   margin-bottom: 60px;
+  padding-top: 10px;
 }
 
 @include breakpoint(tablet-landscape-up){

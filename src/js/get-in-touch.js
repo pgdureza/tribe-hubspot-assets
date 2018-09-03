@@ -1,7 +1,6 @@
 //=include global/**/*.js
 
-
-$(window).load(function(){
+$(document).ready(function(){
   
   function createWhoDoYouNeedDropDown(){
     // generate selectable values for 'who do you need' field
@@ -16,7 +15,11 @@ $(window).load(function(){
     var initialValue = $(".hs_who_do_you_need_2 > label > span:first-of-type").text();
     values.push("<option value='' disabled selected>" + initialValue + "</option>");
     $(".hs_who_do_you_need_2 input").each(function(){
-      values.push("<option value='" + $(this).val() + "'>" + $(this).val() + "</option>");
+      if ($(this).prop('checked')){
+        values.push("<option selected value='" + $(this).val() + "'>" + $(this).val() + "</option>");
+      } else {
+        values.push("<option value='" + $(this).val() + "'>" + $(this).val() + "</option>");
+      }
     });
 
     $select.html(values);
@@ -29,15 +32,18 @@ $(window).load(function(){
 
   }
 
-  createWhoDoYouNeedDropDown();
+  function hsFormLoaded(){
+    createWhoDoYouNeedDropDown();
+    //=include modules/styled-dropdown.js
+    //=include modules/autocomplete-countries.js
+  }
 
-  //=include modules/styled-dropdown.js
-  //=include modules/autocomplete-countries.js
-
-  $(".easy-autocomplete input").on('focus', function(){
-    $(this).parent().addClass('active')
-  }).on('blur', function(){
-    $(this).parent().removeClass('active')
-  });
+  // create faux listener for when the contact-us form is loaded
+  var waitingForForm = setInterval(function(){
+    if ($("#hs_form_target_contact-us form").length >= 1){
+      clearInterval(waitingForForm);
+      hsFormLoaded();
+    }
+  }, 100)
 
 })

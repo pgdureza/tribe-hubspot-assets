@@ -20,6 +20,8 @@
     z-index: 9;
     list-style: none;
     display: none;
+    max-height: 400px;
+    overflow: scroll;
 
     li {
       padding: 5px 20px 5px;
@@ -28,6 +30,15 @@
         background-color: #f8f8f8;
       }
     }
+  }
+
+  .combo-btn {
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
   }
 
   @include caret(22);

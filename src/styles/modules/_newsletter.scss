@@ -74,10 +74,16 @@
     flex-wrap: wrap;
     position: relative;
 
+    > div {
+      width: 100%;
+    }
+
     @include breakpoint(tablet-landscape-up){
-      flex-wrap: nowrap;
-      align-items: center;
-      justify-content: space-between;
+      display: block;
+      > div {
+        width: 50%;
+        display: inline-block;
+      }
     }
 
     .field {

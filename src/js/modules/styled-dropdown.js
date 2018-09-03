@@ -30,13 +30,13 @@ $(".styled-dropdown").each(function(){
 $(".styled-dropdown").on('click', function(){
   var $container = $(this);
   $container.toggleClass('active');
-  $container.find(".values").slideToggle();
+  $container.find(".values").slideToggle(300);
 
   // clicking outside the styled dropdown will close any dropdown
   $(document).on('click', function(e){
     if ($container.hasClass("active") && !$container.is(e.target) && $container.has(e.target).length === 0) {
       $container.removeClass('active')
-      $container.find(".values").slideToggle();
+      $container.find(".values").slideToggle(300);
     }
   });
 });
