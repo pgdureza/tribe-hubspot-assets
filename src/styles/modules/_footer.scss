@@ -2,7 +2,7 @@ nav.footer-menu {
   
   ul {
     display: block;
-    margin: 30px 0 24px;
+    margin: 40px 0 40px;
     padding: 0;
 
     @include breakpoint(tablet-landscape-up){
@@ -11,6 +11,7 @@ nav.footer-menu {
       align-content: center;
       margin: 0;
       width: 100%;
+      margin: 30px 0 24px;
     }
 
     li {
@@ -148,16 +149,20 @@ div.social-icons {
   
 }
 
-.footer-desktop-link-wrapper {
+.footer-link-wrapper {
   border-top: solid 2px #3b373a;
-  padding-top: 18px;
-  padding-bottom: 20px;
+  padding-bottom: 41px;
 
-  .footer-desktop-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  
+  @include breakpoint(tablet-landscape-up){
+    padding-bottom: 0;
+  }
+
+  .footer-link {
+    @include breakpoint(tablet-landscape-up){
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   
     .social-icons {
       min-width: 250px;
