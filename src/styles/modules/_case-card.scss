@@ -1,7 +1,15 @@
 .case-card {
+  display: block;
   cursor: pointer;
   border-radius: 5px;
+  text-decoration: none;
+  background: #fff;
   @include cubicBezier();
+
+  @include breakpoint(tablet-landscape-up){
+    max-width: 350px;
+  }
+  
   &:hover {
     transform: translate(0 -4px);
     box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.12);
@@ -34,17 +42,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
 
     border-radius: 0 0 #{$rounded-corner} #{$rounded-corner};
-
+    overflow: hidden;
     height: 28vw;
     margin-bottom: 16px;
 
     img {
       max-width: 100px;
       max-height: 40px;
+      height: 31%;
     }
 
     .text-content {
@@ -88,6 +97,7 @@
       height: 9vw;
       margin-bottom: 0;
       max-height: 130px;
+      max-width: 350px;
     }
   }
 }
@@ -100,6 +110,7 @@
   position: relative;
   margin-bottom: 16px;
   height: 79.5vw;
+  display: block;
   @include cubicBezier();
 
   .case-card-image {
@@ -143,7 +154,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     img {
       max-height: 85px;
       max-width: 100px;

@@ -1,0 +1,41 @@
+.case-study-landing {
+  h3.heading {
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 30px;
+
+    strong {
+      color: #f848c4;
+      font-weight: normal
+    }
+    
+  }
+
+  div#case-study-main-content {
+    border-top: solid 2px #e4e4e4;
+
+    section#case-study-grid {
+      background: #f8f8f8;
+      padding: 30px 0;
+
+      @include breakpoint(tablet-landscape-up){
+        padding: 60px 0 40px;
+      }
+
+      .grid-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        .case-card {
+          margin-bottom: 20px;
+          max-width: 350px;
+          display: block;
+          width: calc(25% - 20px);
+          margin-bottom: 20px;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}

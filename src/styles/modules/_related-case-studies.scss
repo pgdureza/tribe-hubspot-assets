@@ -1,0 +1,59 @@
+.related-case-studies {
+
+  div#hs_cos_wrapper_Case_Cards {
+    display: block;
+    display: flex;
+    justify-content: flex-start;
+    padding: 16px 0;
+    @include breakpoint(tablet-landscape-up){
+      padding: 10px 0;
+      justify-content: flex-start;
+    }
+
+    .case-card {
+      &:nth-child(n+3) {
+        display: none;
+      }
+      @include breakpoint(tablet-landscape-up){
+        &:nth-child(n+3) {
+          display: block;
+        }
+      }
+      display: inline-block;
+  
+      &:not(:first-of-type){
+        margin-left: 6%;
+        @include breakpoint(tablet-landscape-up){
+          margin-left: 2%;
+        }
+      }
+  
+      .case-card-image {
+        width: 38vw;
+        height: 23vw;
+  
+        @include breakpoint(tablet-landscape-up){
+          width: 11.5vw;
+          height: 6.9vw;
+          max-width: 140px;
+          max-height: 86px;
+        }
+      }
+      .brand-image {
+        width: 38vw;
+        height: 15vw;
+  
+        @include breakpoint(tablet-landscape-up){
+          width: 11.5vw;
+          height: 4.35vw;
+          max-width: 140px;
+          max-height: 54px;
+        }
+  
+        .text-content {
+          display: none;
+        }
+      }
+    }
+  }
+}

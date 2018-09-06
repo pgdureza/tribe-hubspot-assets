@@ -1,9 +1,13 @@
 // load in all images 
-$(".fade-in-image img").on('load', function(){
-  $(this).addClass('loaded')
-}).each(function() {
-  if(this.complete) $(this).load();
-});
+function fadeInImages(){
+  $(".fade-in-image img:not(.loaded)").on('load', function(){
+    $(this).addClass('loaded')
+  }).each(function() {
+    if(this.complete) $(this).load();
+  });
+}
+
+fadeInImages();
 
 $(document).ready(function(){
 

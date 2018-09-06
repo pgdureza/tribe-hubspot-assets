@@ -33,6 +33,6 @@
 
 
 // fade in all loaded images
-.fade-in-image img {
+.fade-in-image img:not(.hs-cta-img) {
   @include fadeIn();
 } 

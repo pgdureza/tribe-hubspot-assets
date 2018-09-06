@@ -1,0 +1,50 @@
+// social sharing
+.case-study-social-sharing-wrapper {
+
+  a {
+    display: block;
+  }
+  
+  position: absolute;
+  right: 10px;
+  top: 10px;
+
+  @include breakpoint(tablet-landscape-up){
+    top: -30px;
+  }
+
+  .case-study-social-sharing {
+    @include cubicBezier();
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+
+    position: absolute;
+    right: 40px;
+    top: 1px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.15);
+    z-index: 999;
+    padding: 10px;
+  
+    &:not(.active){
+      width: 0;
+      padding: 10px 0;
+    }
+  
+    > a {
+      display: block;
+      width: 20px;
+      height: 20px;
+      
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+    
+  }
+
+}

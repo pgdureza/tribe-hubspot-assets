@@ -1,0 +1,138 @@
+// fonts and spacing
+.case-study-details-section {
+  padding-bottom: 50px;
+  @include breakpoint(tablet-landscape-up){
+    padding: 40px 0 50px;
+  }
+  h5 {
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: #3b373a;
+    margin-top: 14px;
+    margin-bottom: 2px;
+
+    @include breakpoint(tablet-landscape-up){
+      font-size: 18px;
+      line-height: 1.33;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+  }
+
+  .campaign-name {
+    margin: 2px auto;
+    font-family: Rubik;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #3b373a;
+    text-align: center;
+  }
+
+  .campaign-type {
+    margin: 2px auto;
+    font-size: 10px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: 1.7px;
+    text-align: center;
+    color: #7a7a7a;
+    text-transform: uppercase;
+  }
+
+  .header {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #3b373a;
+    text-transform: uppercase;
+
+    @include breakpoint(tablet-landscape-up){
+      font-size: 14px;
+      line-height: 1.71;
+    }
+  }
+
+  .campaign-details {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    > div {
+      .content {
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: #7a7a7a;
+        margin-bottom: 20px;
+        margin-top: 6px;
+
+        @include breakpoint(tablet-landscape-up){
+          font-size: 14px;
+          line-height: 1.71;
+        }
+      }
+    }
+  }
+
+  .section {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .sentiments, .creative-formats {
+    border-top: solid 2px #e4e4e4;
+    border-bottom: solid 2px #e4e4e4;
+
+    @include breakpoint(tablet-landscape-up){
+      border-top: none;
+      padding-top: 30px;
+    }
+
+    .text {
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.71;
+      letter-spacing: normal;
+      color: #7a7a7a;
+    }
+
+    .sentiment {
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.43;
+      letter-spacing: normal;
+      color: #7a7a7a;
+      margin: 6px 0;
+
+      strong {
+        color: #3b373a;
+        font-weight: normal;
+      }
+
+      @include breakpoint(tablet-landscape-up){
+        line-height: 1.71;
+        margin: 2px 0;
+      }
+    }
+  }
+}

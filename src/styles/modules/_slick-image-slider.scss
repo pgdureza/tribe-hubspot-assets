@@ -1,0 +1,118 @@
+.slick-image-slider-wrapper {
+  .slick-dots {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    bottom: -22px;
+    margin: 0;
+    position: absolute;
+    z-index: 9;
+    
+    @include breakpoint(tablet-landscape-up){
+      bottom: 20px;
+      margin: 0;
+      margin: 12px 0;
+    }
+  
+    li {
+      @include cubicBezier();
+      height: 6px;
+      background: #d8d8d8;
+      margin: 0 4px;
+      border-radius: 100px;
+      opacity: 0.5;
+      width: 6px;
+      cursor: pointer;
+  
+      @include breakpoint(tablet-landscape-up){
+        background: #ffffff;
+      }
+  
+      &.slick-active {
+        background: #f848c4;
+        opacity: 1;
+        width: 9px;
+        height: 9px;
+  
+        @include breakpoint(tablet-landscape-up){
+          width: 6px;
+          height: 6px;
+        }
+      }
+  
+      button {
+        display: none;
+      }
+    }
+  }
+  
+  button.slick-arrow {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    z-index: 9;
+    text-indent: -9999px;
+    background: #fff;
+    border: none;
+    opacity: 0.6;
+    border-radius: 100px;
+    cursor: pointer;
+    outline: none;
+
+    box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.12);
+
+    @include cubicBezier();
+
+    &:hover {
+      opacity: 1;
+    }
+  
+    &.slick-next {
+      top: 50%;
+      right: 12px;
+
+      &:before, &:after {
+        width: 9px;
+        border-bottom: 2px solid #cecece;
+        position: absolute;
+        content: ' ';
+      }
+
+      &:before {
+        right: 6px;
+        top: 14px;
+        transform: rotate(-45deg);
+      }
+      &:after {
+        right: 6px;
+        top: 9px;
+        transform: rotate(45deg);
+      }
+    }
+    &.slick-prev {
+      top: 50%;
+      left: 12px;
+
+      &:before, &:after {
+        width: 9px;
+        border-bottom: 2px solid #cecece;
+        position: absolute;
+        content: ' ';
+      }
+
+      &:before {
+        left: 6px;
+        top: 14px;
+        transform: rotate(45deg);
+      }
+      &:after {
+        left: 6px;
+        top: 9px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

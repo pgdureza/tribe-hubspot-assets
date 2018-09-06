@@ -8,6 +8,10 @@
         right: 20px;
       }
     }
+
+    img {
+      min-width: 700px;
+    }
   }
   
   .cta-wrapper {
@@ -55,7 +59,7 @@
 
     .cta-wrapper {
       max-width: 41%;
-      top: -50%;
+      top: 0;
       position: absolute;
       left: 0;
       padding: 5% 8.5%;

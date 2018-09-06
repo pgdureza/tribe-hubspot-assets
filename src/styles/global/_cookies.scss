@@ -1,0 +1,80 @@
+body div#hs-eu-cookie-confirmation {
+
+  width: 100%;
+  top: auto;
+  bottom: 0;
+  margin: auto;
+  box-shadow: 0 -4px 12px 0 rgba(0, 0, 0, 0.06);
+  background-color: #f8f8f8;
+  padding: 20px 57px;
+  position: fixed !important;
+
+  border: none;
+  border-top: solid 1px #e4e4e4;
+
+  @include breakpoint(tablet-landscape-up){
+    left: calc(50% - 320px);
+    max-width: 640px;
+    border: solid 1px #e4e4e4;
+  }
+  div#hs-eu-cookie-confirmation-inner {
+    border: 0;
+    padding: 0;
+    background: transparent;
+
+    p, a {
+      margin: 0;
+      font-family: Rubik;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.71;
+      letter-spacing: normal;
+      color: #7a7a7a;
+    }
+
+    a {
+      color: #f848c4;
+      text-decoration: underline !important;
+      &:hover {
+        color: #fa81d6;
+      }
+    }
+
+    div#hs-en-cookie-confirmation-buttons-area {
+      margin: 0 !important;
+    }
+
+    a#hs-eu-confirmation-button {
+      background-color: transparent !important;
+      color: #33475b;
+      border: none !important;
+      text-transform: lowercase;
+      font-size: 26px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      text-indent: -99px;
+      overflow: hidden;
+
+      &:after, &:before {
+        content: ' ';
+        position: absolute;
+        width: 15px;
+        border-bottom: 1px solid black;
+        top: 16px;
+        right: 4px;
+      }
+
+      &:after {
+        transform: rotate(45deg);
+      }
+      
+      &:before {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+}
