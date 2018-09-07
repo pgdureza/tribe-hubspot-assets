@@ -6,6 +6,7 @@ $(".styled-dropdown").each(function(){
   // create the menu items
   var $values = $("<div class='values'>");
   var selected;
+  var initValue;
   if (isMultiselect){
     $(this).find(".checkbox").each(function(){
       var $option = $(this);
@@ -13,6 +14,7 @@ $(".styled-dropdown").each(function(){
       if ($option.find('input').prop('checked')){
         classes += "selected ";
         selected = $option.text();
+        initValue = $option.val();
       }
   
       if ($option.prop('disabled')){
@@ -28,6 +30,7 @@ $(".styled-dropdown").each(function(){
       if ($option.prop('selected')){
         classes += "selected ";
         selected = $option.text();
+        initValue = $option.val();
       }
   
       if ($option.prop('disabled')){
@@ -40,6 +43,10 @@ $(".styled-dropdown").each(function(){
   
 
   $(this).append("<div class='selected-value'><span>"+selected+"</span></div>");
+
+  if (initValue){
+    $(this).addClass('filled');
+  }
 
   // append menu items to dropdown container
   $(this).append($values);
@@ -54,9 +61,7 @@ $(".styled-dropdown").on('click', function(e){
     // close selected
     $container.removeClass('active');
     $container.find(".values").slideUp(300);
-    if ($container.hasClass('multi-select')){
-      $container.find('input').trigger('change');
-    }
+    $container.blur();
   } else {
     $(".styled-dropdown").removeClass('active');
     $(".styled-dropdown").find(".values").slideUp(300);
@@ -93,6 +98,14 @@ $(".styled-dropdown:not(.multi-select) .values .value").on('click', function(){
   $container.removeClass('active');
   $container.find('.values').slideUp(300);
 
+  if ($option.data('value')){
+    $container.addClass('filled');
+  } else {
+    $container.removeClass('filled');
+  }
+
+  $container.blur();
+
   return false;
 });
 
@@ -126,12 +139,12 @@ $(".styled-dropdown.multi-select .values .value").on('click', function(){
     $container.find(".selected-value").text($container.find(".value.selected").length + " selected");
   }
 
-  return false;
-});
+  $container.find("input:checked").trigger('change');
+  if ($container.find("input:checked").length > 0){
+    $container.addClass('filled');
+  } else {
+    $container.removeClass('filled');
+  }
 
-// trigger multi select change
-$(".multi-select").on('blur', function(){
-	if ($(this).hasClass('active')){
-		$(".multi-select input").trigger('change');
-	}
+  return false;
 });
