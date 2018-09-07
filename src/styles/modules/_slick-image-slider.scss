@@ -1,4 +1,10 @@
 .slick-image-slider-wrapper {
+  .slick-image-slider {
+    display: none;
+    &.slick-initialized {
+      display: block;
+    }
+  }
   .slick-dots {
     display: flex;
     list-style: none;
@@ -71,7 +77,7 @@
     }
   
     &.slick-next {
-      top: 50%;
+      top: calc(50% - 24px);
       right: 12px;
 
       &:before, &:after {
@@ -93,7 +99,7 @@
       }
     }
     &.slick-prev {
-      top: 50%;
+      top: calc(50% - 24px);
       left: 12px;
 
       &:before, &:after {

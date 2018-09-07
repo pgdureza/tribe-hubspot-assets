@@ -1,5 +1,7 @@
 // fonts and spacing
 .case-study-details-section {
+  height: 100vh;
+  overflow: scroll;
   padding-bottom: 50px;
   @include breakpoint(tablet-landscape-up){
     padding: 40px 0 50px;
@@ -127,6 +129,10 @@
       strong {
         color: #3b373a;
         font-weight: normal;
+      }
+
+      p {
+        margin: 0;
       }
 
       @include breakpoint(tablet-landscape-up){

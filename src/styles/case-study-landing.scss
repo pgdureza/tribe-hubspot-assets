@@ -1,5 +1,15 @@
 @import "global";
 
+@import "modules/modal";
 @import "modules/case-card";
 
 @import "pages/case-study-landing";
+
+// details page needed 
+@import "modules/slick-image-slider";
+@import "modules/case-study-social-sharing";
+@import "modules/case-study-details-section";
+@import "modules/case-study-stats";
+@import "modules/related-case-studies";
+
+@import "pages/case-study-details";

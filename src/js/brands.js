@@ -7,4 +7,7 @@ $(document).ready(function(){
   //=include modules/featured-simage-silder.js
   //=include modules/testimonials.js
 
+  //=include modules/case-study-details.js
+  //=include modules/case-study-details-modal.js
+
 });

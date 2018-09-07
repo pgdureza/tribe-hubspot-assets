@@ -40,7 +40,6 @@
       width: 43%;
       height: 57.67vw;
       max-height: 715px;
-      overflow: scroll;
     }
   }
 
@@ -67,6 +66,9 @@
         align-items: center;
         justify-content: center;
         padding: 0;
+        @include breakpoint(tablet-landscape-up){ 
+          height: 60px;
+        }
       }
     }
   }
@@ -74,6 +76,7 @@
 
 // cover photo
 .mobile-cover-photo {
+  background-color: #e4e4e4;
   @include breakpoint(tablet-landscape-up){
     display: none;
   }
@@ -83,6 +86,7 @@
     height: 53.35vw;
     width: 100%;
     object-fit: cover;
+    display: block;
   }
 }
 

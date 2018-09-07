@@ -12,6 +12,9 @@
       display: none;
     }
   }
+  a.case-card {
+    margin-bottom: 0;
+  }
 }
 @include breakpoint(tablet-landscape-up){
   .case-cards-wrapper {

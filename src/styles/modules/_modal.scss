@@ -2,3 +2,67 @@ div.embeded-code-wrapper.modal {
   max-width: 1024px;
   border-radius: 0;
 }
+
+.modal {
+  a.close-modal {
+    background: transparent;
+    transform: translate(-12px, -35px);
+    left: 39px;
+    top: 43px;
+    transform: translate(-12px,-35px);
+    width: 24px;
+    z-index: 999;
+    position: fixed;
+    @include breakpoint(tablet-landscape-up){
+      position: absolute;
+      left: auto;
+      top: -12.5px;
+    }
+    &:after, &:before {
+      @include cubicBezier();
+      content: ' ';
+      top: 0;
+      left: 0;
+      border-bottom: 2px solid #fff;
+      position: absolute;
+      width: 100%;
+    }
+    &:after {
+      transform: translate(0, 15px) rotate(45deg);
+    }
+    &:before {
+      transform: translate(0, 15px) rotate(-45deg);
+    }
+  
+    &.invert {
+      &:after, &:before {
+        border-color: #3b373a;
+        @include breakpoint(tablet-landscape-up){
+          border-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.blocker {
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.5);
+  padding: 0;
+}
+
+.modal {
+  padding: 0;
+  max-width: 1240px;
+  border-radius: 0;
+  box-shadow: none;
+  width: 100vw;
+  @include breakpoint(tablet-landscape-up){
+    width: 86vw;
+  }
+}
+
+
+.popup-modal-container {
+  display: none;
+}
