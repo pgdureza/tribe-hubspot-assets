@@ -4,5 +4,6 @@ $(document).ready(function(){
 
   //=include modules/case-study-details.js
   //=include modules/case-study-details-modal.js
+  //=include modules/styled-dropdown.js
 
 });

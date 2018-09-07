@@ -27,7 +27,8 @@ $(".styled-dropdown").each(function(){
 
 
 // clicking on the dropdown opens the menu
-$(".styled-dropdown").on('click', function(){
+$(".styled-dropdown").on('click', function(e){
+  e.preventDefault();
   var $container = $(this);
   if ($container.hasClass("active")){
     // close all
@@ -52,6 +53,7 @@ $(document).on('click', function(e){
 
 // clicking on the values triggers a change in the original dropdown
 $(".styled-dropdown .values .value").on('click', function(){
+  // TODO add handling for multiselect
 
   // disable click on disabled
   if ($(this).hasClass('disabled')){
