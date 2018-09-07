@@ -83,6 +83,11 @@ $(document).on('click', function(e){
 $(".styled-dropdown:not(.multi-select) .values .value").on('click', function(){
 
   var $option = $(this);
+
+  if ($option.hasClass('disabled')){
+    return false;
+  }
+
   var $container = $option.closest(".styled-dropdown");
   // update displayed text
   $container.find(".selected-value").text($option.text());
