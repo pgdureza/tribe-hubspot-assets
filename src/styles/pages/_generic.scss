@@ -1,0 +1,71 @@
+h1 {
+  padding-bottom: 16px;
+}
+
+span.last-update {
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.67;
+  letter-spacing: 2px;
+  color: #3b373a;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  display: block;
+  @include breakpoint(tablet-landscape-up){
+    text-align: center;
+  }
+}
+
+.hs_cos_wrapper_type_rich_text {
+  a, p, ul, ol {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #7a7a7a;
+  }
+
+  > ul, ol {
+    > li {
+      margin-bottom: 20px;
+    }
+    padding-left: 20px;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  p {
+    margin: 20px 0;
+  }
+
+  a {
+    color: #f848c4;
+  }
+
+  table {
+    padding-left: 75px;
+  }
+
+  h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.78;
+    letter-spacing: normal;
+    color: #3b373a;
+  }
+
+  strong {
+    font-weight: normal;
+    color: #3b373a;
+  }
+}

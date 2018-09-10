@@ -91,12 +91,31 @@ nav.header-menu a {
 }
 
 nav.header-menu .hs-menu-item a {
-	display: block;
+  display: block;
+  position: relative;
+
+  &:after {
+    @include cubicBezier();
+    width: 0;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    border-bottom: 1px solid black;
+    content: ' ';
+  }
 }
 
-nav.header-menu .hs-menu-item.active-branch a {
-	border-bottom: 1px solid black;
-}
+nav.header-menu .hs-menu-item {
+  &.active-branch, &:hover {
+    a {
+      position: relative;
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+} 
 
 
 // desktop sticky header
