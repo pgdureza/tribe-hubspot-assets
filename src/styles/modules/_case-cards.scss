@@ -13,7 +13,10 @@
     }
   }
   a.case-card {
-    margin-bottom: 0;
+    margin-bottom: 16px;
+    @include breakpoint(tablet-landscape-up){
+      margin-bottom: 0;
+    }
   }
 }
 @include breakpoint(tablet-landscape-up){

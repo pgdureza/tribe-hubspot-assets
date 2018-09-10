@@ -77,7 +77,7 @@
     }
   
     &.slick-next {
-      top: calc(50% - 24px);
+      top: calc(50% -12px);
       right: 12px;
 
       &:before, &:after {
@@ -99,7 +99,7 @@
       }
     }
     &.slick-prev {
-      top: calc(50% - 24px);
+      top: calc(50% - 12px);
       left: 12px;
 
       &:before, &:after {

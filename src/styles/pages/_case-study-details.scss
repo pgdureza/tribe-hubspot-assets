@@ -8,13 +8,13 @@
     background: #f8f8f8;
     margin-bottom: 50px;
     img {
-      object-fit: cover;
+      object-fit: contain;
       width: auto !important; 
       margin: auto;
       max-height: 375px;
     }
   }
-
+  
   @include breakpoint(tablet-landscape-up){
     display: flex;
     align-content: flex-start;
@@ -44,21 +44,16 @@
   }
 
   .hs-cta-wrapper {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    display: block;
-    width: 100%;
-    z-index: 9;
-
-    @include breakpoint(tablet-landscape-up){
-      width: 43%;
-      position: absolute;
-    }
 
     span {
       display: block;
       a.cta_button {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        display: block;
+        width: 100%;
+        z-index: 9;
         border-radius: 0;
         display: block;
         height: 44px;
@@ -67,11 +62,35 @@
         justify-content: center;
         padding: 0;
         @include breakpoint(tablet-landscape-up){ 
-          height: 60px;
+          width: 43%;
+          position: absolute;
         }
       }
     }
   }
+
+  .next-case, .prev-case {
+    display: none;
+    @include breakpoint(tablet-landscape-up){
+      &.enabled {
+        display: block;
+      }
+    }
+    position: absolute;
+    top: calc(50% - 15px);
+    img {
+      width: 30px;
+      filter: brightness(0) invert(1);
+    }
+  }
+  .prev-case {
+    left: -5vw;
+    transform: rotate(180deg);
+  }
+  .next-case {
+    right: -5vw;
+  }
+  
 }
 
 // cover photo

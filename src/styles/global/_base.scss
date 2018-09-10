@@ -38,3 +38,12 @@ img { // fixes issues with CMS image width
 .relative-container {
   position: relative;
 }
+
+.loading {
+  display: none;
+  &.show {
+    display: block;
+  }
+  text-align: center;
+  width: 100%;
+}

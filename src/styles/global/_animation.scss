@@ -31,6 +31,10 @@
   transition: 0.5s #{$cubicbezier} all;
 }
 
+@mixin cubicBezierTransformOnly(){
+  transition: 0.5s #{$cubicbezier} transform;
+}
+
 
 // fade in all loaded images
 .fade-in-image img:not(.hs-cta-img) {

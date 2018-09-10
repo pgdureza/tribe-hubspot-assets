@@ -15,6 +15,23 @@
         font-weight: normal
       }
     }
+
+    .show-more {
+      border-radius: 100px;
+      border: solid 1px #f848c4;
+      font-size: 12px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: 1.5px;
+      text-align: center;
+      color: #f848c4;
+      text-decoration: none;
+      padding: 14px 45px;
+      margin: 20px auto 0;
+      text-transform: uppercase;
+    }
   }
 
   div#case-study-main-content {
@@ -24,7 +41,51 @@
       border-top: none;
     }
 
-    .filters form {
+    .filters .mobile-only form {
+      padding: 23px 0;
+      h4 {
+        margin-top: 0;
+      }
+      .checkbox {
+        display: block;
+        label {
+          margin-top: 0;
+          margin-bottom: 15px;
+          width: auto;
+          font-size: 16px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.5;
+          letter-spacing: normal;
+          color: #3b373a;
+          position: relative;
+          display: inline-block;
+          &:after {
+            position: absolute;
+            border-bottom: 2px solid #3b373a;
+            width: 0;
+            @include cubicBezier();
+            content: ' ';
+            bottom: 0;
+            left: 0;
+          }
+        }
+        input {
+          width: auto;
+          display: none;
+          &:checked {
+            + label {
+              &:after {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .filters .desktop-only form {
       display: flex;
       justify-content: space-between;
       margin-top: 50px;

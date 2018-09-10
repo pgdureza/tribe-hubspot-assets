@@ -144,7 +144,7 @@ $(".styled-dropdown.multi-select .values .value").on('click', function(){
     $container.find(".selected-value").text($container.find(".value.selected").length + " selected");
   }
 
-  $container.find("input:checked").trigger('change');
+  $container.find("input").trigger('change');
   if ($container.find("input:checked").length > 0){
     $container.addClass('filled');
   } else {
