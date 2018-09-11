@@ -23,7 +23,7 @@ $('.mobile-only form').on('submit', function(e){
   $("[name='offset']").val("");
   $("#case-study-grid .loading").addClass('show');
   $("#case-study-grid .grid-content").hide();
-  var newFormValues = $(".filters .mobile-only form").serialize();
+  $('.mobile-only .controls').trigger('click'); // trigger click to close filter on submit
   var ajaxURL = window.location.origin + window.location.pathname + getFilterParams();
   $.get(ajaxURL, function(data){
     $("#case-study-grid").html($(data).filter("main").find("#case-study-grid").html());
@@ -31,16 +31,19 @@ $('.mobile-only form').on('submit', function(e){
   })
 });
 
-$('.mobile-only form').on('reset', function(e){ // reset with the default country selected
-  setTimeout(function(){
-    $('.mobile-only [name="region"][value="' + resources.country.region + '"]').prop('checked', true)
-  }, 0)
+// mobile hide/show filters
+$('.mobile-only .controls').on('click', function(e){
+  $(this).toggleClass('active');
+  $(this).siblings('form').toggleClass('active');
 });
 
+// $('.mobile-only form').on('reset', function(e){ // reset with the default country selected
+//   setTimeout(function(){
+//     $('.mobile-only [name="region"][value="' + resources.country.region + '"]').prop('checked', true)
+//   }, 0)
+// });
 
-
-
-// desktop filter fnctions
+/******** DESKTOP FILTER FUNCTIONS ********/
 function getFilterParams(){
   var filterArray;
   if ($(window).innerWidth() < 900){
@@ -73,9 +76,9 @@ function getFilterParams(){
   }
   return filterParams;
 }
-// resets entire grid
-var lastFormValues = {};
-$(".filters .desktop-only form").on('change', $.debounce(500, function () {
+
+window.lastFormValues = {};
+function loadContent(){
   $("[name='offset']").val("");
   $("#case-study-grid .loading").addClass('show');
   $("#case-study-grid .grid-content").hide();
@@ -88,6 +91,10 @@ $(".filters .desktop-only form").on('change', $.debounce(500, function () {
       fadeInImages();
     })
   }
+}
+
+$(".filters .desktop-only form").on('change', $.debounce(500, function () {
+  loadContent();
 }));
 
 $(document).on("click", ".show-more", function(e){
@@ -103,10 +110,14 @@ $(document).on("click", ".show-more", function(e){
   })
 });
 
-// select default for mobile
-$('.mobile-only [name="region"][value="' + resources.country.region + '"]').prop('checked', true)
+$(document).ready(function(){
+  loadContent();
+})
 
-// select default region
-$('.desktop-only [name="region"]').siblings('.values')
-  .find('[data-value="' + resources.country.region + '"]')
-  .trigger('click');
+// // select default for mobile
+// $('.mobile-only [name="region"][value="' + resources.country.region + '"]').prop('checked', true)
+
+// // select default region
+// $('.desktop-only [name="region"]').siblings('.values')
+//   .find('[data-value="' + resources.country.region + '"]')
+//   .trigger('click');

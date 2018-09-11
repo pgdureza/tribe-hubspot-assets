@@ -38,26 +38,26 @@
   }
 
   &:after {
-    @include cubicBezier();
+    @include cubicBezierTransformOnly();
     right: #{$offset  + 6}px;
     transform: rotate(45deg);
   }
 
   &:before {
-    @include cubicBezier();
+    @include cubicBezierTransformOnly();
     right: #{$offset}px;
     transform: rotate(-45deg);
   }
 
   &.active {
     &:after {
-      @include cubicBezier();
+      @include cubicBezierTransformOnly();
       right: #{$offset + 6}px;
       transform: rotate(-45deg);
     }
   
     &:before {
-      @include cubicBezier();
+      @include cubicBezierTransformOnly();
       right: #{$offset}px;
       transform: rotate(45deg);
     }

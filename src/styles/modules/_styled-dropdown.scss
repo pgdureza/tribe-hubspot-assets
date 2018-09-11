@@ -31,9 +31,23 @@
         padding-bottom: 2px;
       }
       &:not(.disabled) {
+        span {
+          position: relative;
+          &:after {
+            content: " ";
+            position: absolute;
+            border-bottom: solid 2px #3b373a;
+            width: 0;
+            bottom: 0;
+            left: 0;
+            @include cubicBezier();
+          }
+        }
         &.selected {
           span {
-            border-bottom: solid 2px #3b373a;
+            &:after {
+              width: 100%;
+            }
           }
         }
         &:hover {
