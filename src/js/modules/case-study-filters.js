@@ -80,10 +80,10 @@ function getFilterParams(){
 window.lastFormValues = {};
 function loadContent(){
   $("[name='offset']").val("");
-  $("#case-study-grid .loading").addClass('show');
-  $("#case-study-grid .grid-content").hide();
   var newFormValues = $(".filters .desktop-only form").serialize();
   if (lastFormValues != newFormValues){
+    $("#case-study-grid .loading").addClass('show');
+    $("#case-study-grid .grid-content").hide();
     lastFormValues = newFormValues;
     var ajaxURL = window.location.origin + window.location.pathname + getFilterParams();
     $.get(ajaxURL, function(data){

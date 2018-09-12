@@ -2,20 +2,9 @@
 $('.animated-counter').each(function () {
   var el = this;
   var $counter = $(el).find('.counter');
-  var hasCountrySpecificValues = $counter.data('country-specific-values');
   var showCurrency = $counter.data('show-currency');
   var shorten = $counter.data('shorten');
   var startingPoint = $counter.data('value').toString().replace(/,/g, '');
-
-  if (hasCountrySpecificValues){
-    var values = $counter.data('country-specific-values').split(",");
-    for (var i in values){
-      var countryData = values[i].split("-");
-      if (countryData[0] == resources.country.code) {
-        startingPoint = countryData[1].toString().replace(/,/g, '');
-      }
-    }
-  }
 
   var suffix = "";
   if (shorten){

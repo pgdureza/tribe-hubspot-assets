@@ -1,7 +1,7 @@
 .case-card {
   display: block;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: $rounded-corner;
   text-decoration: none;
   background: #fff;
   margin-bottom: 16px;
@@ -55,6 +55,7 @@
       max-width: 100px;
       max-height: 40px;
       height: 31%;
+      object-fit: contain;
     }
 
     .text-content {
@@ -160,6 +161,7 @@
     img {
       max-height: 85px;
       max-width: 100px;
+      object-fit: contain;
       width: auto;
       @include breakpoint(tablet-landscape-up){
         max-width: 250px;

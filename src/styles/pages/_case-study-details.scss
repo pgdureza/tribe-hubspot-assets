@@ -11,7 +11,7 @@
       object-fit: contain;
       width: auto !important; 
       margin: auto;
-      max-height: 375px;
+      height: 375px;
     }
   }
   
@@ -31,14 +31,14 @@
       top: 0;
       width: 57%;
       img {
-        height: 57.67vw;
+        height: 80vh;
         max-height: 715px;
       }
     }
 
     .case-study-details-section {
       width: 43%;
-      height: 57.67vw;
+      height: 80vh;
       max-height: 715px;
     }
   }
@@ -110,16 +110,18 @@
 }
 
 .display-photo {
+  background: #fff;
   border-width: 0px;
   border: 0px;
   margin-top: -50px;
   width: 100px;
   height: 100px;
-  margin-left: auto;
+  padding: 10px; // added 10px padding since images should be 80 x 80 while containers are 100x100
+  margin-left: calc(50% - 50px);
   margin-right: auto;
-  display: block;
+  display: inline-block;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: $rounded-corner;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
   @include breakpoint(tablet-landscape-up){
     margin-top: 0;
