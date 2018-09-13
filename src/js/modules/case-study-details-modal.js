@@ -71,6 +71,46 @@ initSocialSharing();
 function handleHashChanged(){
   if (window.location.hash.indexOf('/casestudy/') >= 0){
     var request_url = window.location.hash.replace("#","") + "?region=" + resources.country.region + "&currency=" + resources.country.currency_symbol + "&ajax=true";
+
+    // special rule to change related to random filtered card
+
+    // check if the filter form has any values
+    var formValues = $('.desktop-only form').serializeArray();
+    var selectedValues = "";
+    for (var i in formValues){
+      if (formValues[i].name == "category" || formValues[i].name == "region" || formValues[i].name == "budget"){
+        selectedValues+= formValues[i].value;
+      }
+    }
+
+    if (!!selectedValues){
+      // get random cards
+      var randomIndexes = [];
+      do {
+        var randomIndex = Math.floor(Math.random() * $(".case-card[data-case-id]").length);
+        if (randomIndexes.indexOf(randomIndex) < 0){
+          randomIndexes.push(randomIndex);
+        }
+        // case card less 2 because it is possible that we will send itself as a related case
+      } while (randomIndexes.length < 4 && randomIndexes.length < (($(".case-card[data-case-id]").length - 2)));
+
+
+      var randomCards = [];
+      var selectedCard = $("[data-hash='" + window.location.hash + "']");
+      for (var i in randomIndexes){
+        var id = $(".case-card[data-case-id]").eq(randomIndexes[i]).data('case-id');
+        if (id && id != selectedCard.data('case-id')){
+          randomCards.push(id);
+        }
+      }
+      if (randomCards.length > 0) {
+        if (randomCards.length > 3) {
+          randomCards = randomCards.slice(0,3);
+        }
+        request_url += "&relatedcases=" + randomCards.toString();
+      }
+    }
+
     $.get(request_url, function(data){
       initDetailsModal(data); 
     });

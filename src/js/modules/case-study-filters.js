@@ -14,21 +14,23 @@ $(".filters .mobile-only [name='category']").on('change', function(){
 });
 
 // budget "radio" behaviour
-$('.mobile-only [name="budget"]').off().on('click',function(){
+$('.mobile-only [name="budget"]').on('click',function(){
 	$(this).parent().siblings(".checkbox").find('input').prop('checked', false)
 });
 
 $('.mobile-only form').on('submit', function(e){
   e.preventDefault();
-  $("[name='offset']").val("");
-  $("#case-study-grid .loading").addClass('show');
-  $("#case-study-grid .grid-content").hide();
   $('.mobile-only .controls').trigger('click'); // trigger click to close filter on submit
-  var ajaxURL = window.location.origin + window.location.pathname + getFilterParams();
-  $.get(ajaxURL, function(data){
-    $("#case-study-grid").html($(data).filter("main").find("#case-study-grid").html());
-    fadeInImages();
-  })
+  // uncheck everything selected
+  $(".desktop-only form [data-value='']").click()
+  // update the fields in desktop
+  function triggerClickOnDesktopForm(name, value){
+    $(".desktop-only form [name='" + name + "']").closest('.styled-dropdown').find("[data-value='" + value + "']").click();
+  }
+  var formValues = $(".mobile-only form").serializeArray();
+  for (var i in formValues){
+    triggerClickOnDesktopForm(formValues[i].name, formValues[i].value);
+  }
 });
 
 // mobile hide/show filters
@@ -113,11 +115,3 @@ $(document).on("click", ".show-more", function(e){
 $(document).ready(function(){
   loadContent();
 })
-
-// // select default for mobile
-// $('.mobile-only [name="region"][value="' + resources.country.region + '"]').prop('checked', true)
-
-// // select default region
-// $('.desktop-only [name="region"]').siblings('.values')
-//   .find('[data-value="' + resources.country.region + '"]')
-//   .trigger('click');
