@@ -2,18 +2,19 @@ var currentIndex = 0;
 function initModalNextPrev(){
 
   // get current index
-  $("[data-hash]").each(function(index){
-    if ($(this).data('hash') == window.location.hash){
+  $("[data-cs-modal]").each(function(index){
+    var this_pathname = $(this).attr('href').split("?")[0];
+    if (this_pathname == window.location.pathname){
       currentIndex = index;
     }
   });
 
-  var previous = $($("[data-hash]")[currentIndex - 1]);
+  var previous = $($("[data-cs-modal]")[currentIndex - 1]);
   if(previous.length > 0){
     $(".popup-modal-container .prev-case").addClass('enabled');
   }
 
-  var next = $($("[data-hash]")[currentIndex + 1]);
+  var next = $($("[data-cs-modal]")[currentIndex + 1]);
   if(next.length > 0){
     $(".popup-modal-container .next-case").addClass('enabled');
   }
@@ -60,7 +61,7 @@ $(document).on('click', '[data-cs-modal]', function(e){
 initSocialSharing();
 
 function requestCaseStudyDetails(path){
-  var request_url = window.location.origin + '/casestudies/' + path + "?region=" + resources.country.region + "&currency=" + resources.country.currency_symbol + "&details=true";
+  var request_url = window.location.origin + '/casestudies/' + path + "?details=true";
   // special rule to change related to random filtered card
 
   // check if the filter form has any values
@@ -111,14 +112,14 @@ $(document)
   })
   .on('click', 'a.next-case', function(e){
     e.preventDefault();
-    var next = $($("[data-hash]")[currentIndex + 1]);
+    var next = $($("[data-cs-modal]")[currentIndex + 1]);
     if(next.length > 0){
         next.trigger('click')
     }
   })
   .on('click', 'a.prev-case', function(e){
     e.preventDefault();
-    var previous = $($("[data-hash]")[currentIndex - 1]);
+    var previous = $($("[data-cs-modal]")[currentIndex - 1]);
     if(previous.length > 0){
       previous.trigger('click')
     }

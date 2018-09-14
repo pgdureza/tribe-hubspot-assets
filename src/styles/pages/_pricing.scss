@@ -78,9 +78,11 @@ body.pricing {
           font-size: 32px;
           line-height: 1.5;
           margin-top: 80px;
+          margin-bottom: 80px;
         }
       }
       .what-to-expect {
+        position: relative;
         background-color: #f8f8f8;
         padding: 20px 0 50px;
         text-align: center;
@@ -113,12 +115,23 @@ body.pricing {
             align-content: center;  
             justify-content: flex-start;
             flex-wrap: wrap;
+            padding: 0;
+            border: none;
+            &:after, &:before {
+              display: none;
+            }
+            .selected-value {
+              display: none;
+            }
             .checkbox {
               display: block;
               height: 100px;
-              width: calc(16.66% - 20px);
+              width: calc(16.88% - 20px);
               margin-bottom: 20px;
               margin-right: 20px;
+              &:nth-child(6n){
+                margin-right: 0;
+              }
               label {
                 @include cubicBezier();
                 display: flex;
@@ -155,11 +168,24 @@ body.pricing {
       .stats {
         width: 200px;
         margin: auto;
+        @include breakpoint(tablet-landscape-up){
+          display: flex;
+          align-content: center;
+          justify-content: center;
+          width: 100%;
+        }
         .stat {
           padding-top: 20px;
           padding-bottom: 20px;
+          @include breakpoint(tablet-landscape-up){
+            padding: 0 3.5%;
+          }
           &:not(:last-of-type){
             border-bottom: solid 2px #e4e4e4;
+            @include breakpoint(tablet-landscape-up){
+              border-bottom: 0;
+              border-right: solid 2px #e4e4e4;
+            }
           }
           .value {
             font-size: 32px;
@@ -176,6 +202,7 @@ body.pricing {
             }
           }
           .label {
+            text-transform: uppercase;
             margin-top: 8px;
             font-size: 10px;
             font-weight: 500;
@@ -198,6 +225,9 @@ body.pricing {
         margin-bottom: 4px;
         margin-left: -#{$mobile-gutter};
         margin-right: -#{$mobile-gutter};
+        @include breakpoint(tablet-landscape-up){
+          margin-bottom: 44px;
+        }
 
         .subheader {
           text-transform: uppercase;
@@ -214,6 +244,7 @@ body.pricing {
           @include breakpoint(tablet-landscape-up){
             font-size: 12px;
             line-height: 1.67;
+            margin-top: 60px;
           }
         }
 
@@ -221,18 +252,36 @@ body.pricing {
           overflow: scroll;
           padding-left: $mobile-gutter;
 
+          @include breakpoint(tablet-landscape-up){
+            padding: 0;
+            overflow: hidden;
+          }
+
           .cards-wrapper {
             display: flex;
             justify-content: flex-start;
             .hs_cos_wrapper {
               padding-right: 20px;
+              &:last-of-type{
+                @include breakpoint(tablet-landscape-up){
+                  padding-right: 0;
+                }
+              }
               .case-card-image {
                 height: 161px;
                 width: 295px;
+                @include breakpoint(tablet-landscape-up){
+                  height: 12.5vw;
+                  width: auto;
+                }
               }
               .brand-image {
                 height: 117px;
                 width: 295px;
+                @include breakpoint(tablet-landscape-up){
+                  height: 9vw;
+                  width: auto;
+                }
               }
             }
           }
@@ -243,10 +292,19 @@ body.pricing {
     }
 
     .share-button {
+      @include breakpoint(tablet-landscape-up){
+        position: absolute;
+        top: 60px;
+        right: 60px;
+      }
       .case-study-social-sharing-wrapper {
         .case-study-social-sharing {
           top: -50px;
           right: auto; 
+          @include breakpoint(tablet-landscape-up){
+            right: 70px;
+            top: 10px;
+          }
         }
         position: relative;
         padding: 0;
@@ -265,38 +323,69 @@ body.pricing {
 
     .cta-content {
       padding: 60px 0;
+      @include breakpoint(tablet-landscape-up){
+        display: flex;
+        padding-top: 120px;
+        padding-bottom: 0;
+        justify-content: space-between;
+      }
       .image-wrapper {
         background-color: #ffeefa;
         border-radius: 100%;
         display: block;
         height: calc(100vw - 60px);
         width: calc(100vw - 60px);
+        @include breakpoint(tablet-landscape-up){
+          order: 2;
+          max-width: 400px;
+          max-height: 400px;
+        }
       }
-      h2 {
-        font-size: 32px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.38;
-        letter-spacing: normal;
-        color: #3b373a;
-        margin-top: 40px;
-        margin-bottom: 0;
-      }
-      p {
-        font-size: 16px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.5;
-        letter-spacing: normal;
-        color: #7a7a7a;
-        margin-top: 16px;
-        margin-bottom: 30px;
-      }
+      .cta-text-wrapper {
+        @include breakpoint(tablet-landscape-up){
+          order: 1;
+          width: 50%;
+        }
 
-      a { // cta
-        display: inline-block;
+        h2 {
+          font-size: 32px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.38;
+          letter-spacing: normal;
+          color: #3b373a;
+          margin-top: 40px;
+          margin-bottom: 0;
+  
+          @include breakpoint(tablet-landscape-up){
+            font-size: 48px;
+            line-height: 1.17;
+            margin-top: 0;
+          }
+        }
+        p {
+          font-size: 16px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.5;
+          letter-spacing: normal;
+          color: #7a7a7a;
+          margin-top: 16px;
+          margin-bottom: 30px;
+          @include breakpoint(tablet-landscape-up){
+            font-size: 18px;
+            line-height: 1.78;
+            margin-top: 40px;
+            margin-bottom: 60px;
+          }
+        }
+  
+        a { // cta
+          display: inline-block;
+        }
+
       }
     }
   }

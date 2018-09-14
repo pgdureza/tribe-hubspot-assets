@@ -2,12 +2,13 @@
 $(".styled-dropdown").each(function(){
 
   var isMultiselect = $(this).hasClass('multi-select');
+  var isSelection = $(this).hasClass('selection');
 
   // create the menu items
   var $values = $("<div class='values'>");
   var selected;
   var initValue;
-  if (isMultiselect){
+  if (isMultiselect || isSelection){
     $(this).find(".checkbox").each(function(){
       var $option = $(this);
       var classes = "value ";
@@ -55,18 +56,28 @@ $(".styled-dropdown").each(function(){
 
 // clicking on the dropdown opens the menu
 $(".styled-dropdown").on('click', function(e){
-  e.preventDefault();
+
   var $container = $(this);
-  if ($container.hasClass("active")){
-    // close selected
-    $container.removeClass('active');
-    $container.find(".values").slideUp(300);
-    $container.blur();
+  // special handling for selection style dropdown, ignore the dropdown properties when in
+  // selection grid mode while in desktop view
+  if ($(this).hasClass('selection') && $(window).width() < 900){
+    e.preventDefault();
+    if ($container.hasClass("active")){
+      // close selected
+      $container.removeClass('active');
+      $container.find(".values").slideUp(300);
+      $container.blur();
+    } else {
+      $(".styled-dropdown").removeClass('active');
+      $(".styled-dropdown").find(".values").slideUp(300);
+      $container.addClass('active');
+      $container.find(".values").slideDown(300);
+    }
   } else {
-    $(".styled-dropdown").removeClass('active');
-    $(".styled-dropdown").find(".values").slideUp(300);
-    $container.addClass('active');
-    $container.find(".values").slideDown(300);
+    // update the dropdown in mobile just to be consistent with displayed value
+    $container.find(".value").removeClass('selected'); // unselect current selected
+    $container.find("[data-value='" + $container.find(":checked").val() + "']").addClass('selected'); // updated the selected status
+    $container.find(".selected-value").text($container.find(".value.selected").text()); // update the displayed selected
   }
 });
 
@@ -80,7 +91,7 @@ $(document).on('click', function(e){
 });
 
 // clicking on the values triggers a change in the original dropdown
-$(".styled-dropdown:not(.multi-select) .values .value").on('click', function(){
+$(".styled-dropdown:not(.multi-select):not(.selection) .values .value").on('click', function(){
 
   var $option = $(this);
 
@@ -153,3 +164,37 @@ $(".styled-dropdown.multi-select .values .value").on('click', function(){
 
   return false;
 });
+
+
+$(".styled-dropdown.selection .values .value").on('click', function(e){
+
+  if ($(window).width() < 900){
+    var $option = $(this);
+    var $container = $option.closest(".styled-dropdown");
+
+    // unselect all currently selected
+    $container.find('.selected').removeClass('selected');
+    $container.find('input[type="checkbox"]').prop('checked', false);
+    $option.addClass('selected');
+
+    // update the input with the matching value
+    $container.find("input[value='" + $option.data('value') + "']").prop('checked', $option.hasClass('selected'));
+
+    // update displayed text
+    $container.find(".selected-value").text($container.find(".value.selected").text());
+
+    $container.find("input").trigger('change');
+
+    $container.blur();
+    $container.removeClass('active');
+    $container.find('.values').slideUp(300);
+
+    return false;
+  } else {
+    console.log(e);
+    return true;
+  }
+});
+
+
+  

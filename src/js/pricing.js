@@ -17,4 +17,14 @@ $(document).ready(function(){
     $(".case-study-social-sharing").toggleClass('active');
   });
 
+
+  // pricing ajax handler
+  $("form#pricing-inputs").on('change', $.debounce(500, function () {
+    var ajaxUrl = window.location.origin + window.location.pathname + "?" + $(this).serialize() + "&region=" + resources.country.code;
+    console.log(ajaxUrl);
+  }));
+
+  $(window).on('hashchange', function(){
+
+  })
 })
