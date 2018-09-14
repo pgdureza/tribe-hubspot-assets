@@ -13,6 +13,11 @@
       margin: auto;
       height: 375px;
     }
+    video {
+      height: 375px;
+      width: 100%;
+      display: block;
+    }
   }
   
   @include breakpoint(tablet-landscape-up){
@@ -31,6 +36,12 @@
       top: 0;
       width: 57%;
       img {
+        height: 80vh;
+        max-height: 715px;
+      }
+      video {
+        width: 100%;
+        display: block;
         height: 80vh;
         max-height: 715px;
       }

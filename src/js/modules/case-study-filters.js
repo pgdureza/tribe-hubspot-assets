@@ -90,7 +90,7 @@ function loadContent(){
     var ajaxURL = window.location.origin + window.location.pathname + getFilterParams();
     $.get(ajaxURL, function(data){
       $("#case-study-grid").html($(data).filter("main").find("#case-study-grid").html());
-      fadeInImages();
+      utilFunctions.fadeInImages();
     })
   }
 }
@@ -108,7 +108,7 @@ $(document).on("click", ".show-more", function(e){
   $.get(ajaxURL, function(data){
     $("#case-study-grid .loading").remove();
     $("#case-study-grid").append($(data).filter("main").find("#case-study-grid").html());
-    fadeInImages();
+    utilFunctions.fadeInImages();
   })
 });
 

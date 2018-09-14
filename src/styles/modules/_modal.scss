@@ -64,5 +64,7 @@ div.embeded-code-wrapper.modal {
 
 
 .popup-modal-container {
-  display: none;
+  #main-content {
+    margin-top: 0;
+  }
 }

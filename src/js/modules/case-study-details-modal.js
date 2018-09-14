@@ -1,20 +1,3 @@
-function removeHash () {
-  var scrollV, scrollH, loc = window.location;
-  if ("pushState" in history)
-    history.pushState("", document.title, loc.pathname + loc.search);
-  else {
-    // Prevent scrolling by storing the page's current scroll offset
-    scrollV = document.body.scrollTop;
-    scrollH = document.body.scrollLeft;
-
-    loc.hash = "";
-
-    // Restore the scroll offset, should be flicker free
-    document.body.scrollTop = scrollV;
-    document.body.scrollLeft = scrollH;
-  }
-}
-
 var currentIndex = 0;
 function initModalNextPrev(){
 
@@ -38,7 +21,9 @@ function initModalNextPrev(){
 }
 
 function initDetailsModal(data){
-  $(".popup-modal-container").html($(data).filter("main"));
+  if (data){
+    $(".popup-modal-container").html($(data).filter('main'));
+  }
   $(".popup-modal-container").modal({
     fadeDuration: 200,
     showClose: true,
@@ -57,75 +42,72 @@ function initDetailsModal(data){
       initModalNextPrev();
       // assures fade in will always take place /fix for bug with multiple fading in modals
       $(".popup-modal-container.modal").fadeIn(200);
+
+      utilFunctions.formatNumber();
+      utilFunctions.formatDataCurrency();
+      utilFunctions.fadeInImages();
     }
   }, 50);
 }
 
-$(document).on('click', 'a[href^="/casestudies#/casestudy/"]', function(e){
+$(document).on('click', '[data-cs-modal]', function(e){
   e.preventDefault();
-  location.hash = ($(this).attr('href').split('#')[1]);
+  var href = $(this).attr('href');
+  window.history.pushState({href: href}, $(this).data('title'), href);
+  requestCaseStudyDetails($(this).data('case-path'));
 });
 
 initSocialSharing();
 
-function handleHashChanged(){
-  if (window.location.hash.indexOf('/casestudy/') >= 0){
-    var request_url = window.location.hash.replace("#","") + "?region=" + resources.country.region + "&currency=" + resources.country.currency_symbol + "&ajax=true";
+function requestCaseStudyDetails(path){
+  var request_url = window.location.origin + '/casestudies/' + path + "?region=" + resources.country.region + "&currency=" + resources.country.currency_symbol + "&details=true";
+  // special rule to change related to random filtered card
 
-    // special rule to change related to random filtered card
-
-    // check if the filter form has any values
-    var formValues = $('.desktop-only form').serializeArray();
-    var selectedValues = "";
-    for (var i in formValues){
-      if (formValues[i].name == "category" || formValues[i].name == "region" || formValues[i].name == "budget"){
-        selectedValues+= formValues[i].value;
-      }
+  // check if the filter form has any values
+  var formValues = $('.desktop-only form').serializeArray();
+  var selectedValues = "";
+  for (var i in formValues){
+    if (formValues[i].name == "category" || formValues[i].name == "region" || formValues[i].name == "budget"){
+      selectedValues+= formValues[i].value;
     }
-
-    if (!!selectedValues){
-      // get random cards
-      var randomIndexes = [];
-      do {
-        var randomIndex = Math.floor(Math.random() * $(".case-card[data-case-id]").length);
-        if (randomIndexes.indexOf(randomIndex) < 0){
-          randomIndexes.push(randomIndex);
-        }
-        // case card less 2 because it is possible that we will send itself as a related case
-      } while (randomIndexes.length < 4 && randomIndexes.length < (($(".case-card[data-case-id]").length - 2)));
-
-
-      var randomCards = [];
-      var selectedCard = $("[data-hash='" + window.location.hash + "']");
-      for (var i in randomIndexes){
-        var id = $(".case-card[data-case-id]").eq(randomIndexes[i]).data('case-id');
-        if (id && id != selectedCard.data('case-id')){
-          randomCards.push(id);
-        }
-      }
-      if (randomCards.length > 0) {
-        if (randomCards.length > 3) {
-          randomCards = randomCards.slice(0,3);
-        }
-        request_url += "&relatedcases=" + randomCards.toString();
-      }
-    }
-
-    $.get(request_url, function(data){
-      initDetailsModal(data); 
-    });
   }
+
+  if (!!selectedValues){
+    // get random cards
+    var randomIndexes = [];
+    do {
+      var randomIndex = Math.floor(Math.random() * $(".case-card[data-case-id]").length);
+      if (randomIndexes.indexOf(randomIndex) < 0){
+        randomIndexes.push(randomIndex);
+      }
+      // case card less 2 because it is possible that we will send itself as a related case
+    } while (randomIndexes.length < 4 && randomIndexes.length < (($(".case-card[data-case-id]").length - 2)));
+
+
+    var randomCards = [];
+    var selectedCard = $("[data-hash='" + window.location.hash + "']");
+    for (var i in randomIndexes){
+      var id = $(".case-card[data-case-id]").eq(randomIndexes[i]).data('case-id');
+      if (id && id != selectedCard.data('case-id')){
+        randomCards.push(id);
+      }
+    }
+    if (randomCards.length > 0) {
+      if (randomCards.length > 3) {
+        randomCards = randomCards.slice(0,3);
+      }
+      request_url += "&relatedcases=" + randomCards.toString();
+    }
+  }
+
+  $.get(request_url, function(data){
+    initDetailsModal(data); 
+  });
 }
-
-$(window).on('hashchange', function(e){
-  handleHashChanged();
-});
-
-handleHashChanged();
 
 $(document)
   .on('click', 'a.close-modal', function(e){
-    removeHash();
+    window.history.pushState({href: window.resources.origin}, '', window.resources.origin);
   })
   .on('click', 'a.next-case', function(e){
     e.preventDefault();

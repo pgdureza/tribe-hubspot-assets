@@ -1,13 +1,45 @@
 // load in all images 
-function fadeInImages(){
-  $(".fade-in-image img:not(.loaded)").on('load', function(){
-    $(this).addClass('loaded')
-  }).each(function() {
-    if(this.complete) $(this).load();
-  });
+var utilFunctions = {
+  fadeInImages: function(){
+    $(".fade-in-image img:not(.loaded)").on('load', function(){
+      $(this).addClass('loaded')
+    }).each(function() {
+      if(this.complete) $(this).load();
+    });
+  },
+  
+  formatDataCurrency: function(){
+    $("[data-currency]:not('.currency-initialized')").each(function(){
+      var thisCurrency = $(this).data('currency');
+      if (thisCurrency == resources.country.currency_code){
+        $(this).prepend(resources.country.currency_symbol);
+      } else {
+        $(this).hide();
+      }
+      $(this).addClass('currency-initialized');
+    });
+  },
+  
+  formatNumber: function(){
+    $("[data-number-format]:not('.number-format-initialized')").each(function(){
+      var el = $(this);
+      var number = el.text();
+      if (number.split(".").length > 1){ // if has decimal
+        var whole = number.split(".")[0];
+        var decimal = number.split(".")[1];
+        number = Math.ceil(parseInt(whole)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "." + decimal;
+      } else {
+        number = Math.ceil(parseInt(number)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+      
+      el.text(number)
+      el.addClass('number-format-initialized');
+    });
+  }
 }
 
-fadeInImages();
+
+utilFunctions.fadeInImages();
 
 $(document).ready(function(){
 

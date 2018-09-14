@@ -7,4 +7,8 @@ $(document).ready(function(){
   //=include modules/styled-dropdown.js
   //=include modules/case-study-filters.js
 
+  if (typeof isCaseDetails != "undefined" && isCaseDetails) {
+    initDetailsModal();
+  }
+
 });
