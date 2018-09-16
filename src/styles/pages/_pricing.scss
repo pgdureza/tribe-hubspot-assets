@@ -86,6 +86,10 @@ body.pricing {
         background-color: #f8f8f8;
         padding: 20px 0 50px;
         text-align: center;
+
+        .loading {
+          margin: 150px auto;
+        }
   
         .estimations-text {
           font-size: 14px;

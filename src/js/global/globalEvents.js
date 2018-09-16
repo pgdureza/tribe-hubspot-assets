@@ -34,6 +34,19 @@ var utilFunctions = {
           number = Math.ceil(parseInt(number)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
 
+        if (typeof el.attr('data-shorten') != 'undefined'){
+          var decimal = number.split(".")[1];
+          var commaSeparated = number.split(",");
+          var suffix = "";
+          if (commaSeparated.length == 2){
+            suffix = "k"
+          } else if (commaSeparated.length == 3){
+            suffix = "M"
+          }
+          
+          number = commaSeparated[0] + suffix;
+        }
+
         el.text(number)
           .addClass('number-format-initialized');
       }

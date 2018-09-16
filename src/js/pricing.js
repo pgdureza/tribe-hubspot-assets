@@ -18,13 +18,30 @@ $(document).ready(function(){
   });
 
 
+  // set default values here based on the hash
+
+
   // pricing ajax handler
   $("form#pricing-inputs").on('change', $.debounce(500, function () {
-    var ajaxUrl = window.location.origin + window.location.pathname + "?" + $(this).serialize() + "&region=" + resources.country.code;
-    console.log(ajaxUrl);
+
+    // update the URL state
+    window.history.pushState('', '', '/pricing?budget=' + $("[name='budget']").val() + '&category=' + $("[name='category']:checked").val());
+
+    // loading animation
+    $(".loading").addClass('show');
+    $("#pricing-results").html("");
+
+    // do ajax call
+    var ajaxUrl = window.location.origin + window.location.pathname + "?" + $("form#pricing-inputs").serialize() + "&region=" + resources.country.code;
+    $.get(ajaxUrl, function(data){
+      $("#pricing-results").html($(data).find("#pricing-results").html());
+      $(".loading").removeClass('show');      
+      utilFunctions.formatNumber();
+      utilFunctions.fadeInImages();
+    });
+
   }));
 
-  $(window).on('hashchange', function(){
+  $("form#pricing-inputs").trigger('change');
 
-  })
-})
+});
