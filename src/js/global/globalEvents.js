@@ -47,6 +47,10 @@ var utilFunctions = {
           number = commaSeparated[0] + suffix;
         }
 
+        if (typeof el.attr('data-money') != 'undefined'){
+          number = resources.country.currency_symbol + number;
+        }
+
         el.text(number)
           .addClass('number-format-initialized');
       }

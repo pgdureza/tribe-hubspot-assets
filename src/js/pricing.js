@@ -17,9 +17,13 @@ $(document).ready(function(){
     $(".case-study-social-sharing").toggleClass('active');
   });
 
-
-  // set default values here based on the hash
-
+  function setSocialSharingLinks(){
+    $(".case-study-social-sharing a").each(function(){
+      var href = $(this).attr('href');
+      href = href.replace(/pricing/gi, "pricing" + encodeURIComponent(window.location.search));
+      $(this).attr('href', href);
+    });
+  }
 
   // pricing ajax handler
   $("form#pricing-inputs").on('change', $.debounce(500, function () {
@@ -38,6 +42,7 @@ $(document).ready(function(){
       $(".loading").removeClass('show');      
       utilFunctions.formatNumber();
       utilFunctions.fadeInImages();
+      setSocialSharingLinks();
     });
 
   }));

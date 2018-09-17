@@ -20,7 +20,7 @@ $(document).ready(function(){
   })
 
   //=include modules/parallax-box.js
-  //=include modules/featured-simage-silder.js
+  //=include modules/featured-image-silder.js
   //=include modules/testimonials.js
   //=include modules/brand-gallery.js
 

@@ -104,7 +104,7 @@ $(document).on("click", ".show-more", function(e){
   $("#case-study-grid .loading").addClass('show');
   e.preventDefault();
   $("[name='offset']").val($("#case-study-grid .case-card").length);
-  var ajaxURL = window.location.origin + window.location.pathname  + "/" + getFilterParams();
+  var ajaxURL = window.location.origin + window.location.pathname  + getFilterParams();
   $.get(ajaxURL, function(data){
     $("#case-study-grid .loading").remove();
     $("#case-study-grid").append($(data).filter("main").find("#case-study-grid").html());

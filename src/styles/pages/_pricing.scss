@@ -84,7 +84,10 @@ body.pricing {
       .what-to-expect {
         position: relative;
         background-color: #f8f8f8;
-        padding: 20px 0 50px;
+        padding: 20px 0 140px;
+        @include breakpoint(tablet-landscape-up){
+          padding-bottom: 50px;
+        }
         text-align: center;
 
         .loading {
@@ -296,8 +299,11 @@ body.pricing {
     }
 
     .share-button {
+      position: absolute;
+      bottom: 50px;
+      right: calc(50% - 30px);
       @include breakpoint(tablet-landscape-up){
-        position: absolute;
+        bottom: auto;
         top: 60px;
         right: 60px;
       }

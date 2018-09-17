@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
   
-  //=include modules/featured-simage-silder.js
+  //=include modules/featured-image-silder.js
   //=include modules/home-video.js
 
 })
