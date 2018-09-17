@@ -11,12 +11,6 @@ $(document).ready(function(){
       }, 500);
   });
 
-  // social sharing
-  $(document).on('click', '.case-study-social-sharing-wrapper > a', function(e){
-    e.preventDefault();
-    $(".case-study-social-sharing").toggleClass('active');
-  });
-
   function setSocialSharingLinks(){
     $(".case-study-social-sharing a").each(function(){
       var href = $(this).attr('href');
@@ -48,5 +42,10 @@ $(document).ready(function(){
   }));
 
   $("form#pricing-inputs").trigger('change');
+
+  //=include modules/case-study-details.js
+  //=include modules/case-study-details-modal.js
+
+  //=include modules/tooltip.js
 
 });

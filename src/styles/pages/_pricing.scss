@@ -185,7 +185,7 @@ body.pricing {
           padding-top: 20px;
           padding-bottom: 20px;
           @include breakpoint(tablet-landscape-up){
-            padding: 0 3.5%;
+            padding: 0 2.5%;
           }
           &:not(:last-of-type){
             border-bottom: solid 2px #e4e4e4;
@@ -209,6 +209,10 @@ body.pricing {
             }
           }
           .label {
+            white-space: nowrap;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-transform: uppercase;
             margin-top: 8px;
             font-size: 10px;
@@ -267,12 +271,13 @@ body.pricing {
           .cards-wrapper {
             display: flex;
             justify-content: flex-start;
+            @include breakpoint(tablet-landscape-up){
+              margin-right: -20px;
+            }
             .hs_cos_wrapper {
               padding-right: 20px;
-              &:last-of-type{
-                @include breakpoint(tablet-landscape-up){
-                  padding-right: 0;
-                }
+              &:nth-child(n+5) {
+                display: none;
               }
               .case-card-image {
                 height: 161px;

@@ -206,14 +206,14 @@
               content: ' ';
               width: 24px;
               height: 24px;
-              border: 1px solid #7a7a7a;
+              border: 1px solid #e4e4e4;
               position: absolute;
               border-radius: 100px;
               left: 0;
               background: #ffffff;
               @include breakpoint(tablet-landscape-up){
-                width: 30px;
-                height: 30px;
+                width: 24px;
+                height: 24px;
               }
             }
             &:after {
@@ -228,9 +228,10 @@
               opacity: 0;
 
               @include breakpoint(tablet-landscape-up){
-                top: calc(50% - 10px);
-                width: 20px;
-                height: 20px;
+                height: 14px;
+                left: 6px;
+                top: calc(50% - 7px);
+                width: 14px;
               }
             }
           }

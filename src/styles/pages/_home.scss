@@ -25,6 +25,10 @@ section.home-content-wrapper {
       display: flex;
       justify-content: center;
 
+      @include breakpoint(tablet-landscape-up){
+        width: 100%;
+      }
+
       .cta_button {
         display: block;
         max-width: 150px;
@@ -35,12 +39,7 @@ section.home-content-wrapper {
 
       .hs-cta-wrapper:first-of-type {
         .cta_button {
-          margin-right: 10px;
-        }
-      }
-      .hs-cta-wrapper:first-of-type {
-        .cta_button {
-          margin-right: 10px;
+          margin-right: 20px;
         }
       }
     }
