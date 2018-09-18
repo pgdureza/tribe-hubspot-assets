@@ -10,7 +10,9 @@
     }
 
     img {
-      min-width: 700px;
+      @include breakpoint(tablet-landscape-up){
+        min-width: 700px;
+      }
     }
   }
   

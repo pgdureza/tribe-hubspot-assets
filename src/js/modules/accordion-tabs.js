@@ -27,7 +27,7 @@ $(".accordion-tab").on('click', function(e){
 });
 
 // handler for opening a faq accordion and closing existing ones
-$(".accordion-content h5").on('click', function(e){
+$(".accordion-content .header").on('click', function(e){
   e.preventDefault();
   // close open content 
   if ($(this).hasClass('active')){

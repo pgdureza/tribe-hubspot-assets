@@ -1,14 +1,25 @@
 .case-study-landing {
 
   main#main-content {
-    h3.heading {
+    h1.heading {
       text-align: center;
-      padding-top: 20px;
       margin-bottom: 30px;
       max-width: 820px;
+      padding: 100px 0 0 0;
+
+      font-size: 20px;
+      line-height: 1.4;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #3b373a;
       @include breakpoint(tablet-landscape-up){
         margin-left: auto;
         margin-right: auto;
+        font-size: 32px;
+        line-height: 1.5;
       }
       strong {
         color: #f848c4;
@@ -104,8 +115,9 @@
             @extend .cta_button;
           }
         }
-        h4 {
+        .filter-header {
           margin-top: 0;
+          @extend h4;
         }
         .checkbox {
           display: block;

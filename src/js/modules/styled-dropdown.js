@@ -5,7 +5,7 @@ $(".styled-dropdown").each(function(){
   var isSelection = $(this).hasClass('selection');
 
   // create the menu items
-  var $values = $("<div class='values'>");
+  var $values = $("<div role='listbox' class='values'>");
   var selected;
   var initValue;
   if (isMultiselect || isSelection){
@@ -22,7 +22,7 @@ $(".styled-dropdown").each(function(){
         classes += "disabled ";
       }
   
-      $values.append("<div class='" + classes + "' data-value='" + $option.find('input').val() + "'><span>" + $option.find('label').text() + "</span></div>");
+      $values.append("<div role='option' class='" + classes + "' data-value='" + $option.find('input').val() + "'><span>" + $option.find('label').text() + "</span></div>");
     });
   } else {
     $(this).find("select option").each(function(){

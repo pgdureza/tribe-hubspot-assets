@@ -1,9 +1,5 @@
 .why-tribe {
 
-  .info-card:last-of-type{
-    
-  }
-
   #hs_cos_wrapper_information-cards {
     > div {
       &:last-of-type{
@@ -33,14 +29,6 @@
       }
     }
 
-  }
-
-  h3 {
-    margin-top: 20px;
-    margin-bottom: 16px;
-    @include breakpoint(tablet-landscape-up){
-      margin-top: 0;
-    }
   }
 
   p {

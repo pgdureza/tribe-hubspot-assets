@@ -6,7 +6,7 @@
     display: block;
   }
 
-  h3 {
+  h2 {
     margin-top: 40px;
     margin-bottom: 30px;
     display: none;
@@ -39,10 +39,11 @@
 
   .accordion-content {
 
-    h5 {
+    .header {
       margin: 20px 0 20px 0;
       padding-right: 30px;
       @include caret(0);
+      @extend h5;
       cursor: pointer;
       &:after, &:before {
         opacity: 0.5;
