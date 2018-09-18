@@ -16,6 +16,11 @@ header.mobile-header {
   }
 
   .hamburger  {
+    position: fixed;
+    right: $mobile-gutter - 3;
+    top: 15px;
+    z-index: 9999;
+    cursor: pointer;
     .line{
       width: 25px;
       height: 2px;

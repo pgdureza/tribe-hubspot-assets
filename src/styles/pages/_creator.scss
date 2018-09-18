@@ -27,6 +27,7 @@ body.creator {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    overflow: hidden;
 
     > .hs_cos_wrapper {
       .value {
