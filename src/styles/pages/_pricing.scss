@@ -64,17 +64,21 @@ body.pricing {
       }
 
       div#budget-slider-value {
-        font-size: 40px;
+        font-size: 24px;
         font-weight: normal;
         font-style: normal;
         font-stretch: normal;
-        line-height: 1.4;
+        line-height: 1.33;
         letter-spacing: normal;
+        text-align: center;
+        color: #3b373a;
         text-align: center;
         color: #3b373a;
         margin-bottom: 32px;
         @include breakpoint(tablet-landscape-up){
           margin-bottom: 30px;
+          font-size: 40px;
+          line-height: 1.4;
         }
       }
   
@@ -93,9 +97,18 @@ body.pricing {
           font-size: 32px;
           line-height: 1.5;
           margin-top: 80px;
-          margin-bottom: 80px;
+          margin-bottom: 30px;
         }
       }
+
+      .budget-slider {
+        header {
+          @include breakpoint(tablet-landscape-up){ 
+            margin-bottom: 16px;
+          }
+        }
+      }
+
       .what-to-expect {
         position: relative;
         background-color: #f8f8f8;
@@ -174,6 +187,13 @@ body.pricing {
                 color: #3b373a;
                 cursor: pointer;
               }
+              &:hover {
+                label {
+                  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
+                  background-color: #ffffff;
+                  border: solid 2px #f848c4;
+                }
+              }
               input {
                 display: none;
                 &:checked + label {
@@ -200,7 +220,13 @@ body.pricing {
           padding-top: 20px;
           padding-bottom: 20px;
           @include breakpoint(tablet-landscape-up){
-            padding: 0 2.5%;
+            padding: 0 4.5%;
+            &:last-of-type{
+              padding-right: 0;
+            }
+            &:first-of-type{
+              padding-left: 0;
+            }
           }
           &:not(:last-of-type){
             border-bottom: solid 2px #e4e4e4;

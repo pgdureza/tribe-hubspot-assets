@@ -24,7 +24,7 @@ $(document).ready(function(){
   });
   dataSlider.jRange('setValue', dataSlider.val());
 
-  $(window).trigger('resize'); // quick fix for the modified jRange slider 
+  $(window).trigger('resize'); // quick fix for the modified jRange slider and for tooltip
 
   // change format for the labels
   $(".slider-container ins").each(function(){
@@ -58,6 +58,8 @@ $(document).ready(function(){
     $(".loading").addClass('show');
     $("#pricing-results").html("");
 
+    //=include modules/tooltip.js
+
     // do ajax call
     var ajaxUrl = window.location.origin + window.location.pathname + "?" + $("form#pricing-inputs").serialize() + "&region=" + resources.country.code;
     $.get(ajaxUrl, function(data){
@@ -66,6 +68,7 @@ $(document).ready(function(){
       utilFunctions.formatNumber();
       utilFunctions.fadeInImages();
       setSocialSharingLinks();
+      positionTooltip();
     });
 
   }));
@@ -74,7 +77,5 @@ $(document).ready(function(){
 
   //=include modules/case-study-details.js
   //=include modules/case-study-details-modal.js
-
-  //=include modules/tooltip.js
 
 });

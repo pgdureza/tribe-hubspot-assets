@@ -22,6 +22,4 @@ function positionTooltip(){
 
 $(window).on('resize', function(){
   positionTooltip();
-});
-  
-positionTooltip();
+})

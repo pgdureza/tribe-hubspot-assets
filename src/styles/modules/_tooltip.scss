@@ -44,13 +44,15 @@
     background: #f96bcf;
     font-size: 10px;
     color: #fff;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     width: 14px;
     height: 14px;
     text-align: center;
     cursor: pointer;
     text-transform: lowercase;
-    padding-left: 0.5px;
+    padding-left: 1.5px;
     &:hover, &:focus {
       &+.tip {
         opacity: 1;
