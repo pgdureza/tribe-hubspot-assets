@@ -93,6 +93,7 @@ nav.header-menu a {
 nav.header-menu .hs-menu-item a {
   display: block;
   position: relative;
+  white-space: nowrap;
 
   &:after {
     @include cubicBezier();

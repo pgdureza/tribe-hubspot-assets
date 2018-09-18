@@ -3,6 +3,35 @@
 $(document).ready(function(){
   //=include modules/styled-dropdown.js
 
+  function moneyformat(val){
+    return window.resources.country.currency_symbol + val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+  }
+
+  // slider
+  var dataSlider = $('[data-rangeslider]');
+  dataSlider.jRange({
+    from: dataSlider.attr('min'),
+    to: dataSlider.attr('max'),
+    step: dataSlider.attr('step'),
+    scale: dataSlider.attr('scale').split(","),
+    showLabels: false,
+    width: 820,
+    snap: true,
+    theme: "tribe-pink",
+    onstatechange: function(val){
+      $("#budget-slider-value").text(moneyformat(val));
+    }
+  });
+  dataSlider.jRange('setValue', dataSlider.val());
+
+  $(window).trigger('resize'); // quick fix for the modified jRange slider 
+
+  // change format for the labels
+  $(".slider-container ins").each(function(){
+    var val = $(this).text();
+    $(this).text(moneyformat(val));
+  })
+
   // event handler CTA override for calculate ROI
   $(document).on('click', ".pricing-cards > .hs_cos_wrapper:first-of-type a", function(e){
     e.preventDefault();
