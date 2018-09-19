@@ -19,13 +19,13 @@ function initSocialSharing(){
 }
 
 function initScrollHandler(){
-  $(".case-study-details-section").scroll(function(){
+  $(".case-study-details-section").scroll($.throttle(500, function () {
     if ($(this).scrollTop() >= $(".mobile-cover-photo").height()){
       $(".close-modal").addClass("invert");
-          $(".case-study-social-sharing-wrapper").addClass("gray");
+      $(".case-study-social-sharing-wrapper").addClass("gray");
     } else {
       $(".close-modal").removeClass("invert");
       $(".case-study-social-sharing-wrapper").removeClass("gray");
     }
-  });
+  }));
 }

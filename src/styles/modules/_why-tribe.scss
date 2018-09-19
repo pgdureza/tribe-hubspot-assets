@@ -33,7 +33,7 @@
 
   p {
     font-size: 16px;
-    font-weight: normal;
+    font-weight: 300;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.5;
@@ -42,7 +42,7 @@
     margin: 16px 0 30px;
 
     @include breakpoint(tablet-landscape-up){
-      font-size: 18px;
+      font-size: 1.25vw;
       line-height: 1.78;
       letter-spacing: normal;
     }

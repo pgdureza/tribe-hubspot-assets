@@ -1,6 +1,6 @@
 .view-more-link {
   border-radius: $rounded-corner;
-  border: solid 2px #f848c4;
+  border: 1px solid #f848c4;
   height: 100%;
   width: 100%;
   display: flex;
@@ -10,7 +10,7 @@
   text-decoration: none;
 
   font-size: 18px;
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.78;
@@ -41,17 +41,17 @@
   }
 
   @include breakpoint(tablet-landscape-up){
-    font-size: 24px;
     line-height: 1.33;
     flex-wrap: wrap;
     padding: 0;
     justify-content: center;
     flex-direction: column;
+    font-size: 1.67vw;
 
     .text {
       width: 100%;
       margin: 0;
-      max-width: 140px;
+      max-width: 9.7vw;
       padding-bottom: 20px;
     }
   

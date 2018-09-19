@@ -20,7 +20,7 @@
     background-color: #ffffff;
     box-shadow: 2px 8px 20px 0 rgba(0, 0, 0, 0.12);
     font-size: 14px;
-    font-weight: normal;
+    font-weight: 300;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.71;
@@ -40,7 +40,7 @@
           &:after {
             content: " ";
             position: absolute;
-            border-bottom: solid 2px #3b373a;
+            border-bottom: solid 1px #3b373a;
             width: 0;
             bottom: 0;
             left: 0;
@@ -72,5 +72,37 @@
       content: ' ';
       border-bottom: 1px solid #f20000;
     }
+  }
+
+  &.multi-select {
+    .values {
+      .value:not(.disabled) {
+        padding-right: 6px;
+        span {
+          display: block;
+          &:after {
+            transform: rotate(45deg);
+            border: solid #4d4d4d;
+            border-width: 0 1px 1px 0;
+            content: " ";
+            height: 10px;
+            right: 4px;
+            position: absolute;
+            top: 3px;
+            width: 3px;
+            left: auto;
+            opacity: 0;
+          }
+        }
+        &.selected {
+          span {
+            &:after {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    
   }
 }

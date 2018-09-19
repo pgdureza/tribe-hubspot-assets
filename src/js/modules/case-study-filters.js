@@ -48,7 +48,7 @@ $('.mobile-only .controls').on('click', function(e){
 /******** DESKTOP FILTER FUNCTIONS ********/
 function getFilterParams(){
   var filterArray;
-  if ($(window).innerWidth() < 900){
+  if ($(window).innerWidth() < 980){
     filterArray = $(".filters .mobile-only form").serializeArray()
   } else {
     filterArray = $(".filters .desktop-only form").serializeArray()

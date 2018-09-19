@@ -1,14 +1,12 @@
 // breakpoints
 $phone-upper-boundary: 600px;
-$tablet-portrait-upper-boundary: 900px;
+$tablet-portrait-upper-boundary: 980px;
 $tablet-landscape-upper-boundary: 1200px;
 $desktop-upper-boundary: 1440px;
 
-$max-supported-width: 1690px;
-
 // spacing
 $mobile-gutter: 30px;
-$desktop-header-gutter: 30px;
+$desktop-header-gutter: 2.2vw;
 
 // others
 $cubicbezier: cubic-bezier(0.26, 0.54, 0.32, 1);
@@ -18,3 +16,5 @@ $rounded-corner: 5px;
 // header vars
 $header-height-mobile: 60px;
 $header-height-desktop: 85px;
+
+$reference-width: 1440px;

@@ -3,7 +3,7 @@ $(".parallax-box").each(function(){
   var box = $(this);
   var boxParent = $(this).parent();
   function parallaxImg () {
-    if ($(window).width() < 900){
+    if ($(window).width() < 980){
       box.css({
         transform: 'translate(0,0)'
       });

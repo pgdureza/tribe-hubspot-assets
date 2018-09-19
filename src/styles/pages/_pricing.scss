@@ -11,7 +11,7 @@ body.pricing {
       }
       .subheading {
         font-size: 16px;
-        font-weight: normal;
+        font-weight: 300;
         font-style: normal;
         font-stretch: normal;
         line-height: 1.5;
@@ -23,7 +23,7 @@ body.pricing {
     
         @include breakpoint(tablet-landscape-up){
           max-width: none;
-          font-size: 18px;
+          font-size: 1.25vw;
           line-height: 1.78;
           margin-bottom: 60px;
         }
@@ -52,7 +52,7 @@ body.pricing {
     }
   
     .pricing-calculator {
-      border-top: solid 2px #e4e4e4;
+      border-top: 1px solid #e4e4e4;
       h2 {
         text-align: center;
         margin-top: 60px;
@@ -65,7 +65,7 @@ body.pricing {
 
       div#budget-slider-value {
         font-size: 24px;
-        font-weight: normal;
+        font-weight: 300;
         font-style: normal;
         font-stretch: normal;
         line-height: 1.33;
@@ -86,7 +86,7 @@ body.pricing {
         margin-bottom: 30px;
         margin-top: 40px;
         font-size: 28px;
-        font-weight: normal;
+        font-weight: 300;
         font-style: normal;
         font-stretch: normal;
         line-height: 1.29;
@@ -124,7 +124,7 @@ body.pricing {
   
         .estimations-text {
           font-size: 14px;
-          font-weight: normal;
+          font-weight: 300;
           font-style: normal;
           font-stretch: normal;
           line-height: 1.43;
@@ -160,8 +160,8 @@ body.pricing {
             }
             .checkbox {
               display: block;
-              height: 100px;
-              width: calc(16.88% - 20px);
+              height: 6.9vw;
+              width: calc(16.67% - 20px);
               margin-bottom: 20px;
               margin-right: 20px;
               &:nth-child(6n){
@@ -178,7 +178,7 @@ body.pricing {
                 justify-content: center;
                 align-items: center;
                 font-size: 14px;
-                font-weight: normal;
+                font-weight: 300;
                 font-style: normal;
                 font-stretch: normal;
                 line-height: 1.71;
@@ -191,7 +191,7 @@ body.pricing {
                 label {
                   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
                   background-color: #ffffff;
-                  border: solid 2px #f848c4;
+                  border: 1px solid #f848c4;
                 }
               }
               input {
@@ -199,7 +199,7 @@ body.pricing {
                 &:checked + label {
                   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.12);
                   background-color: #ffffff;
-                  border: solid 2px #f848c4;
+                  border: 1px solid #f848c4;
                 }
               }
             }
@@ -229,15 +229,15 @@ body.pricing {
             }
           }
           &:not(:last-of-type){
-            border-bottom: solid 2px #e4e4e4;
+            border-bottom: 1px solid #e4e4e4;
             @include breakpoint(tablet-landscape-up){
               border-bottom: 0;
-              border-right: solid 2px #e4e4e4;
+              border-right: 1px solid #e4e4e4;
             }
           }
           .value {
             font-size: 32px;
-            font-weight: 500;
+            font-weight: 400;
             font-style: normal;
             font-stretch: normal;
             line-height: 1;
@@ -257,7 +257,7 @@ body.pricing {
             text-transform: uppercase;
             margin-top: 8px;
             font-size: 10px;
-            font-weight: 500;
+            font-weight: 400;
             font-style: normal;
             font-stretch: normal;
             line-height: 1.6;
@@ -286,7 +286,7 @@ body.pricing {
           margin-top: 20px;
           margin-bottom: 20px;
           font-size: 10px;
-          font-weight: 500;
+          font-weight: 400;
           font-style: normal;
           font-stretch: normal;
           line-height: 1.6;
@@ -320,12 +320,15 @@ body.pricing {
               &:nth-child(n+5) {
                 display: none;
               }
+              @include breakpoint(tablet-landscape-up){
+                width: calc(25% - 20px);
+              }
               .case-card-image {
                 height: 161px;
                 width: 295px;
                 @include breakpoint(tablet-landscape-up){
                   height: 12.5vw;
-                  width: auto;
+                  width: 100%;
                 }
               }
               .brand-image {
@@ -333,7 +336,7 @@ body.pricing {
                 width: 295px;
                 @include breakpoint(tablet-landscape-up){
                   height: 9vw;
-                  width: auto;
+                  width: 100%;
                 }
               }
             }
@@ -405,7 +408,7 @@ body.pricing {
 
         h2 {
           font-size: 32px;
-          font-weight: normal;
+          font-weight: 300;
           font-style: normal;
           font-stretch: normal;
           line-height: 1.38;
@@ -422,7 +425,7 @@ body.pricing {
         }
         p {
           font-size: 16px;
-          font-weight: normal;
+          font-weight: 300;
           font-style: normal;
           font-stretch: normal;
           line-height: 1.5;

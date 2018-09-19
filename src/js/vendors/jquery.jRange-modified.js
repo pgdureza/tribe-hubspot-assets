@@ -385,7 +385,7 @@
 					// *** ADDITIONAL CODE TO SET WIDTH ***
 					var windowWidth = $(window).outerWidth();
 					var width;
-					if (windowWidth > 900){ // desktop has a fixed width of 820px;
+					if (windowWidth >= 980){ // desktop has a fixed width of 820px;
 						width = 820;
 					} else { // mobile is based on screen width
 						width = windowWidth - 60;

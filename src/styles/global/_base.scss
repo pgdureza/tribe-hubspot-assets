@@ -2,7 +2,6 @@ html, body {
   padding: 0;
   margin: auto;
   @include baseFont();
-  max-width: 1690px;
 }
 
 input, select, textarea, submit, button {

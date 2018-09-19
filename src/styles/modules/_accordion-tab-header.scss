@@ -12,7 +12,7 @@
 
     > .hs_cos_wrapper_widget {
       width: 100%; // auto-adjust width
-      border-bottom: solid 2px #e4e4e4;
+      border-bottom: 1px solid #e4e4e4;
       
       @include breakpoint(tablet-landscape-up){
         width: auto;
@@ -22,7 +22,7 @@
       a {
         text-decoration: none;
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 400;
         font-style: normal;
         font-stretch: normal;
         line-height: 1.5;
@@ -36,8 +36,8 @@
           color: #f848c4;
         }
         @include breakpoint(tablet-landscape-up){
-          font-size: 18px;
-          font-weight: normal;
+          font-size: 1.25vw;
+          font-weight: 300;
           line-height: 1.78;
           letter-spacing: normal;
           display: inline-block;
@@ -48,7 +48,7 @@
           position: relative;
           &:after{
             position: absolute;
-            border-bottom: solid 2px #f848c4;
+            border-bottom: 1px solid #f848c4;
             content: ' ';
             width: 0;
             left: 0;
@@ -65,7 +65,7 @@
     }
   }
   .indicator { // active underline indicator
-    border-bottom: 2px solid #f848c4;
+    border-bottom: 1px solid #f848c4;
     position: absolute;
     bottom: 0px;
     left: 0;

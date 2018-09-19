@@ -60,7 +60,7 @@ $(".styled-dropdown").on('click', function(e){
   var $container = $(this);
   // special handling for selection style dropdown, ignore the dropdown properties when in
   // selection grid mode while in desktop view
-  if ($(this).hasClass('selection') && $(window).width() < 900 || (!$(this).hasClass('selection'))){
+  if ($(this).hasClass('selection') && $(window).width() < 980 || (!$(this).hasClass('selection'))){
     e.preventDefault();
     if ($container.hasClass("active")){
       // close selected
@@ -169,7 +169,7 @@ $(".styled-dropdown.multi-select .values .value").on('click', function(){
 
 $(".styled-dropdown.selection .values .value").on('click', function(e){
 
-  if ($(window).width() < 900){
+  if ($(window).width() < 980){
     var $option = $(this);
     var $container = $option.closest(".styled-dropdown");
 
@@ -198,7 +198,7 @@ $(".styled-dropdown.selection .values .value").on('click', function(e){
 
 // disables the anchor tag when in desktop mode
 $(".styled-dropdown.selection").on('click', function(e){
-  if ($(window).width() >= 900){
+  if ($(window).width() >= 980){
     var el = $(e.target);
     if (el.attr('href') == "#") {
       return false;

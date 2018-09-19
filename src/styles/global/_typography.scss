@@ -1,13 +1,13 @@
 @mixin baseFont(){
   font-family: 'Rubik', sans-serif;
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
   font-stretch: normal;
 }
 
 h1 {
   font-size: 32px;
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.38;
@@ -18,7 +18,7 @@ h1 {
   padding-bottom: 20px;
   margin: 0;
   @include breakpoint(tablet-landscape-up){
-    font-size: 48px;
+    font-size: 3.33vw;
     line-height: 1.17;
     text-align: center;
     padding-top: 100px;
@@ -28,7 +28,7 @@ h1 {
 
 h2 {
   font-size: 32px;
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.38;
@@ -36,7 +36,7 @@ h2 {
   color: #3b373a;
 
   @include breakpoint(tablet-landscape-up){
-    font-size: 48px;
+    font-size: 3.33vw;
     line-height: 1.17;
     letter-spacing: normal;
   }
@@ -44,7 +44,7 @@ h2 {
 
 h3 {
   font-size: 20px;
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.4;
@@ -52,7 +52,7 @@ h3 {
   color: #3b373a;
   
   @include breakpoint(tablet-landscape-up){
-    font-size: 32px;
+    font-size: 2.22vw;
     line-height: 1.5;
     letter-spacing: normal;
   }
@@ -60,7 +60,7 @@ h3 {
 
 h4 {
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -69,20 +69,20 @@ h4 {
   text-transform: uppercase;
 
   @include breakpoint(tablet-landscape-up){
-    font-size: 16px;
+    font-size: 1.11vw;
   }
 }
 
 h5 {
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.5;
   letter-spacing: normal;
   color: #3b373a;
   @include breakpoint(tablet-landscape-up){
-    font-size: 18px;
+    font-size: 1.25vw;
     line-height: 1.78;
   }
 }
