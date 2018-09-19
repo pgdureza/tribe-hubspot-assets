@@ -1,0 +1,23 @@
+div#page-form-main-content {
+  margin-bottom: 60px;
+  @include breakpoint(tablet-landscape-up){
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  
+    #page-form {
+      width: 41.67%;
+    }
+    
+    #page-form-image-wrapper {
+      width: 50%;
+    }
+  }
+}
+
+.hs_who_do_you_need_2 .multi-container, 
+.hs_who_do_you_need_2 > label, 
+.hs_country > label, 
+.hs_country input  { // first label is the actual label, other labels can be error messages
+  display: none !important; // never ever display these fields!
+}

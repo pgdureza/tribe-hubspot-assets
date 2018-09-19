@@ -1,25 +1,11 @@
-div#get-in-touch-main-content {
-  margin-bottom: 60px;
+div#page-form-main-content {
   @include breakpoint(tablet-landscape-up){
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  
-    #get-in-touch-form {
-      width: 41.67%;
+    #page-form {
       order: 1;
     }
     
-    #get-in-touch-image-wrapper {
-      width: 50%;
+    #page-form-image-wrapper {
       order: 2;
     }
   }
-}
-
-.hs_who_do_you_need_2 .multi-container, 
-.hs_who_do_you_need_2 > label, 
-.hs_country > label, 
-.hs_country input  { // first label is the actual label, other labels can be error messages
-  display: none !important; // never ever display these fields!
 }

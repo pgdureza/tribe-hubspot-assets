@@ -41,12 +41,12 @@ $(".styled-dropdown").each(function(){
       $values.append("<div class='" + classes + "' data-value='" + $option.val() + "'><span>" + $option.text() + "</span></div>");
     });
   }
-  
-
-  $(this).append("<div class='selected-value'><span>"+selected+"</span></div>");
 
   if (initValue){
+    $(this).append("<div class='selected-value'><span>"+selected+"</span></div>");
     $(this).addClass('filled');
+  } else {
+    $(this).append("<div class='selected-value no-val'><span>"+selected+"</span></div>");
   }
 
   // append menu items to dropdown container
@@ -101,7 +101,8 @@ $(".styled-dropdown:not(.multi-select):not(.selection) .values .value").on('clic
 
   var $container = $option.closest(".styled-dropdown");
   // update displayed text
-  $container.find(".selected-value").text($option.text());
+  $container.find(".selected-value").removeClass('no-val').text($option.text());
+
   // update selected value for the select element
   $container.find("select").val($option.data('value'));
   $container.find("select").trigger('change');
@@ -150,9 +151,9 @@ $(".styled-dropdown.multi-select .values .value").on('click', function(){
 
   // update displayed text
   if ($container.find(".value.selected").length < 2){
-    $container.find(".selected-value").text($container.find(".value.selected").text());
+    $container.find(".selected-value").removeClass('no-val').text($container.find(".value.selected").text());
   } else {
-    $container.find(".selected-value").text($container.find(".value.selected").length + " selected");
+    $container.find(".selected-value").removeClass('no-val').text($container.find(".value.selected").length + " selected");
   }
 
   $container.find("input").trigger('change');
@@ -181,7 +182,7 @@ $(".styled-dropdown.selection .values .value").on('click', function(e){
     $container.find("input[value='" + $option.data('value') + "']").prop('checked', $option.hasClass('selected'));
 
     // update displayed text
-    $container.find(".selected-value").text($container.find(".value.selected").text());
+    $container.find(".selected-value").removeClass('no-val').text($container.find(".value.selected").text());
 
     $container.find("input").trigger('change');
 

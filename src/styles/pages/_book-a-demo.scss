@@ -1,3 +1,118 @@
-body {
-  display: none;
+div#page-form-main-content {
+  margin-bottom: 0;
+  section#page-form {
+    background: #f8f8f8;
+    padding-bottom: 60px;
+    padding-top: 40px;
+    border-bottom: 2px solid #e4e4e4;
+    @include breakpoint(tablet-landscape-up){
+      border-bottom: none;
+      padding-bottom: 80px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.56;
+      letter-spacing: normal;
+      color: #3b373a;
+      margin: 0 0 24px;
+      @include breakpoint(tablet-landscape-up){
+        font-size: 24px;
+        line-height: 1.67;
+      }
+    }
+    .actions {
+      margin-top: 30px;
+    }
+  }
+  
+  section#page-form-image-wrapper {
+    @include breakpoint(tablet-landscape-up){
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 0;
+    }
+    img {
+      max-width: 53vw;
+      margin: auto;
+      width: 100% !important;
+      @include breakpoint(tablet-landscape-up){
+        max-width: 505px;
+        order: 3;
+        margin-top: 44px;
+      }
+    }
+    h1.header {
+      font-size: 18px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.56;
+      letter-spacing: normal;
+      color: #3b373a;
+      text-align: left;
+      padding-bottom: 0;
+      strong {
+        color: #f848c4;
+        font-weight: normal;
+      }
+      margin-bottom: 30px;
+      @include breakpoint(tablet-landscape-up){
+        font-size: 24px;
+        line-height: 1.67;
+        order: 1;
+        margin-bottom: 40px;
+        padding-top: 0;
+      }
+    }
+    div.points {
+      @include breakpoint(tablet-landscape-up){
+        order: 2;
+      }
+      p {
+        font-size: 16px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: 0.5px;
+        color: #3b373a;
+        margin-top: 0;
+        margin-bottom: 16px;
+        @include breakpoint(tablet-landscape-up){
+          margin-bottom: 20px;
+        }
+      }
+      ul {
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: #7a7a7a;
+        padding-left: 18px;
+        @include breakpoint(tablet-landscape-up){
+          font-size: 14px;
+          line-height: 1.71;
+        }
+        li {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+
+  section#page-form, section#page-form-image-wrapper {
+    @include breakpoint(tablet-landscape-up){
+      width: 50%;
+      margin-top: 80px;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 40px 7%;
+    }
+  }
+
 }
