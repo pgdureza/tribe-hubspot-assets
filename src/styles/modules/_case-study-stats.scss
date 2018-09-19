@@ -32,6 +32,7 @@
       align-items: center;
       @include breakpoint(tablet-landscape-up){
         line-height: 1.71;
+        white-space: nowrap;
       }
     }
     > span {

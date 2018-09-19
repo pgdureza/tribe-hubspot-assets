@@ -131,10 +131,14 @@ nav.header-menu .hs-menu-item {
       background: #fff;
       z-index: 999;
       top: 0;
+      transition: box-shadow 0.5s;
+      &.has-shadow {
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,.12);
+      }
     }
     .main-content {
       margin-top: $header-height-desktop;
-      }
     }
+  }
 }
 

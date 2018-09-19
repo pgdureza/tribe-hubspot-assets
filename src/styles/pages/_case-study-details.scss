@@ -27,14 +27,14 @@
     margin-bottom: 0;
 
     .image-gallery-spacer {
-      width: 57%;
+      width: 525px;
     }
 
     .slick-image-slider-wrapper {
       position: absolute;
       left: 0;
       top: 0;
-      width: 57%;
+      width: 525px;
       img {
         height: 80vh;
         max-height: 715px;
@@ -48,7 +48,7 @@
     }
 
     .case-study-details-section {
-      width: 43%;
+      width: calc(100% - 525px);
       height: 80vh;
       max-height: 715px;
     }
@@ -73,7 +73,8 @@
         justify-content: center;
         padding: 0;
         @include breakpoint(tablet-landscape-up){ 
-          width: 42.82%;
+          width: 525px;
+          border: 0;
           position: absolute;
         }
       }

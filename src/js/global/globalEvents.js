@@ -73,6 +73,18 @@ $(document).ready(function(){
     $("body").toggleClass("mobile-menu-open");
   });
 
+  $(window).on('scroll', $.throttle(500, function(){
+    var mainHeader = $(".main-header");
+    var mobileHeader = $(".mobile-header ");
+    if ($(".main-header").hasClass('has-shadow') && $(window).scrollTop() == 0){
+      mainHeader.removeClass('has-shadow');
+      mobileHeader.removeClass('has-shadow');
+    } else {
+      mainHeader.addClass('has-shadow');
+      mobileHeader.addClass('has-shadow');
+    }
+  }));
+
 });
 
 $(window).load(function(){

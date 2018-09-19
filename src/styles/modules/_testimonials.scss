@@ -5,7 +5,7 @@ span#hs_cos_wrapper_testimonial-slider {
 
   @include breakpoint(tablet-landscape-up){
     padding-bottom: 24px;
-    padding-top: 80px; // only 80 instead of 120 since we will use additional 40px for the featured image overflow
+    padding-top: 120px; // only 80 instead of 120 since we will use additional 40px for the featured image overflow
 
     .slick-track {
       padding-top: 40px;
@@ -35,7 +35,7 @@ div#testimonial-slider-control {
     overflow: scroll;
 
     @include breakpoint(tablet-landscape-up){
-      padding-bottom: 80px;
+      padding-bottom: 120px;
     }
   }
 
@@ -119,6 +119,11 @@ div#testimonial-slider-control {
 .brand-testimonials, .creator-testimonials {
   position: relative;
   background-color: #f8f8f8;
+
+  .inner-width {
+    max-width: 1424px;
+    margin: auto;
+  }
 }
 
 .creator-testimonials {

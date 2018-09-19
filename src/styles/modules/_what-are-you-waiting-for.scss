@@ -1,5 +1,9 @@
 .what-are-you-waiting-for {
   position: relative;
+  @include breakpoint(tablet-landscape-up){
+    margin-bottom: 180px;
+    margin-top: 180px;
+  }
   .image-with-handle  {
     div.featured-image-text {
       bottom: 20px;

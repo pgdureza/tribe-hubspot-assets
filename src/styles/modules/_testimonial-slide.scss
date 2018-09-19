@@ -68,7 +68,7 @@
 
   .featured-image-wrapper {
     display: none;
-
+    transform: translate(-5px, 5px);
     font-size: 8px;
     font-weight: 300;
     font-style: normal;
@@ -77,6 +77,7 @@
     letter-spacing: 1px;
     text-align: center;
     color: #7a7a7a;
+    @include cubicBezier();
 
     @include breakpoint(tablet-landscape-up){
       display: block;
@@ -111,4 +112,13 @@
     }
   }
   
+}
+
+.slick-current {
+  .testimonial-slide {
+    .featured-image-wrapper {
+      transform: none;
+      transition-delay: 0.5s;
+    }
+  }
 }
