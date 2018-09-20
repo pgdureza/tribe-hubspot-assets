@@ -1,13 +1,9 @@
 .animated-counter {
 
-  $small-movement-when-animating: 2px;
-
-  height: 100px;
   margin: 60px 0;
   max-width: 295px;
 
   @include breakpoint(tablet-landscape-up){
-    min-width: 200px;
     margin-top: 100px;
   }
   p {
@@ -26,64 +22,13 @@
       font-size: 12px;
       line-height: 1.67;
       width: 100%;
-    }
-  }
-
-  .counter {
-    .mask-track {
-      position: relative;
-      .mask-skew {
-        width: 100%;
-        display: inline-block;
-        transform: skew(20deg) translate(0);  
-        overflow: hidden;
-        padding-left: 5px;
-        padding-right: 5px;
-        box-sizing: content-box;
-        .mask {
-          display: block;
-        }
-        &.animating {
-          transition: 0.3s linear transform;
-          .mask {
-            transition: 0.3s linear transform;
-          }
-        }
-        &.current {
-          .mask {
-            transform: skew(-20deg) translate(0);
-          }
-          &.animating {
-            transform: skew(20deg) translate(calc(100%));
-            .mask {
-              transform: skew(-20deg) translate(calc(-100% + #{$small-movement-when-animating}));
-            }
-          }
-        }
-        &.next {
-          position: absolute;
-          left: 0;
-          top: 0;
-          transform: skew(20deg) translate(-100%);
-          .mask {
-            transform: skew(-20deg) translate(calc(100% - #{$small-movement-when-animating}));
-          }
-          &:not(.animating) { 
-            opacity: 0;
-          }
-          &.animating { 
-            transform: skew(20deg) translate(0);
-            .mask {
-              transform: skew(-20deg) translate(0);
-            }
-          }
-        }
-      }
+      position: absolute; // to go in front of the video
     }
   }
 
   .value {
     margin-top: -81px;
+    min-height: 38px;
     font-size: 32px;
     font-weight: 400;
     font-style: normal;
@@ -91,6 +36,7 @@
     line-height: 1;
     letter-spacing: 1.5px;
     color: #3b373a;
+    white-space: nowrap;
 
     display: flex;
     justify-content: flex-start;
@@ -100,6 +46,7 @@
       font-weight: 400;
       line-height: 0.83;
       letter-spacing: 1.8px;
+      min-height: 48px;
     }
   }
 

@@ -42,6 +42,8 @@ var utilFunctions = {
             suffix = "k"
           } else if (commaSeparated.length == 3){
             suffix = "M"
+          } else if (commaSeparated.length == 4){
+            suffix = "B"
           }
           
           number = commaSeparated[0] + suffix;

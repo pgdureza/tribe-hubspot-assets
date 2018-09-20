@@ -1,62 +1,39 @@
 // animated counter
-$('.animated-counter').each(function () {
-  var el = this;
-  var $counter = $(el).find('.counter');
-  var showCurrency = $counter.data('show-currency');
-  var shorten = $counter.data('shorten');
-  var startingPoint = $counter.data('value').toString().replace(/,/g, '');
+$('.animated-counter .counter').each(function () {
+  var $el = $(this);
+  var counterValue = $el.data('value').toString().replace(/,/g, '');
+  $el.html("<div class='displayed-value'>");
 
-  var suffix = "";
-  if (shorten){
-    // add commas then split
-    var commaSeparated = Math.ceil(parseInt(startingPoint)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",").split(",");
-    if (commaSeparated.length == 2){
+  if (typeof $el.attr('data-currency') != 'undefined'){
+    $el.before(resources.country.currency_symbol);
+  }
+
+  if (typeof $el.attr('data-shorten') != 'undefined'){
+    var valWithCommas = Math.ceil(parseInt(counterValue)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    var segments = valWithCommas.split(',');
+    if (segments.length == 2){
       suffix = "k"
-    } else if (commaSeparated.length == 3){
+    } else if (segments.length == 3){
       suffix = "M"
+    } else if (segments.length == 4){
+      suffix = "B"
     }
-    startingPoint = commaSeparated[0];
-  }
-
-  function triggerAnimation(counter, transitionSpeed){
-    $(el).find(".mask-skew.current").addClass('animating');
-    $(el).find(".mask-skew.next").addClass('animating');
-    setTimeout(function(){
-      // remove animation related classes and reset the 'next' mask to be current
-      $(el).find(".mask-skew.current").remove();
-      $(el).find(".mask-skew.next").removeClass('next').removeClass('animating').addClass('current');
-      createNextElement(counter, suffix, "next");
-      // generate new 'next' mask
-    }, transitionSpeed)
-  }
-
-  function createNextElement(counter, suffix, className){
-    var content = Math.ceil(parseInt(counter)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + suffix;
-    if (showCurrency){ // probably add handling for non global source in the future 
-      content = resources.country.currency_symbol + content ;
+    // shorten starting point
+    counterValue = segments[0];
+    if (suffix){
+      $el.after(suffix);
     }
-    $(el).find(".mask-track").append('<div class="mask-skew ' + className + '"><div class="mask">' + content + '</div></div>');
   }
 
-  function animateCounter(start, end, tickSpeed, transitionSpeed){
-    var counter = start;
-    // generate initial "current" and 'next' elements
-    $(el).find(".mask-skew.current").remove(); // remove initial blank placeholder
-    createNextElement(counter, suffix, "current")
-    counter++;
-    createNextElement(counter, suffix, "next")
-    var tickInterval = setInterval(function(){
-      counter++;
-      triggerAnimation(counter, transitionSpeed)
-      if (counter > end){
-        clearInterval(tickInterval);
-      }
-    }, tickSpeed)
-  }
-
-  $(el).appear(function(){
-    animateCounter((startingPoint - 10), startingPoint, 1000, 300);
+  var od = new Odometer({
+    el: $el.find('.displayed-value')[0],
+    value: counterValue - 50,
+    format: '(,ddd)',
+    theme: 'default'
   });
+  
+  $el.appear(function(){
+    od.update(counterValue);
+  }); 
 
 }); 
-

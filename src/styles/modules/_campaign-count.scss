@@ -31,7 +31,7 @@
     margin-top: 2px;
     margin-bottom: 8px;
     @include breakpoint(tablet-landscape-up){
-      margin-top: 8px;
+      margin-top: 20px;
       margin-bottom: 16px;
       font-size: getVW(24);
       line-height: 1.33;
