@@ -18,7 +18,7 @@ h1 {
   padding-bottom: 20px;
   margin: 0;
   @include breakpoint(tablet-landscape-up){
-    font-size: 3.33vw;
+    font-size: getVW(48);
     line-height: 1.17;
     text-align: center;
     padding-top: 100px;
@@ -36,7 +36,7 @@ h2 {
   color: #3b373a;
 
   @include breakpoint(tablet-landscape-up){
-    font-size: 3.33vw;
+    font-size: getVW(48);
     line-height: 1.17;
     letter-spacing: normal;
   }
@@ -52,7 +52,7 @@ h3 {
   color: #3b373a;
   
   @include breakpoint(tablet-landscape-up){
-    font-size: 2.22vw;
+    font-size: getVW(34);
     line-height: 1.5;
     letter-spacing: normal;
   }
@@ -69,7 +69,7 @@ h4 {
   text-transform: uppercase;
 
   @include breakpoint(tablet-landscape-up){
-    font-size: 1.11vw;
+    font-size: getVW(16);
   }
 }
 
@@ -82,7 +82,7 @@ h5 {
   letter-spacing: normal;
   color: #3b373a;
   @include breakpoint(tablet-landscape-up){
-    font-size: 1.25vw;
+    font-size: getVW(18);
     line-height: 1.78;
   }
 }

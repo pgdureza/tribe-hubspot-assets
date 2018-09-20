@@ -122,7 +122,9 @@ div#testimonial-slider-control {
 
   .inner-width {
     max-width: 1424px;
-    margin: auto;
+    @include breakpoint(big-desktop-up){
+      margin: auto;
+    }
   }
 }
 

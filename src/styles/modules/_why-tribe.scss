@@ -1,5 +1,9 @@
 .why-tribe {
 
+  h2 {
+    @extend h4;
+  }
+
   #hs_cos_wrapper_information-cards {
     > div {
       &:last-of-type{
@@ -46,7 +50,7 @@
     margin: 16px 0 30px;
 
     @include breakpoint(tablet-landscape-up){
-      font-size: 1.25vw;
+      font-size: getVW(18);
       line-height: 1.78;
       letter-spacing: normal;
       margin-bottom: 40px;

@@ -22,7 +22,7 @@
 
     @include breakpoint(tablet-landscape-up){
       max-width: 27.7vw;
-      font-size: 1.25vw;
+      font-size: getVW(18);
       line-height: 1.78;
       margin-top: 30px;
       margin-bottom: 30px;

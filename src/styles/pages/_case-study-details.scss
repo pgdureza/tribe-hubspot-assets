@@ -16,7 +16,7 @@
     video {
       height: 375px;
       width: 100%;
-      display: block;
+      display: block !important;
     }
   }
   
@@ -27,14 +27,14 @@
     margin-bottom: 0;
 
     .image-gallery-spacer {
-      width: 525px;
+      width: calc(100% - 525px);
     }
 
     .slick-image-slider-wrapper {
       position: absolute;
       left: 0;
       top: 0;
-      width: 525px;
+      width: calc(100% - 525px);
       img {
         height: 80vh;
         max-height: 715px;
@@ -48,7 +48,7 @@
     }
 
     .case-study-details-section {
-      width: calc(100% - 525px);
+      width: 525px;
       height: 80vh;
       max-height: 715px;
     }

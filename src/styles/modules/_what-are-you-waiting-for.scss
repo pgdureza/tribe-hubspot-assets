@@ -34,7 +34,7 @@
       letter-spacing: normal;
       color: #3b373a;
       @include breakpoint(tablet-landscape-up){
-        font-size: 2.77vw;
+        font-size: getVW(40);
       }
     }
   
@@ -48,7 +48,7 @@
       letter-spacing: normal;
       color: #7a7a7a;
       @include breakpoint(tablet-landscape-up){
-        font-size: 1.25vw;
+        font-size: getVW(18);
         line-height: 1.78;
         margin-top: 16px;
         margin-bottom: 48px;

@@ -19,7 +19,7 @@ div#page-form-main-content {
       color: #3b373a;
       margin: 0 0 24px;
       @include breakpoint(tablet-landscape-up){
-        font-size: 1.67vw;
+        font-size: getVW(24);
         line-height: 1.67;
       }
     }
@@ -60,7 +60,7 @@ div#page-form-main-content {
       }
       margin-bottom: 30px;
       @include breakpoint(tablet-landscape-up){
-        font-size: 1.67vw;
+        font-size: getVW(24);
         line-height: 1.67;
         order: 1;
         margin-bottom: 40px;

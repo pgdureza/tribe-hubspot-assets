@@ -19,7 +19,7 @@ function initSocialSharing(){
 }
 
 function initScrollHandler(){
-  $(".case-study-details-section").scroll($.throttle(500, function () {
+  $(".case-study-details-section").off().scroll($.throttle(500, function () {
     if ($(this).scrollTop() >= $(".mobile-cover-photo").height()){
       $(".close-modal").addClass("invert");
       $(".case-study-social-sharing-wrapper").addClass("gray");

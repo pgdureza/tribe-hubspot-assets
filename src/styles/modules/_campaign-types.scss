@@ -1,0 +1,112 @@
+section#campaign-types-section {
+  border-top: 1px solid #e4e4e4;
+  .inner-width {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    @include breakpoint(tablet-landscape-up){
+      padding-bottom: 160px;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 300;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.17;
+      letter-spacing: normal;
+      color: #3b373a;
+      width: 100%;
+      text-align: center;
+      margin: 0;
+
+      @include breakpoint(tablet-landscape-up){
+        font-size: getVW(32);
+        line-height: 1.5;
+        margin-bottom: 80px;
+      }
+    }
+  
+    .column {
+      text-align: center;
+      width: 100%;
+      padding: 40px 0;
+      text-align: center;
+      width: 100%;
+      
+      &:not(:first-of-type){
+        border-top: 1px solid #e4e4e4;
+        @include breakpoint(tablet-landscape-up){
+          border-top: none;
+          border-left: 1px solid #e4e4e4;
+        }
+      }
+      @include breakpoint(tablet-landscape-up){
+        width: 50%;
+        padding: 0 getVW(115);
+      }
+      img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        border-radius: 100%;
+        max-width: 160px;
+        max-height: 160px;
+        @include breakpoint(tablet-landscape-up){
+          min-width: 160px;
+          min-height: 160px;
+          max-width: getVW(160);
+          max-height: getVW(160);
+        }
+      }
+      h3 {
+        @extend h4;
+        color: #3b373a;
+        margin-top: 35px;
+        margin-bottom: 12px;
+      }
+      p {
+        font-size: 16px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: center;
+        color: #7a7a7a;
+        margin-top: 12px;
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+  
+        @include breakpoint(tablet-landscape-up){
+          font-size: getVW(18);
+          line-height: 1.78;
+          max-width: none;
+        }
+        
+      }
+  
+      .hs-cta-wrapper {
+        a {
+          display: inline-block;
+          margin-top: 30px;
+
+          &.cta-secondary { // override the style of cta-secondary
+            background-color: #f848c4;
+            color: #fff;
+            border: solid 1px #f848c4;
+            &:hover {
+              background-color: #FA81D6;
+              border: solid 1px #FA81D6;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

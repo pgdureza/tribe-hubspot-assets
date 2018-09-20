@@ -52,7 +52,7 @@
 
     @include breakpoint(tablet-landscape-up){
       margin-bottom: 64px;
-      font-size: 16px;
+      font-size: getVW(16);
       line-height: normal;
     }    
   }

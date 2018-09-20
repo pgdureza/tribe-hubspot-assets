@@ -46,7 +46,7 @@
     padding: 0;
     justify-content: center;
     flex-direction: column;
-    font-size: 1.67vw;
+    font-size: getVW(24);
 
     .text {
       width: 100%;

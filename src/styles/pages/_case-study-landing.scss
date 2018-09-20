@@ -17,11 +17,11 @@
       margin-left: auto;
 
       @include breakpoint(tablet-landscape-up){
-        max-width: 56.94vw;
+        max-width: getVW(820);
         padding: 100px 0 50px 0;
         margin-left: auto;
         margin-right: auto;
-        font-size: 2.22vw;
+        font-size: getVW(34);
         line-height: 1.5;
       }
       strong {

@@ -26,7 +26,7 @@
       color: #3b373a;
 
       @include breakpoint(tablet-landscape-up){
-        font-size: 1.67vw;
+        font-size: getVW(24);
         line-height: 1.33;
         padding: 30px 0;
       }

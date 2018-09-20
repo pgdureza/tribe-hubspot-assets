@@ -63,3 +63,7 @@
     }
   }
 }
+
+@function getVW($target) { 
+  @return #{$target/$reference-width * 100}vw;
+}
