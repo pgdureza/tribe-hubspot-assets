@@ -19,6 +19,7 @@ main#main-content {
     outline: none;
     width: 100%;
     display: block;
+    appearance: none;
 
     &:focus, &.active {
       border-color: #7a7a7a;

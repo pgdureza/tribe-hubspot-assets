@@ -120,12 +120,14 @@
     .hs_email {
 
       .input {
+        
         display: flex;
         align-items: center;
         justify-content: center;
         outline: none;
 
         input {
+          appearance: none;
           width: 100%;
           border-radius: #{$rounded-corner} 0 0 #{$rounded-corner};
           border: solid 1px #e4e4e4;
