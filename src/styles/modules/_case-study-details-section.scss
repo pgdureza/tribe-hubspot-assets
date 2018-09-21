@@ -3,6 +3,7 @@
   
   height: 100vh;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   padding-bottom: 50px;
   @include breakpoint(tablet-landscape-up){
     padding: 40px 0 40px;

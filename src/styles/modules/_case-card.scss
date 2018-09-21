@@ -53,7 +53,10 @@
     img {
       height: auto;
       max-height: 30%;
-      width: 6.9vw;
+      width: 109px;
+      @include breakpoint(tablet-landscape-up){
+        width: 6.9vw;
+      }
       object-fit: contain;
       @include cubicBezier();
     }

@@ -23,7 +23,7 @@
   z-index: 99;
 
   img {
-    filter: brightness(1) invert(1);
+    filter: brightness(100);
     @include breakpoint(tablet-landscape-up){
       filter: none;
     }
