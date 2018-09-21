@@ -1,21 +1,15 @@
-var currentIndex = 0;
+function getCurrentOpenCaseStudyLink(){
+  var currentDetailsCaseId = $("[data-details-case-id]").data('details-case-id');
+  return $("[data-case-id='" + currentDetailsCaseId + "']");
+}
+
 function initModalNextPrev(){
 
-  // get current index
-  $("[data-cs-modal]").each(function(index){
-    var this_pathname = $(this).attr('href').split("?")[0];
-    if (this_pathname == window.location.pathname){
-      currentIndex = index;
-    }
-  });
-
-  var previous = $($("[data-cs-modal]")[currentIndex - 1]);
-  if(previous.length > 0){
+  var caseLink = getCurrentOpenCaseStudyLink();
+  if (caseLink.prev().length > 0){
     $(".popup-modal-container .prev-case").addClass('enabled');
   }
-
-  var next = $($("[data-cs-modal]")[currentIndex + 1]);
-  if(next.length > 0){
+  if (caseLink.next().length > 0){
     $(".popup-modal-container .next-case").addClass('enabled');
   }
 
@@ -61,7 +55,7 @@ $(document).on('click', '[data-cs-modal]', function(e){
 initSocialSharing();
 
 function requestCaseStudyDetails(path){
-  var request_url = window.location.origin + '/casestudies/' + path + "?details=true";
+  var request_url = window.location.origin + '/case-study/' + path + "?details=true";
   // special rule to change related to random filtered card
 
   // check if the filter form has any values
@@ -77,18 +71,18 @@ function requestCaseStudyDetails(path){
     // get random cards
     var randomIndexes = [];
     do {
-      var randomIndex = Math.floor(Math.random() * $(".case-card[data-case-id]").length);
+      var randomIndex = Math.floor(Math.random() * $("#case-study-grid .case-card[data-case-id]").length);
       if (randomIndexes.indexOf(randomIndex) < 0){
         randomIndexes.push(randomIndex);
       }
       // case card less 2 because it is possible that we will send itself as a related case
-    } while (randomIndexes.length < 4 && randomIndexes.length < (($(".case-card[data-case-id]").length - 2)));
+    } while (randomIndexes.length < 4 && randomIndexes.length <= ($("#case-study-grid .case-card[data-case-id]").length - 1));
 
 
     var randomCards = [];
     var selectedCard = $("[data-hash='" + window.location.hash + "']");
     for (var i in randomIndexes){
-      var id = $(".case-card[data-case-id]").eq(randomIndexes[i]).data('case-id');
+      var id = $("#case-study-grid .case-card[data-case-id]").eq(randomIndexes[i]).data('case-id');
       if (id && id != selectedCard.data('case-id')){
         randomCards.push(id);
       }
@@ -112,16 +106,10 @@ $(document)
   })
   .on('click', 'a.next-case', function(e){
     e.preventDefault();
-    var next = $($("[data-cs-modal]")[currentIndex + 1]);
-    if(next.length > 0){
-        next.trigger('click')
-    }
+    getCurrentOpenCaseStudyLink().next().trigger('click');
   })
   .on('click', 'a.prev-case', function(e){
     e.preventDefault();
-    var previous = $($("[data-cs-modal]")[currentIndex - 1]);
-    if(previous.length > 0){
-      previous.trigger('click')
-    }
+    getCurrentOpenCaseStudyLink().prev().trigger('click');
   })
 

@@ -10,7 +10,7 @@
     list-style: none;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    padding: 0 $mobile-gutter;
     width: 100%;
     bottom: -22px;
     margin: 0;
@@ -71,6 +71,10 @@
     box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.12);
 
     @include cubicBezier();
+
+    &.slick-disabled {
+      display: none !important;
+    }
 
     &:hover {
       opacity: 1;

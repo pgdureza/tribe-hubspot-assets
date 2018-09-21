@@ -29,6 +29,9 @@ body.creator {
     justify-content: flex-start;
 
     > .hs_cos_wrapper {
+      @include breakpoint(tablet-landscape-up){
+        min-width: 205px;
+      }
       .value {
         font-size: 32px;
         font-weight: 400;

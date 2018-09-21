@@ -17,21 +17,27 @@ header.mobile-header {
       display: block;
     }
   }
+}
 
-  .hamburger  {
-    position: fixed;
-    right: $mobile-gutter - 3;
-    top: 15px;
-    z-index: 9999;
-    cursor: pointer;
-    .line{
-      width: 25px;
-      height: 2px;
-      background-color: #3b373a;
-      display: block;
-      margin: 6px auto;
-      transition: all 0.3s ease-in-out;
-    }
+.hamburger-menu {
+  @include breakpoint(tablet-landscape-up){
+    display: none;
+  }
+}
+
+.hamburger  {
+  position: fixed;
+  right: $mobile-gutter - 3;
+  top: 15px;
+  z-index: 9999;
+  cursor: pointer;
+  .line{
+    width: 25px;
+    height: 2px;
+    background-color: #3b373a;
+    display: block;
+    margin: 6px auto;
+    transition: all 0.3s ease-in-out;
   }
 }
 
@@ -67,6 +73,7 @@ body:not(.home){
 
 // open mobile drawer state
 body.mobile-menu-open {
+  overflow: hidden; // disables scrolling while menu is open
   .hamburger {
     .line:nth-child(2){
       opacity: 0;

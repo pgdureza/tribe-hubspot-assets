@@ -4,7 +4,7 @@ function initSlick(){
     arrows: true,
     slidesToShow: 1,
     dots: true,
-    infinite: true,
+    infinite: false,
     fade: true,
     speed: 500,
   });
