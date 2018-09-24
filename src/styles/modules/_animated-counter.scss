@@ -1,5 +1,9 @@
 .animated-counter {
 
+  .prefix, .suffix {
+    margin-top: 1.4px;
+  }
+
   margin: 60px 0;
   max-width: 295px;
 
@@ -15,8 +19,9 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-top: 6px;
-    width: 90px;
+    width: 200px;
     color: #3b373a;
+    position: relative;
 
     @include breakpoint(tablet-landscape-up){
       font-size: 12px;
@@ -52,11 +57,16 @@
   }
 
   .background-circle {
+    position: relative;
     width: 100px;
     height: 100px;
     background-color: #ffeefa; // default color, but can be overriden in module
     border-radius: 200px;
     margin-left: 48px;
+    
+    .value {
+      position: relative;
+    }
 
     @include breakpoint(tablet-landscape-up){
       width: 120px;

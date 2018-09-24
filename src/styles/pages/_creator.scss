@@ -3,9 +3,18 @@ body.creator {
 
   // DOWNLOAD CTS OVERRIDES
   .download-cta {
+    max-width: 350px;
+    > span {
+      width: 50%;
+    }
     .hs-cta-wrapper:first-of-type {
       a.cta_button:not(.cta-secondary):not(.cta-primary) {
-        padding-right: 25px;
+        margin-right: 6%;
+      }
+    }
+    .hs-cta-wrapper:last-of-type {
+      a.cta_button:not(.cta-secondary):not(.cta-primary) {
+        margin-left: 6%;
       }
     }
     a.cta_button:not(.cta-secondary):not(.cta-primary) {
@@ -28,6 +37,13 @@ body.creator {
     align-items: center;
     justify-content: flex-start;
 
+    .animated-counter p {
+      width: 90px;
+      @include breakpoint(tablet-landscape-up){
+        width: 100%;
+      }
+    }
+
     > .hs_cos_wrapper {
       @include breakpoint(tablet-landscape-up){
         min-width: 205px;
@@ -40,6 +56,7 @@ body.creator {
         line-height: 1;
         letter-spacing: 1.5px;
         color: #3b373a;
+        position: relative;
 
         @include breakpoint(tablet-landscape-up){
           font-size: 40px;
@@ -47,9 +64,18 @@ body.creator {
       }
 
       &:first-of-type {
+        .value {
+          @include breakpoint(tablet-landscape-up){
+            margin-top: -94px;
+          }
+        }
         .background-circle {
           width: 100px;
           height: 100px;
+          @include breakpoint(tablet-landscape-up){
+            width: 140px;
+            height: 140px;
+          }
         }
         
 
@@ -58,9 +84,13 @@ body.creator {
       &:last-of-type {
         .value {
           margin-top: -70px;
+          @include breakpoint(tablet-landscape-up){
+            margin-top: -94px;
+          }
         }
         .animated-counter {
           padding-top: 10px;
+          padding-left: 10%;
           @include breakpoint(tablet-landscape-up){
             padding-left: 25px;
           }
@@ -68,6 +98,10 @@ body.creator {
         .background-circle {
           width: 80px;
           height: 80px;
+          @include breakpoint(tablet-landscape-up){
+            width: 128px;
+            height: 128px;
+          }
         }
       }
     }
@@ -92,18 +126,29 @@ body.creator {
 
       @include breakpoint(tablet-landscape-up){
         margin: 0;
-        font-size: 32px;
+        font-size: getVW(32);
         line-height: 1.5;
+        margin-bottom: 90px;
       }
     }
   }
 
   @include breakpoint(tablet-landscape-up){
-    .why-tribe .column.cards {
-      width: 75%;
-    }
     .why-tribe #hs_cos_wrapper_information-cards>div {
       width: calc(33% - 10px);
+    }
+    .why-tribe {
+      .column {
+        h3 {
+          font-size: getVW(32);
+        }
+        &.cta {
+          width: 22%;
+        }
+        &.cards {
+          width: 75%;
+        }
+      }
     }
   }
 
@@ -121,6 +166,90 @@ body.creator {
       font-size: 18px;
       line-height: 1.78;
     }
+  }
+
+  .what-are-your-posts-worth {
+    text-align: center;
+
+    padding: 60px 0 80px 0;
+    @include breakpoint(tablet-landscape-up){
+      padding: 128px 0 160px 0;
+    }
+    border-top: 1px solid #e4e4e4;
+
+    h2 {
+      @extend h3;
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+
+    p {
+      margin-top: 24px;
+      margin-bottom: 60px;
+    }
+
+    .posts-table-wrapper {
+      max-width: 820px;
+      margin: auto;
+      padding: 60px 8.6%;
+      border-radius: 4px;
+      box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.06);
+      background-color: #ffffff;
+      border: solid 1px #e4e4e4;
+      table {
+        border-collapse: collapse;
+        tr:nth-child(odd) {
+          background: #f8f8f8;
+        }
+        width: 100%;
+        td {
+          padding: 14px 0;
+        }
+        th {
+          vertical-align: top;
+          background: #fff;
+          &.header {
+            padding: 0;
+            font-size: 24px;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.33;
+            letter-spacing: normal;
+            text-align: center;
+            color: #3b373a;
+            vertical-align: top;
+          }
+          svg {
+            height: 14px;
+            width: 20px;
+          }
+          small {
+            font-size: 14px;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.71;
+            letter-spacing: normal;
+            color: #7a7a7a;
+            display: block;
+            margin: 8px 0;
+          }
+          .pink-text {
+            font-size: 14px;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.71;
+            letter-spacing: normal;
+            text-align: center;
+            color: #f848c4;
+            margin: 6px 0 26px;
+          }
+        }
+      }
+    }
+    
   }
 
 }

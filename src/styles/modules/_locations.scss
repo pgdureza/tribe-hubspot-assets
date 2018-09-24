@@ -30,6 +30,10 @@ div#hs_cos_wrapper_footer-locations {
     justify-content: flex-start;
     margin-bottom: 34px;
     text-transform: uppercase;
+
+    @include breakpoint(tablet-landscape-up){
+      align-items: flex-start;
+    }
   }
 
 

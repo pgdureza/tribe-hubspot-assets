@@ -58,9 +58,18 @@ body.pricing {
         text-align: center;
         margin-top: 60px;
         margin-bottom: 30px;
+        font-size: 12px;
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.67;
+        letter-spacing: 3px;
+        text-align: center;
+        color: #f848c4;
         @include breakpoint(tablet-landscape-up){
           margin-top: 98px;
           margin-bottom: 16px;
+          font-size: getVW(16);
         }
       }
 
@@ -175,7 +184,7 @@ body.pricing {
                 width: 100%;
                 height: 100%;
                 border: 1px solid #e4e4e4;
-                padding: 20px;
+                padding: 20px 6px;
                 border-radius: 5px;
                 justify-content: center;
                 align-items: center;

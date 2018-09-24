@@ -39,7 +39,7 @@
 
   &:after {
     @include cubicBezierTransformOnly();
-    right: #{$offset  + 6}px;
+    right: #{$offset  + 5}px;
     transform: rotate(45deg);
   }
 
@@ -52,7 +52,7 @@
   &.active {
     &:after {
       @include cubicBezierTransformOnly();
-      right: #{$offset + 6}px;
+      right: #{$offset + 5}px;
       transform: rotate(-45deg);
     }
   

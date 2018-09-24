@@ -5,7 +5,7 @@ $('.animated-counter .counter').each(function () {
   $el.html("<div class='displayed-value'>");
 
   if (typeof $el.attr('data-currency') != 'undefined'){
-    $el.before(resources.country.currency_symbol);
+    $el.before("<div class='prefix'>" + resources.country.currency_symbol) + "</div>";
   }
 
   if (typeof $el.attr('data-shorten') != 'undefined'){
@@ -21,7 +21,7 @@ $('.animated-counter .counter').each(function () {
     // shorten starting point
     counterValue = segments[0];
     if (suffix){
-      $el.after(suffix);
+      $el.after("<div class='suffix'>"+suffix+"</div>");
     }
   }
 

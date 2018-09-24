@@ -23,12 +23,33 @@
     margin-top: 0;
 
     @include breakpoint(tablet-landscape-up){
-      font-size: 24px;
+      font-size: getVW(24);
       line-height: 1.33;
       margin-top: 0;
-      margin-bottom: 0;
-      min-height: 62px;
+      margin-bottom: 14px;
     }
+  }
+
+  p {
+    margin-top: 16px;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #7a7a7a;
+
+    @include breakpoint(tablet-landscape-up){
+      margin-top: 14px;
+      margin-bottom: 40px;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.78;
+    }
+    
   }
 
   .values {

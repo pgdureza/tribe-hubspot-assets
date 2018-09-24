@@ -49,7 +49,9 @@ span.last-update {
   }
 
   table {
-    padding-left: 75px;
+    @include breakpoint(tablet-landscape-up){
+      padding-left: 75px;
+    }
   }
 
   h2 {
@@ -62,6 +64,7 @@ span.last-update {
     line-height: 1.78;
     letter-spacing: normal;
     color: #3b373a;
+    text-transform: uppercase;
   }
 
   strong {

@@ -19,12 +19,19 @@ header.main-header {
   
     section.navigation {
       > span { // logo image wrapper
-        padding-right: 45px;
+        padding-right: 20px;
+        @include breakpoint(desktop-up){
+          padding-right: 45px;
+        }
         img {
-          max-width: 135px;
+          max-width: 115px;
           height: 42px;
           margin-top: -22px;
-          min-width: 135px;
+          min-width: 115px;
+          @include breakpoint(desktop-up){
+            max-width: 135px;
+            min-width: 135px;
+          }
         }
       }
       ul {
@@ -33,10 +40,7 @@ header.main-header {
   
         li {
           a {
-            font-size: 12px;
-            @include breakpoint(desktop-up){
-              font-size: 14px;          
-            }
+            font-size: 16px;
             font-weight: 300;
             font-style: normal;
             font-stretch: normal;
@@ -64,7 +68,7 @@ header.main-header {
         display: block;
         padding-right: 30px;
         text-decoration: none;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 400;
         font-style: normal;
         font-stretch: normal;
@@ -86,7 +90,10 @@ nav.header-menu ul {
 }
 
 nav.header-menu ul li {
-	padding-right: 30px;
+  padding-right: 20px;
+  @include breakpoint(desktop-up){
+    padding-right: 45px;
+  }
 }
 
 nav.header-menu a {

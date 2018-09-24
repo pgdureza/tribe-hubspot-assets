@@ -17,9 +17,9 @@ $(document).ready(function(){
     values.push("<option value='' disabled selected>" + initialValue + "</option>");
     $(".hs_who_do_you_need_2 input").each(function(){
       if ($(this).prop('checked')){
-        values.push("<option selected value='" + $(this).val() + "'>" + $(this).val() + "</option>");
+        values.push("<option selected value='" + $(this).val() + "'>" + $(this).parent().text() + "</option>");
       } else {
-        values.push("<option value='" + $(this).val() + "'>" + $(this).val() + "</option>");
+        values.push("<option value='" + $(this).val() + "'>" + $(this).parent().text() + "</option>");
       }
     });
 
