@@ -78,6 +78,12 @@
           letter-spacing: normal;
           text-align: center;
           color: #3b373a;
+
+          width: 80%;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          margin: auto;
         }
         &.type {
           font-size: 10px;
