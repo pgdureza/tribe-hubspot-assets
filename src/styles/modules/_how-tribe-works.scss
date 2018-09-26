@@ -50,7 +50,9 @@
 
     .column.video {
       width: 58.33%;
-      padding: 30px 0;
+      &:not(.no-padding){
+        padding: 30px 0;
+      }
 
       .wistia-video {
         margin-left: -60px;

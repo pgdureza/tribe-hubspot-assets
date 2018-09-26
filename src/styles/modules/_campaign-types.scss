@@ -6,6 +6,7 @@ section#campaign-types-section {
     padding-top: 100px;
     padding-bottom: 80px;
     @include breakpoint(tablet-landscape-up){
+      padding-top: 120px;
       padding-bottom: 160px;
     }
 
@@ -34,6 +35,10 @@ section#campaign-types-section {
       padding: 40px 0;
       text-align: center;
       width: 100%;
+
+      > span {
+        display: block; // image module wrapper
+      }
       
       &:not(:first-of-type){
         border-top: 1px solid #e4e4e4;
@@ -49,15 +54,14 @@ section#campaign-types-section {
       img {
         width: 100% !important;
         height: 100% !important;
-        object-fit: cover;
-        border-radius: 100%;
-        max-width: 160px;
-        max-height: 160px;
+        object-fit: contain;
+        max-width: 220px;
+        max-height: 220px;
         @include breakpoint(tablet-landscape-up){
-          min-width: 160px;
-          min-height: 160px;
-          max-width: getVW(160);
-          max-height: getVW(160);
+          min-width: 220px;
+          min-height: 220px;
+          max-width: getVW(220);
+          max-height: getVW(220);
         }
       }
       h3 {
@@ -90,6 +94,7 @@ section#campaign-types-section {
       }
   
       .hs-cta-wrapper {
+
         a {
           display: inline-block;
           margin-top: 30px;

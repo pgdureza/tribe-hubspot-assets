@@ -1,0 +1,42 @@
+section.home-copy-section {
+  background: #f8f8f8;
+  padding-top: 42px;
+  padding-bottom: 60px;
+  @include breakpoint(tablet-landscape-up){
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+  h2 {
+    font-size: 32px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #3b373a;
+    margin: 0 auto 42px;
+    @include breakpoint(tablet-landscape-up){
+      margin-bottom: 34px;
+      font-size: getVW(32);
+    }
+  }
+
+  p {
+    margin: 42px auto 0;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.78;
+    letter-spacing: normal;
+    text-align: center;
+    color: #7a7a7a;
+
+    @include breakpoint(tablet-landscape-up){
+      margin-top: 34px;
+      font-size: getVW(18);
+      max-width: getVW(820);
+    }
+  }
+}

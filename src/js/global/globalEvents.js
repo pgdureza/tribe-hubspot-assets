@@ -89,8 +89,11 @@ $(document).ready(function(){
 
 });
 
-$(window).load(function(){
-    // appends newsletter arrow
-    var arrowImage = '<img src="https://cdn2.hubspot.net/hubfs/1609563/TRIBE%20Website%202018%20Assets/Global%20Assets/Right-1.svg" />';
+// create faux listener for when the newsletter form is loaded
+var waitingForNewsletterForm = setInterval(function(){
+  if ($("#hs_form_target_newsletter form").length >= 1){
+    clearInterval(waitingForNewsletterForm);
+    var arrowImage = '<img src="https://www.tribegroup.co/hubfs/TRIBE-Website-2018-Assets/Global-Assets/Right-1.svg" />';
     $(".newsletter-wrapper .hs_email .input").append('<submit ><span>SUBSCRIBE</span><span class="arrow-button"> ' + arrowImage + ' </span></submit>');
-});
+  }
+}, 100);

@@ -5,5 +5,25 @@
 @import "modules/home-video";
 @import "modules/image-with-handle";
 @import "modules/featured-image-slider";
+@import "modules/home-campaign-types";
+@import "modules/how-tribe-works";
+@import "modules/home-copy-section";
+@import "modules/download-cta";
 
+// campaigns & counting
+@import "modules/animated-counter";
+@import "modules/campaign-count";
+@import "modules/case-card";
+@import "modules/case-cards";
+@import "modules/view-more-link";
+
+// case study details
+@import "modules/slick-image-slider";
+@import "modules/case-study-social-sharing";
+@import "modules/case-study-details-section";
+@import "modules/case-study-stats";
+@import "modules/related-case-studies";
+@import "modules/modal";
+
+@import "pages/case-study-details";
 @import "pages/home";

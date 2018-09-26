@@ -1,15 +1,23 @@
-function getCurrentOpenCaseStudyLink(){
+function getCurrentOpenCaseStudyLinkIndex(){
   var currentDetailsCaseId = $("[data-details-case-id]").data('details-case-id');
-  return $("[data-case-id='" + currentDetailsCaseId + "']");
+  var linkIndex = 0;
+  $("[data-cs-modal-navigatable]").each(function(index){
+    if ($(this).data('case-id') == currentDetailsCaseId){
+      linkIndex = index
+    }
+  })
+  return linkIndex;
 }
 
 function initModalNextPrev(){
 
-  var caseLink = getCurrentOpenCaseStudyLink();
-  if (caseLink.prev().length > 0){
+  var caseLinkIndex = getCurrentOpenCaseStudyLinkIndex();
+
+  var total_navigatable = $("[data-cs-modal-navigatable]").length;
+  if (caseLinkIndex > 0){
     $(".popup-modal-container .prev-case").addClass('enabled');
   }
-  if (caseLink.next().length > 0){
+  if (caseLinkIndex < total_navigatable - 1){
     $(".popup-modal-container .next-case").addClass('enabled');
   }
 
@@ -29,9 +37,9 @@ function initDetailsModal(data){
   // using setInterval since .modal does not have a callback handler
   var hasModalClass = setInterval(function(){
     if ($(".popup-modal-container").parent().hasClass('jquery-modal')){
+      clearInterval(hasModalClass);
       initSlick();
       initScrollHandler();
-      clearInterval(hasModalClass);
 
       // show next/previous buttons
       initModalNextPrev();
@@ -104,12 +112,14 @@ $(document)
   .on('click', 'a.close-modal', function(e){
     window.history.pushState({href: window.resources.origin}, '', window.resources.origin);
   })
-  .on('click', 'a.next-case', function(e){
+  .on('click', 'a.next-case', $.throttle(1000, function(e){
     e.preventDefault();
-    getCurrentOpenCaseStudyLink().next().trigger('click');
-  })
-  .on('click', 'a.prev-case', function(e){
+    $("[data-cs-modal-navigatable]").eq(getCurrentOpenCaseStudyLinkIndex() + 1).trigger('click')
+    return false;
+  }))
+  .on('click', 'a.prev-case', $.throttle(1000, function(e){
     e.preventDefault();
-    getCurrentOpenCaseStudyLink().prev().trigger('click');
-  })
+    $("[data-cs-modal-navigatable]").eq(getCurrentOpenCaseStudyLinkIndex() - 1).trigger('click')
+    return false;
+  }))
 

@@ -1,7 +1,8 @@
 .newsletter-wrapper {
   text-align: left;
   padding: 38px 0 48px;
-  background: #f8f8f8;
+  background: #fff;
+  border-top: 1px solid #e4e4e4;
 
   .hs-error-msgs {
     display: block;
@@ -19,11 +20,8 @@
   }
 
   @include breakpoint(tablet-landscape-up){
-    margin-top: 120px;
-    border-top: 0;
-    margin-bottom: 40px;
-    margin-left: 40px;
-    margin-right: 40px;
+    padding: 32px 0 64px;
+    margin: 120px 0 0 0;
     .inner-width { // override the inner-width class
       margin-left: calc(7% - 40px);
       margin-right: calc(7% - 40px);
@@ -33,23 +31,22 @@
   > div {
     @include breakpoint(tablet-landscape-up){
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
       > .newsletter-heading {
-        width: 25%;
-        margin: 0;
+        width: 100%;
+        text-align: center;
+        margin: 0 0 30px;
       }
       span#hs_cos_wrapper_newsletter {
         width: 85%;
+        max-width: 960px;
       }
     }
-    @include breakpoint(desktop-up){
-      > .newsletter-heading {
-        width: 33%;
-        margin: 0;
-      }
+    @include breakpoint(tablet-landscape-up){
       span#hs_cos_wrapper_newsletter {
-        width: 66%;
+        max-width: 800px;
       }
     }
   }
@@ -107,10 +104,6 @@
         width: 50%;
         display: inline-block;
       }
-    }
-
-    .field {
-      width: 100%;
     }
 
     .hs_submit {
@@ -209,16 +202,13 @@
       .hs-form-radio {
 
         @include breakpoint(tablet-landscape-up){
-          font-size: 12px;
+          font-size: 14px;
           font-weight: 400;
           font-style: normal;
           font-stretch: normal;
           line-height: normal;
           letter-spacing: 1.5px;
           color: #4a4a4a;
-        }
-        @include breakpoint(desktop-up){
-          font-size: 14px;
         }
         input {
           display: none; // hides the actual radio button
@@ -279,7 +269,7 @@
 
   .newsletter-heading {
     font-size: 16px;
-    font-weight: 300;
+    font-weight: normal;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.5;
@@ -287,11 +277,11 @@
     color: #3b373a;
     margin: 0 auto 12px;
     @include breakpoint(tablet-landscape-up){
-      font-size: 16px;
+      font-size: 20px;
       line-height: 1.56;
     }
-    @include breakpoint(tablet-landscape-up){
-      font-size: 18px;
+    @include breakpoint(desktop-up){
+      font-size: 24px;
     }
   }
 

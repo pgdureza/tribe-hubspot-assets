@@ -14,7 +14,7 @@
     margin-bottom: 0px;
     @include breakpoint(tablet-landscape-up){
       margin-bottom: 0px;
-      font-size: getVW(48);
+      font-size: 48px;
       line-height: 1.17;
       letter-spacing: normal;
     }

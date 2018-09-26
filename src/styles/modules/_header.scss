@@ -132,7 +132,7 @@ nav.header-menu .hs-menu-item {
 
 // desktop sticky header
 @include breakpoint(tablet-landscape-up){
-  body:not(.home){
+  body {
     .main-header {
       position: fixed;
       background: #fff;

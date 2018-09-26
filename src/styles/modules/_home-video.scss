@@ -3,23 +3,25 @@
 }
 
 .video-wrapper-module .home-video-link {
-	display: block;
-  width: 60px;
-  height: 60px;
-  margin-top: 16px;
-  margin-bottom: 16px;
-}
+  display: block;
+  border-radius: 100%;
+  overflow: hidden;
+  margin: 30px auto;
+  max-width: 313px;
 
-.video-wrapper-module .home-video-link img {
-  border-radius: 100px;
-  width: 100%;
-  height: 100%;
-}
+  @include breakpoint(tablet-landscape-up){
+    margin-top: -#{getVW(22)};
+    margin-bottom: -#{getVW(22)};
+    height: getVW(600);
+    width: getVW(600);
+    margin-left: getVW(18);
+    max-width: none;
+  }
 
-@include breakpoint(tablet-landscape-up){
-	.video-wrapper-module .home-video-link {
-    margin: auto;
-    width: 80px;
-    height: 80px;
+  img {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: contain;
+    display: block;
   }
 }

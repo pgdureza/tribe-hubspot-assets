@@ -1,0 +1,43 @@
+.download-cta {
+  max-width: 350px;
+  display: flex;
+  justify-content: flex-start;
+  > span {
+    width: 50%;
+  }
+  .hs-cta-wrapper a.cta_button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    &:hover {
+      background: transparent;
+      border: 0;
+    }
+  }
+
+  .hs-cta-wrapper:first-of-type {
+    a.cta_button {
+      margin-right: 6%;
+    }
+  }
+  .hs-cta-wrapper:last-of-type {
+    a.cta_button {
+      margin-left: 6%;
+    }
+  }
+  a.cta_button {
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: 0;
+    max-width: 161px;
+    display: inline-block;
+    box-shadow: none;
+    img {
+      width: 100%;
+    }
+  }
+  img {
+    width: 100%;
+  }
+}
