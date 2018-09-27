@@ -94,6 +94,6 @@ var waitingForNewsletterForm = setInterval(function(){
   if ($("#hs_form_target_newsletter form").length >= 1){
     clearInterval(waitingForNewsletterForm);
     var arrowImage = '<img src="https://www.tribegroup.co/hubfs/TRIBE-Website-2018-Assets/Global-Assets/Right-1.svg" />';
-    $(".newsletter-wrapper .hs_email .input").append('<submit ><span>SUBSCRIBE</span><span class="arrow-button"> ' + arrowImage + ' </span></submit>');
+    $(".newsletter-wrapper .hs_email .input").append('<button><span>SUBSCRIBE</span><span class="arrow-button"> ' + arrowImage + ' </span></button>');
   }
 }, 100);

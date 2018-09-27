@@ -67,7 +67,7 @@ function getFilterParams(){
   })
 
   // convert map to string params
-  var filterParams = "?";
+  var filterParams = window.resources.origin.indexOf("?") > 0 ? "&" : "?";
   var index = 0;
   for (var key in filterMap){
     filterParams += key + "=" + filterMap[key];

@@ -4,7 +4,7 @@ html, body {
   @include baseFont();
 }
 
-input, select, textarea, submit, button {
+input, select, textarea, button {
   @include baseFont();
 }
 

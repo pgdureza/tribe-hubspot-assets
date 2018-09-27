@@ -22,7 +22,7 @@ function hsForm(hs_form_wrapper, callback){
     $(hs_form_wrapper).find("form").on('submit', function(){
       setTimeout(function(){ // need settimeout to trigger after the other submit validations
         $(".styled-dropdown").each(function(){
-          if ($(this).siblings('.hs-error-msgs').length >= 0){
+          if ($(this).parent().siblings('.hs-error-msgs:visible').length >= 1){
             $(this).addClass('error');
           }
         })

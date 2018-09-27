@@ -12,10 +12,8 @@ header.mobile-header {
     box-shadow: 0 2px 6px 0 rgba(0,0,0,.12);
   }
   .icon-wrapper {
-    a {
-      margin-left: -12px;
-      display: block;
-    }
+    margin-left: -12px;
+    display: block;
   }
 }
 
@@ -83,11 +81,9 @@ body.mobile-menu-open {
 // home overrides
 body.home {
   @mixin hamburger-color($hbgr-color){
-    header.mobile-header {
-      &+ .mobile-menu + .mobile-menu + .hamburger-menu {
-        .hamburger .line {
-          background-color: $hbgr-color;
-        }
+    &+ .mobile-menu + .mobile-menu + .hamburger-menu {
+      .hamburger .line {
+        background-color: $hbgr-color;
       }
     }
   }
@@ -102,6 +98,8 @@ body.home {
     }
   }
   &.mobile-menu-open{
-    @include hamburger-color(#3b373a);
+    header.mobile-header {
+      @include hamburger-color(#3b373a);
+    }
   }
 }
