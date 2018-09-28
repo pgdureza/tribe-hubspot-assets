@@ -2,12 +2,20 @@
 function initSlick(){
   $(".slick-image-slider").slick({
     arrows: true,
+    lazyLoad: 'ondemand',
     slidesToShow: 1,
     dots: true,
     infinite: false,
     fade: true,
     speed: 500,
   });
+
+  // lazyload videos
+  $("video [data-lazy]").each(function(){
+    $(this).attr('src', $(this).data('lazy'));
+    $(this).removeAttr('data-lazy');
+    $(this).parent().load()
+  })
 }
 
 function initSocialSharing(){

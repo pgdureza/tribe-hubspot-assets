@@ -95,5 +95,23 @@ var waitingForNewsletterForm = setInterval(function(){
     clearInterval(waitingForNewsletterForm);
     var arrowImage = '<img src="https://www.tribegroup.co/hubfs/TRIBE-Website-2018-Assets/Global-Assets/Right-1.svg" />';
     $(".newsletter-wrapper .hs_email .input").append('<button><span>SUBSCRIBE</span><span class="arrow-button"> ' + arrowImage + ' </span></button>');
+
+    // add an on submit callback
+    // hubspot doesn't allow callback in html form, so we convert it into html
+    $("#hs_form_target_newsletter form").on('submit', function(){
+      var formCallback = setInterval(function(){
+        if ($("#hs_form_target_newsletter.submitted-message").length > 0){
+          clearInterval(formCallback);
+          var responsePlaceholder = $("#hs_form_target_newsletter p");
+          var content = responsePlaceholder.text();
+          responsePlaceholder.html(content)
+          responsePlaceholder.addClass('show');
+          setTimeout(function(){
+            responsePlaceholder.addClass('fadeIn');
+          }, 0)
+        }
+      }, 100)
+    });
+    
   }
 }, 100);

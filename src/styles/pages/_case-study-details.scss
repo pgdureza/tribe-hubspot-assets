@@ -7,6 +7,9 @@
   .slick-image-slider-wrapper {
     background: #f8f8f8;
     margin-bottom: 50px;
+    [data-lazy] {
+      opacity: 0;
+    }
     img {
       object-fit: contain;
       width: auto !important; 
