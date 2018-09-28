@@ -16,11 +16,18 @@ const fs = require('fs')
 
 
 const ftpConfig = require("./ftp.json")
+let env = "dev";
 
 // WATCHER SCRIPT
 gulp.task('default', ['deploy_styles', 'deploy_scripts'], function() {
   gulp.watch('src/styles/**/*.scss', ['deploy_styles']);
   gulp.watch('src/js/**/*.js', ['deploy_scripts']);
+});
+
+gulp.task('prod', function() {
+  env = "prod";
+  gulp.start('deploy_styles');
+  gulp.start('deploy_scripts');
 });
 
 
@@ -49,14 +56,14 @@ gulp.task('bundle_styles', function(){
 
 // FTP/DEPLOY SCRIPTS
 gulp.task('deploy_scripts', ['bundle_scripts'], function () {
-  var base = ftpConfig.base
+  var base = env == "prod" ? ftpConfig.basePROD : ftpConfig.base;
   var rootDist = appRoot.path + "/_dist"
   var globs = [rootDist + "/js/*.js"]
   upload(globs, base)
 });
 
 gulp.task('deploy_styles', ['bundle_styles'], function () {
-  var base = ftpConfig.base
+  var base = env == "prod" ? ftpConfig.basePROD : ftpConfig.base;
   var rootDist = appRoot.path + "/_dist"
   var globs = [rootDist + "/css/*.css"]
   upload(globs, base)

@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start": "gulp",
-    "dev": "gulp"
+    "dev": "gulp",
+    "prod": "gulp prod"
   },
   "author": {
     "name" : "Patrick Dureza",

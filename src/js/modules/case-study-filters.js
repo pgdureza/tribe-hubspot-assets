@@ -76,7 +76,7 @@ function getFilterParams(){
       filterParams += "&"
     }
   }
-  return filterParams;
+  return window.location.search + filterParams;
 }
 
 window.lastFormValues = {};
