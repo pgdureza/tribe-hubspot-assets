@@ -1,7 +1,7 @@
 // generate brand slider control buttons
 var testimonials_controls = [];
 $("#hs_cos_wrapper_testimonial-slider .testimonial-slide").each(function(){
-  var img_src = $(this).data('control-image');
+  var img_src = $(this).find('.control-image').html();
   testimonials_controls.push($("<div>").append(img_src))
 });
 $("#testimonial-slider-control").html(testimonials_controls);
