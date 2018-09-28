@@ -102,6 +102,20 @@ function requestCaseStudyDetails(path){
       request_url += "&relatedcases=" + randomCards.toString();
     }
   }
+  
+  // create a loading clode for modal
+  var loadingModalConfig = {
+    fadeDuration: 200,
+    showClose: false,
+    clickClose: false,
+    escapeClose: false
+  }
+  if ($(".loading.modal").length <= 0){
+    var loadingClone = $(".loading").clone().addClass('modal')
+    loadingClone.modal(loadingModalConfig)
+  } else {
+    $(".loading.modal").modal(loadingModalConfig)
+  }
 
   $.get(request_url, function(data){
     initDetailsModal(data); 

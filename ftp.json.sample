@@ -5,5 +5,6 @@
   "password": "XXXXX",
   "port": 3200,
   "secure": true,
-  "base": "/portals/XXXXXX-XXXXX/content/templates/custom/page/test/"
+  "base": "/portals/XXXXXX-XXXXX/content/templates/custom/page/test/",
+  "basePROD": "/portals/XXXXXX-XXXXX/content/templates/custom/page/prod/",
 }

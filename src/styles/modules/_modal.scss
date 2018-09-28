@@ -60,6 +60,9 @@ div.embeded-code-wrapper.modal {
   @include breakpoint(tablet-landscape-up){
     width: 86vw;
   }
+  &.loading {
+    background: transparent;
+  }
 }
 
 

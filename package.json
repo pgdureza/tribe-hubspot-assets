@@ -8,6 +8,7 @@
     "name" : "Patrick Dureza",
     "email" : "patrick@tribegroup.co"
   },
+  "license": "ISC",
   "dependencies": {
     "app-root-path": "^2.1.0",
     "autoprefixer": "^9.1.2",
