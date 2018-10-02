@@ -1,5 +1,4 @@
 .case-study-landing {
-
   main#main-content {
     h1.heading {
       text-align: center;
@@ -16,7 +15,7 @@
       margin-right: auto;
       margin-left: auto;
 
-      @include breakpoint(tablet-landscape-up){
+      @include breakpoint(tablet-landscape-up) {
         max-width: getVW(820);
         padding: 100px 0 50px 0;
         margin-left: auto;
@@ -55,7 +54,7 @@
   div#case-study-main-content {
     border-top: 1px solid #e4e4e4;
 
-    @include breakpoint(tablet-landscape-up){
+    @include breakpoint(tablet-landscape-up) {
       border-top: none;
     }
 
@@ -98,26 +97,27 @@
         top: 0;
         height: 100vh;
         overflow: scroll;
-        transform: translate(0,999px);
+        transform: translate(0, 999px);
         @include cubicBezierTransformOnly();
 
         &.active {
           transform: none;
         }
-  
+
         .actions {
           position: fixed;
           bottom: 0;
           width: 100%;
           left: 0;
-  
+
           justify-content: space-between;
           display: flex;
           padding: 23px 30px;
           box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.12);
           background: #fff;
-          
-          input[type='submit'], input[type='reset'] {
+
+          input[type='submit'],
+          input[type='reset'] {
             width: calc(50% - 12.5px);
             @extend .cta_button;
           }
@@ -171,7 +171,7 @@
               &:after {
                 border: solid #4d4d4d;
                 border-width: 0 1px 1px 0;
-                content: " ";
+                content: ' ';
                 height: 10px;
                 left: auto;
                 opacity: 0;
@@ -182,7 +182,7 @@
                 width: 3px;
               }
             }
-            input:checked+label:after {
+            input:checked + label:after {
               opacity: 1;
               width: 3px;
             }
@@ -215,12 +215,13 @@
 
         border-color: #e4e4e4;
         color: #7a7a7a;
-        
+
         &.filled {
           color: #3b373a;
           border-color: #3b373a;
         }
-        &.active, &:focus {
+        &.active,
+        &:focus {
           border-color: #f848c4;
           color: #3b373a;
         }
@@ -234,8 +235,37 @@
       background: #f8f8f8;
       padding: 30px 0;
 
-      @include breakpoint(tablet-landscape-up){
+      @include breakpoint(tablet-landscape-up) {
         padding: 60px 0 40px;
+      }
+
+      .no-results {
+        width: 100%;
+        h2 {
+          margin: 0;
+          padding: 0;
+          font-size: 32px;
+          font-weight: normal;
+          font-style: 300;
+          font-stretch: normal;
+          line-height: 1.5;
+          letter-spacing: normal;
+          text-align: center;
+          color: #3b373a;
+        }
+        p {
+          margin: 4px 0 67px;
+          text-align: center;
+          padding: 0;
+          font-size: 18px;
+          font-weight: normal;
+          font-style: 300;
+          font-stretch: normal;
+          line-height: 1.78;
+          letter-spacing: normal;
+          color: #7a7a7a;
+          text-align: center;
+        }
       }
 
       .grid-content {
@@ -250,11 +280,10 @@
           margin-bottom: 20px;
           display: block;
 
-          @include breakpoint(tablet-landscape-up){
+          @include breakpoint(tablet-landscape-up) {
             width: calc(25% - 20px);
             margin-right: 20px;
           }
-          
         }
       }
     }
