@@ -4,7 +4,7 @@
   > span.hs_cos_wrapper {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-end;
 
     @include breakpoint(tablet-landscape-up){
       display: block;
@@ -31,6 +31,9 @@
         display: block;
         text-align: center;
         padding: 9px 0;
+        @include breakpoint(phone-only){
+          font-size: 3vw;
+        }
         @include cubicBezier();
         &.active{
           color: #f848c4;
