@@ -15,6 +15,8 @@ $(document).ready(function(){
     $(".animated-counter .counter").eq(0).data('value', data.total_briefs);
     $(".animated-counter .counter").eq(1).data('value', payout_this_month);
 
+  }).always(function(){
+
     // call the animated-counter init
     //=include modules/animated-counter.js
   })
