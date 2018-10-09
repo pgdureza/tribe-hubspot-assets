@@ -97,7 +97,7 @@ $(document).ready(function () {
 var waitingForNewsletterForm = setInterval(function () {
   if ($("#hs_form_target_newsletter form").length >= 1) {
     clearInterval(waitingForNewsletterForm);
-    var arrowImage = '<img src="https://www.tribegroup.co/hubfs/TRIBE-Website-2018-Assets/Global-Assets/Right-1.svg" alt="subscribe"/>';
+    var arrowImage = '<img src="https://www.tribegroup.co/hubfs/TRIBE-Website-2018-Assets/Global-Assets/Right-1.svg" alt="subscribe newsletter"/>';
     $(".newsletter-wrapper .hs_email .input").append('<button><span>SUBSCRIBE</span><span class="arrow-button"> ' + arrowImage + ' </span></button>');
 
     // add an on submit callback
@@ -117,9 +117,10 @@ var waitingForNewsletterForm = setInterval(function () {
       }, 100)
     });
 
+    //Accessibility: Adding aria tags.
     if ($('.newsletter-wrapper ul.inputs-list li').find("input[type='radio']").length > 0){
+
       $('.newsletter-wrapper ul.inputs-list li').each(function(){
-  
         var $option = $(this).find("input[type='radio']").is(':checked');
   
         if($(this).attr('role') === 'radio') {
@@ -135,18 +136,14 @@ var waitingForNewsletterForm = setInterval(function () {
   }
 }, 100);
 
-//Accessibility: Adding aria tags.
-
-setTimeout(function() {
-  
-}, 1000);
-
-if ($('.main-footer .footer-menu ul').length > 0 && $('.main-header .header-menu ul').length > 0) {
-	$('.main-footer .footer-menu ul li, .main-header .header-menu ul').find('a').each(function(){
-		var $role = $(this).attr('role');
-		if($role === 'menuitem') {
-      $(this).parents('ul').attr('role','menu');
-      $(this).parents('li').attr('role','none');
-		}
-  });
+if ($('.main-footer .footer-menu ul').length > 0 && $('.main-header .header-menu ul').length > 0 || 
+    $('.mobile-menu .header-menu ul').length > 0 && $('.mobile-menu .footer-menu ul').length > 0) {
+    
+      $('.main-footer .footer-menu ul li, .main-header .header-menu ul, .mobile-menu .header-menu ul, .mobile-menu .footer-menu ul').find('a').each(function(){
+      var $role = $(this).attr('role');
+      if($role === 'menuitem') {
+        $(this).parents('ul').attr('role','menu');
+        $(this).parents('li').attr('role','none');
+      }
+    });
 }
