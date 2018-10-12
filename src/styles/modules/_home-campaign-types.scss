@@ -51,6 +51,7 @@ section#campaign-types-section {
         @include breakpoint(tablet-landscape-up){
           margin: 85px 0 0;
           max-width: 36%;
+          min-width: 36%;
         }
       }
 

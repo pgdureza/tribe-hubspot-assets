@@ -67,3 +67,7 @@
 @function getVW($target) { 
   @return #{$target/$reference-width * 100}vw;
 }
+
+@function getMVW($target) { 
+  @return #{$target/$reference-mobile-width * 100}vw;
+}
